@@ -19,4 +19,4 @@ And `main.js` after footer (requires jQuery)
 DOCUMENTATION
 -----------
 
-Please visit the project page for reference: [Base](http://2frags.com/base/readme.html)]
+Please visit the project page for reference: [Documentation](http://2frags.com/base/readme.html)
