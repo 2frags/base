@@ -1,0 +1,204 @@
+// ==================================================================== forms
+#forms.section
+  .col
+    h1 Forms
+    hr
+    div 
+      |Forms is builded on the same  
+      code .grid .col     
+      | system, and additional 
+      code .form     
+      |   class. It can be applied to whole form or any 
+      code .grid 
+      |   inside it. (    
+      code   .form    
+      |   class affecting on all inner
+      code .col    
+      |   blocks)
+    div 
+      code .col
+      |   class can be applied directly on inputs, selects and textareas. It works fine with simple one line forms:
+    br      
+    .grid.form
+      label.col.m-3 Input name 
+      input.fld.col.m-5(type='text', placeholder='Input with .col class')
+      .col.m-3
+        input.btn.icon-check(type='submit', value='Input name')
+     
+    br   
+    div We don`t use "stacked", "inline", "aligned" and any other special form types like Bootstrap & other frameworks does. 
+    div Because in real world the same form looks different on various devices. 
+    div So "inline" form on a wide screen must automatically transfom into "stacked" one on 4.5" phone.
+    div 
+      |We can easily adapt our forms for any device using     
+      code   .grid & .col
+      |   classes.
+    br
+    .grid.form
+      label.col.m-3 Very long input name 
+      .col.m-5         
+        input.fld(type='text', placeholder='Input name')          
+      .col.m-3
+        input.fld(type='text', placeholder='Input name')
+  .col
+    h4 Field & buttons sizes
+    hr
+    .form.h3 
+      .grid     
+        label.col.m-3  .form.h3
+        .col.m-3
+          input.fld(type='text', placeholder='Input name')
+        .col.m-3
+          input.bool(type='radio', id="r2", name="r1")          
+          label(for="r2") Input name 
+        .col.m-3
+          button.btn.icon-shopping_cart Input name
+    .form.h2 
+      .grid     
+        label.col.m-3 .form.h2
+        .col.m-3
+          input.fld(type='text', placeholder='Input name')
+        .col.m-3
+          input.bool(type='radio', id="r1", name="r1")          
+          label(for="r1") Input name         
+        .col.m-3
+          a.btn.icon-pencil(href="#") icon-pencil 
+    .form.h1
+      .grid      
+        label.col.m-3 .form.h1
+        .col.m-3
+          input.fld(type='text', placeholder='Input name')
+        .col.m-3
+          input.bool(type='checkbox', id="ch1")          
+          label(for="ch1") Input name
+        .col.m-3
+          div.btn.icon-paperplane div as button
+  .col    
+    h4 Select          
+    hr      
+    p 
+      |We use standart HTML select with   
+      code   appearance: none; 
+      |   rule. and .svg arrow background.
+    .grid.form.grid_l      
+      label.col.s-3 Select name
+      .col.s-4
+        select
+          option(disabled="disabled", selected="selected") Choose an option
+          option Option 1
+          option Option 2
+          option Very very very loooong Option 3
+  .col    
+    h4 Textarea          
+    hr      
+    p 
+      |Use     
+      code .v_top   
+      |   class on wrapper for correct vertical-align relative to textarea.
+    .grid.form.v_top     
+      label.col.s-3 Textarea name
+      .col.s-5
+        textarea(rows='4')  
+         
+  .col    
+    h4 Form groups & form rows         
+    hr      
+    div 
+      code .form_group 
+      |  and  
+      code   .form_line   
+      |  can contain any textual inputs, buttons and selects. 
+    div
+      |Also  
+      code .form_group  
+      |  can contain textareas.
+    div 
+      |We can change buttons and fields color by adding a color class like   
+      code  .clr_ok 
+      |  to any element in .form_group   
+    p   
+    .grid.form.v_top     
+      .col.s-5
+        .grid.form_group
+          input.fld(type='text', placeholder='Username')
+          input.fld(type='text', placeholder='Password')
+          input.fld(type='text', placeholder='Email')
+          textarea(rows='4', placeholder='Your message')  
+        .grid.txt_r
+          div.col.btn.icon-paperplane div as button   
+           
+      .col.s-6.s-gap-1
+        .grid.form_line
+          .btn.icon-pencil.clr_ok
+          input.fld.s-5.clr_ok(type='text', placeholder='Password')
+          button.s-3.btn.icon-paperplane.clr_ok
+        br
+        .grid.form_line.h3
+          input.fld.s-4(type='text', placeholder='Username')
+          input.fld.s-5(type='text', placeholder='Password')
+          button.s-3.btn.icon-paperplane
+        br
+        .grid.form_line.h2
+          select.s-4
+            option Option1
+            option Option2
+          input.fld.s-5(type='text', placeholder='Password')
+          button.s-3.btn.icon-paperplane
+        br
+        .grid.form_line.h1
+          select.s-4
+            option Option1
+            option Option2
+          input.fld.s-5(type='text', placeholder='Password')
+          button.s-3.btn.icon-paperplane
+        br
+            
+#buttons.section  
+  .col    
+    h1 Buttons          
+    hr      
+        
+    .btn.clr_def .btn.clr_def
+    .btn.clr_err .btn.clr_err
+    .btn.clr_warn .btn.clr_warn
+    .btn.clr_info .btn.clr_info
+    .btn.clr_ok .btn.clr_ok
+    .btn.clr_none .btn.clr_none
+    p
+    p Disabled buttons
+    .btn.clr_def.disabled .btn.clr_def
+    .btn.clr_err.disabled .btn.clr_err
+    .btn.clr_warn.disabled .btn.clr_warn
+    .btn.clr_info.disabled .btn.clr_info
+    .btn.clr_ok.disabled .btn.clr_ok
+    .btn.clr_none.disabled .btn.clr_none
+    br
+    br
+    p  
+      | Simply add    
+      code .brdr   
+      |   class to make  buttons outline
+    .btn.brdr.clr_def .btn.brdr.clr_def
+    .btn.brdr.clr_err .btn.brdr.clr_err
+    .btn.brdr.clr_warn .btn.brdr.clr_warn
+    .btn.brdr.clr_info .btn.brdr.clr_info
+    .btn.brdr.clr_ok .btn.brdr.clr_ok
+    .btn.brdr.clr_none .btn.brdr.clr_none
+
+    h4 Sizes, icons etc.          
+    hr   
+    p 
+      .btn.clr_def.h1 .btn.clr_def.h1    
+      .btn.brdr.clr_def.h1 .btn.brdr.clr_def.h1
+      .btn.icon-key.h1 .btn.h1
+      .btn.icon-attach_file.h1
+    p 
+      .btn.clr_def.h2 .btn.clr_def.h2    
+      .btn.brdr.clr_def.h2 .btn.brdr.clr_def.h2
+      .btn.icon-key.h2 .btn.h2
+      .btn.icon-attach_file.h2
+    p 
+      .btn.clr_def.h3 .btn.clr_def.h3   
+      .btn.brdr.clr_def.h3 .btn.brdr.clr_def.h3
+      .btn.icon-key.h3 .btn.h3
+      .btn.icon-attach_file.h3

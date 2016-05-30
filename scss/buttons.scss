@@ -1,0 +1,100 @@
+@import "vars";
+//---------------------------------------------------------------------------- BUTTONS
+@mixin btn_hover($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,7%);
+  }
+  &:active {
+    background:darken($bg,14%);
+  }
+}
+@mixin btn_brdr_hover($bg){
+  border-color:  $bg;
+  color: $bg;
+  background: transparent;
+  &:hover {
+    border-color:  darken($bg,10%);
+    color:  darken($bg,10%);
+    background: transparent;
+  }
+  &:active {
+    border-color:  darken($bg,20%);
+    color:  darken($bg,20%);
+  }
+}
+.btn{
+  border: none;
+  width: auto;
+  vertical-align: middle;
+  text-decoration: none;
+  background: $clr_btn;
+  display: inline-block;
+  color: $txt_dark;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 100%;
+  border: transparent 1px solid;
+  @include transition(all ease-in-out .2s);
+  @include rounded(4px);
+  &
+  &[class*=" icon-"], &[class^="icon-"] {
+    &:before {
+      font-size: 1.4em;
+      line-height: .75em;
+      vertical-align: -25%;
+    }
+  }
+  &:focus, &:active { outline: none;}
+  @include btn_hover($clr_btn);
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  cursor: not-allowed;
+  @include opacity(.5);
+  pointer-events:none;
+}
+
+.btn.h1 {font-size: $h1f;}
+.btn.h2 {font-size: $h2f;}
+.btn.h3 {font-size: $h3f;}
+.clr_err {
+  background: $clr_err;
+  @include btn_hover($clr_err);
+}
+.clr_warn {
+  background: $clr_warn;
+  @include btn_hover($clr_warn);
+}
+.clr_info {
+  background: $clr_info;
+  @include btn_hover($clr_info);
+}
+.clr_ok {
+  background: $clr_ok;
+  @include btn_hover($clr_ok);
+}
+.clr_def {
+  background: $active;
+  @include btn_hover($active);
+}
+.clr_err, .clr_warn, .clr_info, .clr_ok, .clr_def {
+  color: #fff;
+}
+.clr_none {
+  background: transparent;
+  @include btn_hover(transparent);
+}
+.brdr {
+  background: transparent;
+  border-color: $txt_mid;
+  color: $txt_dark;
+}
+.brdr, .fld, select {
+  &.clr_err {@include btn_brdr_hover($clr_err);}
+  &.clr_warn { @include btn_brdr_hover($clr_warn);}
+  &.clr_info { @include btn_brdr_hover($clr_info);}
+  &.clr_ok { @include btn_brdr_hover($clr_ok);}
+  &.clr_def { @include btn_brdr_hover($active);}
+}

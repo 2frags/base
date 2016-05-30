@@ -1,0 +1,29 @@
+
+@import "vars";
+
+.mainmenu {
+	display: none;
+	&.on { display: block;
+		background: $bg_1;
+		position: fixed;
+		right: 0px;
+		top: 0px;
+		height: 100vh;
+		width: 20%;
+		min-width: 200px;
+		z-index: 100;
+	}
+	li { display: inline-block;}
+	a { 
+		padding: 10px;
+		text-decoration: none;
+		color: $txt_light;
+		display: block;
+	}
+}
+
+//------------------- queries
+@include mquery(min-width, $m){
+	.js-hamburger { display: none;}
+	.mainmenu { display: inline-block;}
+}

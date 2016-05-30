@@ -1,0 +1,187 @@
+// ==================================================================== grids
+#grids.section
+  .col
+    h1 Grids
+    hr
+    div
+      | We use 
+      code inline-blocks
+      |  for columns.
+    div
+      |  In that way we preventing common problem of all float grids: 
+      a(href='http://stackoverflow.com/questions/30598970/bootstrap-row-elements-with-variable-height', target='_blank') variable columns height.
+    div 
+      |For example, Bootstrap trying to fix it in a
+      a(href="http://getbootstrap.com.vn/examples/equal-height-columns/", target="_blank") flexbox-way 
+    div But this solution works only on less-than-12 columns per row. Flexbox just shrinks all colunns into a single row. 
+    div Also 
+      code flexbox
+      |  have a lot of issues on IE 10 & 11.      
+    
+    
+    h4 Grid options
+    hr
+    table.v_brdr.h_brdr.brdr
+      tr 
+        th class
+        th Media-query
+        th Screen width
+      tr
+        td .xx-*
+        td @media screen and (min-width: 5em)
+        td ≥ 80px
+      tr
+        td .xs-*
+        td @media screen and (min-width: 22.5em)
+        td ≥ 360px
+      tr
+        td .s-*
+        td @media screen and (min-width: 35.5em)
+        td ≥ 568px
+      tr
+        td .m-*
+        td @media screen and (min-width: 48em)
+        td ≥ 768px
+      tr
+        td .l-*
+        td @media screen and (min-width:64em)
+        td ≥ 1024px
+      tr
+        td .xl-*
+        td @media screen and (min-width: 80em)
+        td ≥ 1280px
+
+            
+    h4 Nested grids
+    hr
+  .grid.test
+    .col.s-4
+      div .s-4
+    .col.s-4
+      div .s-4
+    .col.s-4      
+      .grid 
+        .col.s-9 
+          div .s-9
+        .col.s-3
+          div .s-3      
+          
+    .col.s-8
+      .grid 
+        .col.s-6 
+          div .s-6
+        .col.s-4
+          div .s-4
+        .col.s-2
+          div .s-2
+    .col.s-2
+      div .s-2   
+    .col.s-1
+      div .s-1  
+    .col.s-1
+      div .s-1   
+      
+    .col.s-4
+      div .s-4
+    .col.s-8      
+      .grid 
+        .col.s-4 
+          div .s-4
+        .col.s-5
+          div .s-5  
+        .col.s-3
+          div .s-3  
+
+  .col
+    h4 Column gaps and show/hide
+    hr
+    div
+      |     		Use 
+      code .xs0
+      |  to hide 1th column on screens ≥ 360px.   		
+      br
+      |     		Use 
+      code .s-6
+      |  to show it and make it 6x wide  on screens ≤ 568px    		
+      br
+      |     		Use 
+      code .s-gap-1
+      |  to make 4th column 1x gap, and 
+      code .l-gap-0
+      |  to clear it.
+    br
+  .grid.test
+    .col.xs0.s-6.m0.l-3
+      div
+        h6 #1
+        span
+          | .col 
+          code .xs0
+          code .s-6
+          |  .m0 .l-3
+    .col.xs-5.s-4.m-7.l-3
+      div
+        h6 #2
+        span .col .xs-5 .s-4 .m-7 .l-3
+    .col.xs-3.s-2.m-2.l-4
+      div
+        h6 #3
+        span .col .xs-3 .s-2 .m-2 .l-4
+    .col.xs-4.s-11.s-gap-1.m-2.l-2.l-gap-0
+      div
+        h6 #4
+        span
+          | .col .xs-4 .s-11 
+          code .s-gap-1
+          |  .m-2 .l-2 
+          code .l-gap-0
+
+  .col
+    h4 Column order
+    hr
+    div
+      |     		Use 
+      code .rtl
+      |  on 
+      code .grid
+      |  to reverse columns
+      br
+  .grid.rtl.test
+    .col.xs-4
+      h6 #1
+    .col.xs-8
+      h6 #2
+
+  .col
+    h4 Grid align
+    hr 
+    div
+      |     		Use 
+      code .grid_l
+      |  or 
+      code .grid_r
+      |  or 
+      code .grid_c
+      |  to align columns
+      br
+  .grid.grid_l.test
+    .col.xs-4
+      h6 grid_l
+    .col.xs-2
+      h6 grid_l
+    .col.xs-3
+      h6 grid_l
+  .grid.grid_r.test
+    .col.xs-4
+      h6 grid_r
+    .col.xs-2
+      h6 grid_r
+    .col.xs-3
+      h6 grid_r
+  .grid.grid_c.test
+    .col.xs-4
+      h6 grid_c
+    .col.xs-2
+      h6 grid_c
+    .col.xs-3
+      h6 grid_c
