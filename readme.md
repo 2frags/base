@@ -13,7 +13,7 @@ QUICK START
 -----------
 
 Just add  `out.css` file to your page header
-And `main.js` after footer (requires jQuery)
+And `main.js` after footer
 
 
 DOCUMENTATION
