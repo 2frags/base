@@ -216,6 +216,9 @@ input[type="checkbox"] {
 //---------------------------------------------------------------------------- FORM LINE
 .form_line {
     text-align: left;
+    &>.btn {
+        border-left-color: rgba(255, 255, 255, .5);
+    }
     &>.btn, &>input {
         @include rounded(0);
     }

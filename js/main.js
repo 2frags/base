@@ -19,11 +19,11 @@ $(document).ready(function() {
         }
         //================ js-hamburger
     function mainmenu_pos($el) {
-        $($el).is(':visible') ? $('body').addClass('menu_fixed') : $('body').removeClass('menu_fixed');
+        $($el).is(':visible') ? $('body').addClass('js-menu') : $('body').removeClass('js-menu');
     }
     //=============== js-show_block
-    $(document).on('mouseup', 'body.menu_on', function() {
-        $(this).removeClass('menu_on');
+    $(document).on('mouseup', 'body.js-menu_on', function() {
+        $(this).removeClass('js-menu_on');
         console.log('body');
     });
     $('#mainmenu').mouseup(function(e) {
@@ -34,16 +34,15 @@ $(document).ready(function() {
     $('.js-click_show').one('click', function() {
         $(this).addClass('hide');
     })
-
     mainmenu_pos('#mainmenu_toggle');
 
     $('#mainmenu_toggle').click(function() {
-        $('body').toggleClass('menu_on');
+        $('body').toggleClass('js-menu_on');
     })
 
     $(window).resize(function() {
             mainmenu_pos('#mainmenu_toggle');
-            $('body').removeClass('menu_on');
+            $('body').removeClass('js-menu_on');
         })
         //=============== tabs
     $('.tabs dt').click(function() {

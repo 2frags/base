@@ -9,54 +9,6 @@ body:before {
     opacity: 0;
     @include transition(opacity ease-in-out .3s);
 }
-#mainmenu {
-    display: inline-block;
-    width: auto;
-    right: auto;
-    top: auto;
-    position: static;
-    @include transition(left 0.3s ease-in-out);
-    // @include transition(left 0.3s ease-in-out, top 0.3s ease-in-out);
-}
-//----------------------- !!! styles for mobile mainmenu
-.menu_fixed #mainmenu {
-    // left: -$menu_fixed_W;
-    background: #fff;
-    @include shadow(0px, 4px, 10px, #333);
-    // top: $page_hdr_H;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    overflow-y: auto;
-    padding: 0;
-    margin: 0px;
-    position: fixed;
-    z-index: 10000;
-    width: $menu_fixed_W;
-    li {
-        display: block;
-    }
-    a {
-        border-bottom: $bg_1 1px solid;
-        text-align: left;
-    }
-}
-body.menu_on {
-    overflow: hidden;
-    margin-left: $menu_fixed_W;
-    margin-right: -$menu_fixed_W;
-    #mainmenu {
-        left: 0px;
-    }
-    &:before {
-        opacity: 1;
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        z-index: 999;
-    }
-}
 //--------------------------- tabs
 .tabs {
     width: 100%;

@@ -1,29 +1,61 @@
-
 @import "vars";
-
-.mainmenu {
-	display: none;
-	&.on { display: block;
-		background: $bg_1;
-		position: fixed;
-		right: 0px;
-		top: 0px;
-		height: 100vh;
-		width: 20%;
-		min-width: 200px;
-		z-index: 100;
-	}
-	li { display: inline-block;}
-	a { 
-		padding: 10px;
-		text-decoration: none;
-		color: $txt_light;
-		display: block;
-	}
+.js-main_wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
 }
-
-//------------------- queries
-@include mquery(min-width, $m){
-	.js-hamburger { display: none;}
-	.mainmenu { display: inline-block;}
+.js_inner_wrap {
+    width: 100%;
+    position: relative;
+    left: 0;
+    @include transition(left .3s ease-in-out);
+    &:before {
+        content: '';
+        position: absolute;
+        background: #000;
+        opacity: 0;
+        @include transition(opacity .3s ease-in-out);
+    }
+}
+.js-menu_on {
+    .js_inner_wrap {
+        left: $menu_fixed_W;
+        &:before {
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 999;
+            opacity: .3;
+        }
+    }
+    &.js-menu #mainmenu {
+        left: 0;
+        @include shadow(0px, 4px, 10px, #333);
+    }
+}
+#mainmenu {
+    display: inline-block;
+}
+//----------------------- !!! styles for mobile mainmenu
+.js-menu #mainmenu {
+    left: -$menu_fixed_W;
+    @include transition(left .3s ease-in-out);
+    background: #fff;
+    // top: $page_hdr_H;
+    top: 0px;
+    overflow-y: auto;
+    padding: 0;
+    margin: 0px;
+    height: 100%;
+    position: fixed;
+    z-index: 10000;
+    width: $menu_fixed_W;
+    li {
+        display: block;
+    }
+    a {
+        border-bottom: $bg_1 1px solid;
+        text-align: left;
+    }
 }

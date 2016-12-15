@@ -9,700 +9,704 @@
     <script src="js/jquery-1.12.1.min.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body class="demo grid">
-    <div class="col l-11 xl-9"> 
-      <!-- ==================================================================== grids-->
-      <div class="section" id="grids">
-        <div class="col">
-          <h1>Grids</h1>
-          <hr>
-          <div>We use <code>inline-blocks</code> for columns.</div>
-          <div> In that way we preventing common problem of all float grids: <a href="http://stackoverflow.com/questions/30598970/bootstrap-row-elements-with-variable-height" target="_blank">variable columns height.</a></div>
-          <div>
-             For example, Bootstrap trying to fix it in a<a href="http://getbootstrap.com.vn/examples/equal-height-columns/" target="_blank">flexbox-way </a></div>
-          <div>But this solution works only on less-than-12 columns per row. Flexbox just shrinks all colunns into a single row. </div>
-          <div>Also <code>flexbox</code> have a lot of issues on IE 10 & 11.      </div>
-          <h4>Grid options</h4>
-          <hr>
-          <table class="v_brdr h_brdr brdr">
-            <tr> 
-              <th>class</th>
-              <th>Media-query</th>
-              <th>Screen width</th>
-            </tr>
-            <tr>
-              <td>.xx-*</td>
-              <td>@media screen and (min-width: 5em)</td>
-              <td>≥ 80px</td>
-            </tr>
-            <tr>
-              <td>.xs-*</td>
-              <td>@media screen and (min-width: 22.5em)</td>
-              <td>≥ 360px</td>
-            </tr>
-            <tr>
-              <td>.s-*</td>
-              <td>@media screen and (min-width: 35.5em)</td>
-              <td>≥ 568px</td>
-            </tr>
-            <tr>
-              <td>.m-*</td>
-              <td>@media screen and (min-width: 48em)</td>
-              <td>≥ 768px</td>
-            </tr>
-            <tr>
-              <td>.l-*</td>
-              <td>@media screen and (min-width:64em)</td>
-              <td>≥ 1024px</td>
-            </tr>
-            <tr>
-              <td>.xl-*</td>
-              <td>@media screen and (min-width: 80em)</td>
-              <td>≥ 1280px</td>
-            </tr>
-          </table>
-          <h4>Nested grids</h4>
-          <hr>
-        </div>
-        <div class="grid test">
-          <div class="col s-4">
-            <div>.s-4</div>
-          </div>
-          <div class="col s-4">
-            <div>.s-4</div>
-          </div>
-          <div class="col s-4">     
-            <div class="grid"> 
-              <div class="col s-9"> 
-                <div>.s-9</div>
-              </div>
-              <div class="col s-3">
-                <div>.s-3      </div>
-              </div>
+  <body>
+    <div class="grid js-main_wrap">
+      <div class="col l-11 xl-9 js_inner_wrap">
+        <div class="demo"> 
+          <!-- ==================================================================== grids-->
+          <div class="section" id="grids">
+            <div class="col">
+              <h1>Grids</h1>
+              <hr>
+              <div>We use <code>inline-blocks</code> for columns.</div>
+              <div> In that way we preventing common problem of all float grids: <a href="http://stackoverflow.com/questions/30598970/bootstrap-row-elements-with-variable-height" target="_blank">variable columns height.</a></div>
+              <div>
+                 For example, Bootstrap trying to fix it in a<a href="http://getbootstrap.com.vn/examples/equal-height-columns/" target="_blank">flexbox-way </a></div>
+              <div>But this solution works only on less-than-12 columns per row. Flexbox just shrinks all colunns into a single row. </div>
+              <div>Also <code>flexbox</code> have a lot of issues on IE 10 & 11.      </div>
+              <h4>Grid options</h4>
+              <hr>
+              <table class="v_brdr h_brdr brdr">
+                <tr> 
+                  <th>class</th>
+                  <th>Media-query</th>
+                  <th>Screen width</th>
+                </tr>
+                <tr>
+                  <td>.xx-*</td>
+                  <td>@media screen and (min-width: 5em)</td>
+                  <td>≥ 80px</td>
+                </tr>
+                <tr>
+                  <td>.xs-*</td>
+                  <td>@media screen and (min-width: 22.5em)</td>
+                  <td>≥ 360px</td>
+                </tr>
+                <tr>
+                  <td>.s-*</td>
+                  <td>@media screen and (min-width: 35.5em)</td>
+                  <td>≥ 568px</td>
+                </tr>
+                <tr>
+                  <td>.m-*</td>
+                  <td>@media screen and (min-width: 48em)</td>
+                  <td>≥ 768px</td>
+                </tr>
+                <tr>
+                  <td>.l-*</td>
+                  <td>@media screen and (min-width:64em)</td>
+                  <td>≥ 1024px</td>
+                </tr>
+                <tr>
+                  <td>.xl-*</td>
+                  <td>@media screen and (min-width: 80em)</td>
+                  <td>≥ 1280px</td>
+                </tr>
+              </table>
+              <h4>Nested grids</h4>
+              <hr>
             </div>
-          </div>
-          <div class="col s-8">
-            <div class="grid"> 
-              <div class="col s-6"> 
-                <div>.s-6</div>
+            <div class="grid test">
+              <div class="col s-4">
+                <div>.s-4</div>
               </div>
               <div class="col s-4">
                 <div>.s-4</div>
               </div>
-              <div class="col s-2">
-                <div>.s-2</div>
+              <div class="col s-4">     
+                <div class="grid"> 
+                  <div class="col s-9"> 
+                    <div>.s-9</div>
+                  </div>
+                  <div class="col s-3">
+                    <div>.s-3      </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col s-2">
-            <div>.s-2   </div>
-          </div>
-          <div class="col s-1">
-            <div>.s-1  </div>
-          </div>
-          <div class="col s-1">
-            <div>.s-1   </div>
-          </div>
-          <div class="col s-4">
-            <div>.s-4</div>
-          </div>
-          <div class="col s-8">     
-            <div class="grid"> 
-              <div class="col s-4"> 
+              <div class="col s-8">
+                <div class="grid"> 
+                  <div class="col s-6"> 
+                    <div>.s-6</div>
+                  </div>
+                  <div class="col s-4">
+                    <div>.s-4</div>
+                  </div>
+                  <div class="col s-2">
+                    <div>.s-2</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col s-2">
+                <div>.s-2   </div>
+              </div>
+              <div class="col s-1">
+                <div>.s-1  </div>
+              </div>
+              <div class="col s-1">
+                <div>.s-1   </div>
+              </div>
+              <div class="col s-4">
                 <div>.s-4</div>
               </div>
-              <div class="col s-5">
-                <div>.s-5  </div>
+              <div class="col s-8">     
+                <div class="grid"> 
+                  <div class="col s-4"> 
+                    <div>.s-4</div>
+                  </div>
+                  <div class="col s-5">
+                    <div>.s-5  </div>
+                  </div>
+                  <div class="col s-3">
+                    <div>.s-3  </div>
+                  </div>
+                </div>
               </div>
-              <div class="col s-3">
-                <div>.s-3  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <h4>Column gaps and show/hide</h4>
-          <hr>
-          <div>    		Use <code>.xs0</code> to hide 1th column on screens ≥ 360px.   		<br>    		Use <code>.s-6</code> to show it and make it 6x wide  on screens ≤ 568px    		<br>    		Use <code>.s-gap-1</code> to make 4th column 1x gap, and <code>.l-gap-0</code> to clear it.</div><br>
-        </div>
-        <div class="grid test">
-          <div class="col xs0 s-6 m0 l-3">
-            <div>
-              <h6>#1</h6><span>.col <code>.xs0</code><code>.s-6</code> .m0 .l-3</span>
-            </div>
-          </div>
-          <div class="col xs-5 s-4 m-7 l-3">
-            <div>
-              <h6>#2</h6><span>.col .xs-5 .s-4 .m-7 .l-3</span>
-            </div>
-          </div>
-          <div class="col xs-3 s-2 m-2 l-4">
-            <div>
-              <h6>#3</h6><span>.col .xs-3 .s-2 .m-2 .l-4</span>
-            </div>
-          </div>
-          <div class="col xs-4 s-11 s-gap-1 m-2 l-2 l-gap-0">
-            <div>
-              <h6>#4</h6><span>.col .xs-4 .s-11 <code>.s-gap-1</code> .m-2 .l-2 <code>.l-gap-0</code></span>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <h4>Column order</h4>
-          <hr>
-          <div>    		Use <code>.rtl</code> on <code>.grid</code> to reverse columns<br></div>
-        </div>
-        <div class="grid rtl test">
-          <div class="col xs-4">
-            <h6>#1</h6>
-          </div>
-          <div class="col xs-8">
-            <h6>#2</h6>
-          </div>
-        </div>
-        <div class="col">
-          <h4>Grid align</h4>
-          <hr>
-          <div>    		Use <code>.grid_l</code> or <code>.grid_r</code> or <code>.grid_c</code> to align columns<br></div>
-        </div>
-        <div class="grid grid_l test">
-          <div class="col xs-4">
-            <h6>grid_l</h6>
-          </div>
-          <div class="col xs-2">
-            <h6>grid_l</h6>
-          </div>
-          <div class="col xs-3">
-            <h6>grid_l</h6>
-          </div>
-        </div>
-        <div class="grid grid_r test">
-          <div class="col xs-4">
-            <h6>grid_r</h6>
-          </div>
-          <div class="col xs-2">
-            <h6>grid_r</h6>
-          </div>
-          <div class="col xs-3">
-            <h6>grid_r</h6>
-          </div>
-        </div>
-        <div class="grid grid_c test">
-          <div class="col xs-4">
-            <h6>grid_c</h6>
-          </div>
-          <div class="col xs-2">
-            <h6>grid_c</h6>
-          </div>
-          <div class="col xs-3">
-            <h6>grid_c</h6>
-          </div>
-        </div>
-      </div>
-      <!-- ==================================================================== forms-->
-      <div class="section" id="forms">
-        <div class="col">
-          <h1>Forms</h1>
-          <hr>
-          <div>
-             Forms is builded on the same  <code>.grid .col     </code>system, and additional <code>.form     </code>  class. It can be applied to whole form or any <code>.grid </code>  inside it. (    <code>  .form    </code>  class affecting on all inner<code>.col    </code>  blocks)</div>
-          <div> <code>.col</code>  class can be applied directly on inputs, selects and textareas. It works fine with simple one line forms:</div><br>
-          <div class="grid form">
-            <label class="col m-3">Input name </label>
-            <input class="fld col m-5" type="text" placeholder="Input with .col class">
-            <div class="col m-3">
-              <input class="btn icon-check" type="submit" value="Input name">
-            </div>
-          </div><br>
-          <div>We don`t use "stacked", "inline", "aligned" and any other special form types like Bootstrap & other frameworks does. </div>
-          <div>Because in real world the same form looks different on various devices. </div>
-          <div>So "inline" form on a wide screen must automatically transfom into "stacked" one on 4.5" phone.</div>
-          <div>
-             We can easily adapt our forms for any device using     <code>  .grid & .col</code>  classes.</div><br>
-          <div class="grid form">
-            <label class="col m-3">Very long input name </label>
-            <div class="col m-5">        
-              <input class="fld" type="text" placeholder="Input name">
-            </div>
-            <div class="col m-3">
-              <input class="fld" type="text" placeholder="Input name">
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <h4>Field & buttons sizes</h4>
-          <hr>
-          <div class="form h3"> 
-            <div class="grid">    
-              <label class="col m-3"> .form.h3</label>
-              <div class="col m-3">
-                <input class="fld" type="text" placeholder="Input name">
-              </div>
-              <div class="col m-3">
-                <input class="bool" type="radio" id="r2" name="r1">
-                <label for="r2">Input name </label>
-              </div>
-              <div class="col m-3">
-                <button class="btn icon-shopping_cart">Input name</button>
-              </div>
-            </div>
-          </div>
-          <div class="form h2"> 
-            <div class="grid">    
-              <label class="col m-3">.form.h2</label>
-              <div class="col m-3">
-                <input class="fld" type="text" placeholder="Input name">
-              </div>
-              <div class="col m-3">
-                <input class="bool" type="radio" id="r1" name="r1">
-                <label for="r1">Input name         </label>
-              </div>
-              <div class="col m-3"><a class="btn icon-pencil" href="#">icon-pencil </a></div>
-            </div>
-          </div>
-          <div class="form h1">
-            <div class="grid">     
-              <label class="col m-3">.form.h1</label>
-              <div class="col m-3">
-                <input class="fld" type="text" placeholder="Input name">
-              </div>
-              <div class="col m-3">
-                <input class="bool" type="checkbox" id="ch1">
-                <label for="ch1">Input name</label>
-              </div>
-              <div class="col m-3">
-                <div class="btn icon-plane">div as button</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col">   
-          <h4>Select          </h4>
-          <hr>
-          <p>
-             We use standart HTML select with   <code>  appearance: none; </code>  rule. and .svg arrow background.</p>
-          <div class="grid form grid_l">     
-            <label class="col s-3">Select name</label>
-            <div class="col s-4">
-              <select>
-                <option disabled="disabled" selected="selected">Choose an option</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Very very very loooong Option 3</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="col">   
-          <h4>Textarea          </h4>
-          <hr>
-          <p>
-             Use     <code>.v_top   </code>  class on label for correct vertical-align relative to textarea.</p>
-          <div class="grid form">    
-            <label class="col s-3 v_top">Textarea name</label>
-            <div class="col s-5">
-              <textarea rows="4"> </textarea>
-            </div>
-          </div>
-        </div>
-        <div class="col">   
-          <h4>Form groups & form rows         </h4>
-          <hr>
-          <div> <code>.form_group </code> and  <code>  .form_line   </code> can contain any textual inputs, buttons and selects. </div>
-          <div>Also  <code>.form_group  </code> can contain textareas.</div>
-          <div>
-             We can change buttons and fields color by adding a color class like   <code> .clr_ok </code> to any element in .form_group   </div>
-          <p>  </p>
-          <div class="grid form v_top">    
-            <div class="col s-5">
-              <div class="grid form_group">
-                <input class="fld" type="text" placeholder="Username">
-                <input class="fld" type="text" placeholder="Password">
-                <input class="fld" type="text" placeholder="Email">
-                <textarea rows="4" placeholder="Your message"> </textarea>
-              </div>
-              <div class="grid txt_r">
-                <div class="col btn icon-plane">div as button   </div>
-              </div>
-            </div>
-            <div class="col s-6 s-gap-1">
-              <div class="grid form_line">
-                <div class="btn icon-pencil clr_ok"></div>
-                <input class="fld s-5 clr_ok" type="text" placeholder="Password">
-                <button class="s-3 btn icon-plane clr_ok"></button>
-              </div><br>
-              <div class="grid form_line h3">
-                <input class="fld s-4" type="text" placeholder="Username">
-                <input class="fld s-5" type="text" placeholder="Password">
-                <button class="s-3 btn icon-plane"></button>
-              </div><br>
-              <div class="grid form_line h2">
-                <select class="s-4">
-                  <option>Option1</option>
-                  <option>Option2</option>
-                </select>
-                <input class="fld s-5" type="text" placeholder="Password">
-                <button class="s-3 btn icon-plane"></button>
-              </div><br>
-              <div class="grid form_line h1 fluid">
-                <div class="btn">Button 1</div>
-                <div class="btn">Button 2</div>
-                <div class="btn">Button 3</div>
-                <div class="btn icon-plane"></div>
-              </div><br>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section" id="buttons"> 
-        <div class="col">   
-          <h1>Buttons          </h1>
-          <hr>
-          <div class="btn clr_def">.btn.clr_def</div>
-          <div class="btn clr_err">.btn.clr_err</div>
-          <div class="btn clr_warn">.btn.clr_warn</div>
-          <div class="btn clr_info">.btn.clr_info</div>
-          <div class="btn clr_ok">.btn.clr_ok</div>
-          <div class="btn clr_none">.btn.clr_none</div>
-          <p></p>
-          <p>Disabled buttons</p>
-          <div class="btn clr_def disabled">.btn.clr_def</div>
-          <div class="btn clr_err disabled">.btn.clr_err</div>
-          <div class="btn clr_warn disabled">.btn.clr_warn</div>
-          <div class="btn clr_info disabled">.btn.clr_info</div>
-          <div class="btn clr_ok disabled">.btn.clr_ok</div>
-          <div class="btn clr_none disabled">.btn.clr_none</div><br><br>
-          <p>
-             Simply add    <code>.brdr   </code>  class to make  buttons outline</p>
-          <div class="btn brdr clr_def">.btn.brdr.clr_def</div>
-          <div class="btn brdr clr_err">.btn.brdr.clr_err</div>
-          <div class="btn brdr clr_warn">.btn.brdr.clr_warn</div>
-          <div class="btn brdr clr_info">.btn.brdr.clr_info</div>
-          <div class="btn brdr clr_ok">.btn.brdr.clr_ok</div>
-          <div class="btn brdr clr_none">.btn.brdr.clr_none</div>
-          <h4>Sizes, icons etc.          </h4>
-          <hr>
-          <p> 
-            <div class="btn clr_def h1">.btn.clr_def.h1    </div>
-            <div class="btn brdr clr_def h1">.btn.brdr.clr_def.h1</div>
-            <div class="btn icon-key h1">.btn.h1</div>
-            <div class="btn icon-attach h1"></div>
-          </p>
-          <p> 
-            <div class="btn clr_def h2">.btn.clr_def.h2    </div>
-            <div class="btn brdr clr_def h2">.btn.brdr.clr_def.h2</div>
-            <div class="btn icon-key h2">.btn.h2</div>
-            <div class="btn icon-attach h2"></div>
-          </p>
-          <p> 
-            <div class="btn clr_def h3">.btn.clr_def.h3   </div>
-            <div class="btn brdr clr_def h3">.btn.brdr.clr_def.h3</div>
-            <div class="btn icon-key h3">.btn.h3</div>
-            <div class="btn icon-attach h3"></div>
-          </p>
-        </div>
-      </div>
-      <!-- ==================================================================== forms-->
-      <div class="section" id="tables">
-        <div class="col">
-          <h1>Tables</h1>
-          <hr>
-          <div class="grid">
-            <div class="col m-6">
-              <p></p>
-              <p>Table wthout any classes have no borders:</p>
-              <table>
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col m-6">
-              <p></p>
-              <p>
-                 Adding outer border to table:   <code>.brdr</code></p>
-              <table class="brdr">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984</td>
-                </tr>
-              </table>
-            </div>
-            <div class="col m-6">
-              <p> </p>
-              <p>
-                 Vertical borders table:   <code>.v_brdr</code></p>
-              <table class="v_brdr">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984   </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col m-6">
-              <p> </p>
-              <p>
-                 Horizontal borders table:   <code>.h_brdr</code></p>
-              <table class="h_brdr">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984  </td>
-                </tr>
-              </table>
             </div>
             <div class="col">
-              <p> </p>
-              <p>
-                 Also we can use any combinations of outher   <code>.brdr   </code>, horisontal <code>.h_brdr    </code> and vertical   <code>.v_brdr </code> borders. Or use   <code>.all_brdr </code>for fully bordered table.</p>
-              <table class="brdr v_brdr h_brdr">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984 </td>
-                </tr>
-              </table>
+              <h4>Column gaps and show/hide</h4>
+              <hr>
+              <div>    		Use <code>.xs0</code> to hide 1th column on screens ≥ 360px.   		<br>    		Use <code>.s-6</code> to show it and make it 6x wide  on screens ≤ 568px    		<br>    		Use <code>.s-gap-1</code> to make 4th column 1x gap, and <code>.l-gap-0</code> to clear it.</div><br>
             </div>
-            <div class="col"> 
-              <h4>Hover states</h4>
+            <div class="grid test">
+              <div class="col xs0 s-6 m0 l-3">
+                <div>
+                  <h6>#1</h6><span>.col <code>.xs0</code><code>.s-6</code> .m0 .l-3</span>
+                </div>
+              </div>
+              <div class="col xs-5 s-4 m-7 l-3">
+                <div>
+                  <h6>#2</h6><span>.col .xs-5 .s-4 .m-7 .l-3</span>
+                </div>
+              </div>
+              <div class="col xs-3 s-2 m-2 l-4">
+                <div>
+                  <h6>#3</h6><span>.col .xs-3 .s-2 .m-2 .l-4</span>
+                </div>
+              </div>
+              <div class="col xs-4 s-11 s-gap-1 m-2 l-2 l-gap-0">
+                <div>
+                  <h6>#4</h6><span>.col .xs-4 .s-11 <code>.s-gap-1</code> .m-2 .l-2 <code>.l-gap-0</code></span>
+                </div>
+              </div>
             </div>
-            <div class="col m-6">   
-              <p> </p>
-              <p>
-                 Use   <code>.tr_hover     </code> for tr hovering </p>
-              <table class="brdr h_brdr tr_hover">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984   </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col m-6">   
-              <p> </p>
-              <p>
-                 Use   <code>.td_hover     </code> for td hovering </p>
-              <table class="brdr h_brdr td_hover">
-                <tr> 
-                  <th>First Name</th>
-                  <th>Last name</th>
-                  <th>Year</th>
-                </tr>
-                <tr> 
-                  <td>Barton </td>
-                  <td>Fink</td>
-                  <td>1991</td>
-                </tr>
-                <tr> 
-                  <td>Sundance </td>
-                  <td>Kid</td>
-                  <td>1969</td>
-                </tr>
-                <tr> 
-                  <td>David </td>
-                  <td>Aaronson</td>
-                  <td>1984   </td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ==================================================================== forms-->
-      <div class="section" id="typography">
-        <div class="col">
-          <h1>Typography</h1>
-          <hr>
-          <h4>Headings</h4>
-          <hr>
-          <div class="grid">
             <div class="col">
-              <p>Use <code> &lt;h1&gt;</code> - <code>&lt;h6&gt;</code> or <code>.hdr.h1</code> - <code>.hdr.h6</code> for headings.</p>
-              <p><code>&lt;small&gt;</code> is used for secondary text.</p>
-              <div class="hdr h1">H1 heading <small>Secondary text</small> </div>
-              <div class="hdr h2">H2 heading <small>Secondary text</small></div>
-              <div class="hdr h3">H3 heading <small>Secondary text</small></div>
-              <div class="hdr h4">H4 heading <small>Secondary text</small></div>
-              <div class="hdr h5">H5 heading <small>Secondary text</small></div>
-              <div class="hdr h6">H6 heading <small>Secondary text</small></div><br>
+              <h4>Column order</h4>
+              <hr>
+              <div>    		Use <code>.rtl</code> on <code>.grid</code> to reverse columns<br></div>
+            </div>
+            <div class="grid rtl test">
+              <div class="col xs-4">
+                <h6>#1</h6>
+              </div>
+              <div class="col xs-8">
+                <h6>#2</h6>
+              </div>
+            </div>
+            <div class="col">
+              <h4>Grid align</h4>
+              <hr>
+              <div>    		Use <code>.grid_l</code> or <code>.grid_r</code> or <code>.grid_c</code> to align columns<br></div>
+            </div>
+            <div class="grid grid_l test">
+              <div class="col xs-4">
+                <h6>grid_l</h6>
+              </div>
+              <div class="col xs-2">
+                <h6>grid_l</h6>
+              </div>
+              <div class="col xs-3">
+                <h6>grid_l</h6>
+              </div>
+            </div>
+            <div class="grid grid_r test">
+              <div class="col xs-4">
+                <h6>grid_r</h6>
+              </div>
+              <div class="col xs-2">
+                <h6>grid_r</h6>
+              </div>
+              <div class="col xs-3">
+                <h6>grid_r</h6>
+              </div>
+            </div>
+            <div class="grid grid_c test">
+              <div class="col xs-4">
+                <h6>grid_c</h6>
+              </div>
+              <div class="col xs-2">
+                <h6>grid_c</h6>
+              </div>
+              <div class="col xs-3">
+                <h6>grid_c</h6>
+              </div>
             </div>
           </div>
-          <h4>Paragraphs and inline elements</h4>
-          <hr>
-          <p>Default  <code>font-size</code> is <strong>16px</strong>, with <code>line-height</code>  of <strong>1.4em</strong></p>
-          <p>We use default for HTML5 inline elements: <code>&lt;strong&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;u&gt;</code></p>
-          <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis <strong>&lt;strong&gt; for bold text</strong> et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-          <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur <small>&lt;small&gt; for small text</small> mus. <u>&lt;u&gt; tag for underline</u> ullamcorper nulla non metus auctor <em>&lt;em&gt; for italic text</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
-          <h4>Alignment and text-transform</h4>
-          <hr>
-          <p> <code>.txt_r</code> for right aligned text</p>
-          <p><code>.txt_l</code> for left aligned text</p>
-          <p><code>.txt_c</code> for center aligned text</p>
-          <p><code>.txt_j</code> for justify aligned text</p>
-          <hr>
-          <p><code>.txt_lower</code> for right <span class="txt_lower">aligned text  </span></p>
-          <p><code>.txt_upper</code> for right <span class="txt_upper">aligned text  </span></p>
-          <p><code>.txt_caps</code> for right <span class="txt_caps">aligned text</span></p>
-          <h4>Blockquotes</h4>
-          <hr>
-          <blockquote>
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-            <footer>Butch Cassidy</footer>
-          </blockquote>
+          <!-- ==================================================================== forms-->
+          <div class="section" id="forms">
+            <div class="col">
+              <h1>Forms</h1>
+              <hr>
+              <div>
+                 Forms is builded on the same  <code>.grid .col     </code>system, and additional <code>.form     </code>  class. It can be applied to whole form or any <code>.grid </code>  inside it. (    <code>  .form    </code>  class affecting on all inner<code>.col    </code>  blocks)</div>
+              <div> <code>.col</code>  class can be applied directly on inputs, selects and textareas. It works fine with simple one line forms:</div><br>
+              <div class="grid form">
+                <label class="col m-3">Input name </label>
+                <input class="fld col m-5" type="text" placeholder="Input with .col class">
+                <div class="col m-3">
+                  <input class="btn icon-check" type="submit" value="Input name">
+                </div>
+              </div><br>
+              <div>We don`t use "stacked", "inline", "aligned" and any other special form types like Bootstrap & other frameworks does. </div>
+              <div>Because in real world the same form looks different on various devices. </div>
+              <div>So "inline" form on a wide screen must automatically transfom into "stacked" one on 4.5" phone.</div>
+              <div>
+                 We can easily adapt our forms for any device using     <code>  .grid & .col</code>  classes.</div><br>
+              <div class="grid form">
+                <label class="col m-3">Very long input name </label>
+                <div class="col m-5">        
+                  <input class="fld" type="text" placeholder="Input name">
+                </div>
+                <div class="col m-3">
+                  <input class="fld" type="text" placeholder="Input name">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <h4>Field & buttons sizes</h4>
+              <hr>
+              <div class="form h3"> 
+                <div class="grid">    
+                  <label class="col m-3"> .form.h3</label>
+                  <div class="col m-3">
+                    <input class="fld" type="text" placeholder="Input name">
+                  </div>
+                  <div class="col m-3">
+                    <input class="bool" type="radio" id="r2" name="r1">
+                    <label for="r2">Input name </label>
+                  </div>
+                  <div class="col m-3">
+                    <button class="btn icon-shopping_cart">Input name</button>
+                  </div>
+                </div>
+              </div>
+              <div class="form h2"> 
+                <div class="grid">    
+                  <label class="col m-3">.form.h2</label>
+                  <div class="col m-3">
+                    <input class="fld" type="text" placeholder="Input name">
+                  </div>
+                  <div class="col m-3">
+                    <input class="bool" type="radio" id="r1" name="r1">
+                    <label for="r1">Input name         </label>
+                  </div>
+                  <div class="col m-3"><a class="btn icon-pencil" href="#">icon-pencil </a></div>
+                </div>
+              </div>
+              <div class="form h1">
+                <div class="grid">     
+                  <label class="col m-3">.form.h1</label>
+                  <div class="col m-3">
+                    <input class="fld" type="text" placeholder="Input name">
+                  </div>
+                  <div class="col m-3">
+                    <input class="bool" type="checkbox" id="ch1">
+                    <label for="ch1">Input name</label>
+                  </div>
+                  <div class="col m-3">
+                    <div class="btn icon-plane">div as button</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">   
+              <h4>Select          </h4>
+              <hr>
+              <p>
+                 We use standart HTML select with   <code>  appearance: none; </code>  rule. and .svg arrow background.</p>
+              <div class="grid form grid_l">     
+                <label class="col s-3">Select name</label>
+                <div class="col s-4">
+                  <select>
+                    <option disabled="disabled" selected="selected">Choose an option</option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Very very very loooong Option 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">   
+              <h4>Textarea          </h4>
+              <hr>
+              <p>
+                 Use     <code>.v_top   </code>  class on label for correct vertical-align relative to textarea.</p>
+              <div class="grid form">    
+                <label class="col s-3 v_top">Textarea name</label>
+                <div class="col s-5">
+                  <textarea rows="4"> </textarea>
+                </div>
+              </div>
+            </div>
+            <div class="col">   
+              <h4>Form groups & form rows         </h4>
+              <hr>
+              <div> <code>.form_group </code> and  <code>  .form_line   </code> can contain any textual inputs, buttons and selects. </div>
+              <div>Also  <code>.form_group  </code> can contain textareas.</div>
+              <div>
+                 We can change buttons and fields color by adding a color class like   <code> .clr_ok </code> to any element in .form_group   </div>
+              <p>  </p>
+              <div class="grid form v_top">    
+                <div class="col s-5">
+                  <div class="grid form_group">
+                    <input class="fld" type="text" placeholder="Username">
+                    <input class="fld" type="text" placeholder="Password">
+                    <input class="fld" type="text" placeholder="Email">
+                    <textarea rows="4" placeholder="Your message"> </textarea>
+                  </div>
+                  <div class="grid txt_r">
+                    <div class="col btn icon-plane">div as button   </div>
+                  </div>
+                </div>
+                <div class="col s-6 s-gap-1">
+                  <div class="grid form_line">
+                    <div class="btn icon-pencil clr_ok"></div>
+                    <input class="fld s-5 clr_ok" type="text" placeholder="Password">
+                    <button class="s-3 btn icon-plane clr_ok"></button>
+                  </div><br>
+                  <div class="grid form_line h3">
+                    <input class="fld s-4" type="text" placeholder="Username">
+                    <input class="fld s-5" type="text" placeholder="Password">
+                    <button class="s-3 btn icon-plane"></button>
+                  </div><br>
+                  <div class="grid form_line h2">
+                    <select class="s-4">
+                      <option>Option1</option>
+                      <option>Option2</option>
+                    </select>
+                    <input class="fld s-5" type="text" placeholder="Password">
+                    <button class="s-3 btn icon-plane"></button>
+                  </div><br>
+                  <div class="grid form_line h1 fluid">
+                    <div class="btn">Button 1</div>
+                    <div class="btn">Button 2</div>
+                    <div class="btn">Button 3</div>
+                    <div class="btn icon-plane"></div>
+                  </div><br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="buttons"> 
+            <div class="col">   
+              <h1>Buttons          </h1>
+              <hr>
+              <div class="btn clr_def">.btn.clr_def</div>
+              <div class="btn clr_err">.btn.clr_err</div>
+              <div class="btn clr_warn">.btn.clr_warn</div>
+              <div class="btn clr_info">.btn.clr_info</div>
+              <div class="btn clr_ok">.btn.clr_ok</div>
+              <div class="btn clr_none">.btn.clr_none</div>
+              <p></p>
+              <p>Disabled buttons</p>
+              <div class="btn clr_def disabled">.btn.clr_def</div>
+              <div class="btn clr_err disabled">.btn.clr_err</div>
+              <div class="btn clr_warn disabled">.btn.clr_warn</div>
+              <div class="btn clr_info disabled">.btn.clr_info</div>
+              <div class="btn clr_ok disabled">.btn.clr_ok</div>
+              <div class="btn clr_none disabled">.btn.clr_none</div><br><br>
+              <p>
+                 Simply add    <code>.brdr   </code>  class to make  buttons outline</p>
+              <div class="btn brdr clr_def">.btn.brdr.clr_def</div>
+              <div class="btn brdr clr_err">.btn.brdr.clr_err</div>
+              <div class="btn brdr clr_warn">.btn.brdr.clr_warn</div>
+              <div class="btn brdr clr_info">.btn.brdr.clr_info</div>
+              <div class="btn brdr clr_ok">.btn.brdr.clr_ok</div>
+              <div class="btn brdr clr_none">.btn.brdr.clr_none</div>
+              <h4>Sizes, icons etc.          </h4>
+              <hr>
+              <p> 
+                <div class="btn clr_def h1">.btn.clr_def.h1    </div>
+                <div class="btn brdr clr_def h1">.btn.brdr.clr_def.h1</div>
+                <div class="btn icon-key h1">.btn.h1</div>
+                <div class="btn icon-attach h1"></div>
+              </p>
+              <p> 
+                <div class="btn clr_def h2">.btn.clr_def.h2    </div>
+                <div class="btn brdr clr_def h2">.btn.brdr.clr_def.h2</div>
+                <div class="btn icon-key h2">.btn.h2</div>
+                <div class="btn icon-attach h2"></div>
+              </p>
+              <p> 
+                <div class="btn clr_def h3">.btn.clr_def.h3   </div>
+                <div class="btn brdr clr_def h3">.btn.brdr.clr_def.h3</div>
+                <div class="btn icon-key h3">.btn.h3</div>
+                <div class="btn icon-attach h3"></div>
+              </p>
+            </div>
+          </div>
+          <!-- ==================================================================== forms-->
+          <div class="section" id="tables">
+            <div class="col">
+              <h1>Tables</h1>
+              <hr>
+              <div class="grid">
+                <div class="col m-6">
+                  <p></p>
+                  <p>Table wthout any classes have no borders:</p>
+                  <table>
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col m-6">
+                  <p></p>
+                  <p>
+                     Adding outer border to table:   <code>.brdr</code></p>
+                  <table class="brdr">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col m-6">
+                  <p> </p>
+                  <p>
+                     Vertical borders table:   <code>.v_brdr</code></p>
+                  <table class="v_brdr">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984   </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col m-6">
+                  <p> </p>
+                  <p>
+                     Horizontal borders table:   <code>.h_brdr</code></p>
+                  <table class="h_brdr">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984  </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col">
+                  <p> </p>
+                  <p>
+                     Also we can use any combinations of outher   <code>.brdr   </code>, horisontal <code>.h_brdr    </code> and vertical   <code>.v_brdr </code> borders. Or use   <code>.all_brdr </code>for fully bordered table.</p>
+                  <table class="brdr v_brdr h_brdr">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984 </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col"> 
+                  <h4>Hover states</h4>
+                </div>
+                <div class="col m-6">   
+                  <p> </p>
+                  <p>
+                     Use   <code>.tr_hover     </code> for tr hovering </p>
+                  <table class="brdr h_brdr tr_hover">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984   </td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="col m-6">   
+                  <p> </p>
+                  <p>
+                     Use   <code>.td_hover     </code> for td hovering </p>
+                  <table class="brdr h_brdr td_hover">
+                    <tr> 
+                      <th>First Name</th>
+                      <th>Last name</th>
+                      <th>Year</th>
+                    </tr>
+                    <tr> 
+                      <td>Barton </td>
+                      <td>Fink</td>
+                      <td>1991</td>
+                    </tr>
+                    <tr> 
+                      <td>Sundance </td>
+                      <td>Kid</td>
+                      <td>1969</td>
+                    </tr>
+                    <tr> 
+                      <td>David </td>
+                      <td>Aaronson</td>
+                      <td>1984   </td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ==================================================================== forms-->
+          <div class="section" id="typography">
+            <div class="col">
+              <h1>Typography</h1>
+              <hr>
+              <h4>Headings</h4>
+              <hr>
+              <div class="grid">
+                <div class="col">
+                  <p>Use <code> &lt;h1&gt;</code> - <code>&lt;h6&gt;</code> or <code>.hdr.h1</code> - <code>.hdr.h6</code> for headings.</p>
+                  <p><code>&lt;small&gt;</code> is used for secondary text.</p>
+                  <div class="hdr h1">H1 heading <small>Secondary text</small> </div>
+                  <div class="hdr h2">H2 heading <small>Secondary text</small></div>
+                  <div class="hdr h3">H3 heading <small>Secondary text</small></div>
+                  <div class="hdr h4">H4 heading <small>Secondary text</small></div>
+                  <div class="hdr h5">H5 heading <small>Secondary text</small></div>
+                  <div class="hdr h6">H6 heading <small>Secondary text</small></div><br>
+                </div>
+              </div>
+              <h4>Paragraphs and inline elements</h4>
+              <hr>
+              <p>Default  <code>font-size</code> is <strong>16px</strong>, with <code>line-height</code>  of <strong>1.4em</strong></p>
+              <p>We use default for HTML5 inline elements: <code>&lt;strong&gt;</code>, <code>&lt;small&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;u&gt;</code></p>
+              <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis <strong>&lt;strong&gt; for bold text</strong> et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+              <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur <small>&lt;small&gt; for small text</small> mus. <u>&lt;u&gt; tag for underline</u> ullamcorper nulla non metus auctor <em>&lt;em&gt; for italic text</em>. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor fringilla.</p>
+              <h4>Alignment and text-transform</h4>
+              <hr>
+              <p> <code>.txt_r</code> for right aligned text</p>
+              <p><code>.txt_l</code> for left aligned text</p>
+              <p><code>.txt_c</code> for center aligned text</p>
+              <p><code>.txt_j</code> for justify aligned text</p>
+              <hr>
+              <p><code>.txt_lower</code> for right <span class="txt_lower">aligned text  </span></p>
+              <p><code>.txt_upper</code> for right <span class="txt_upper">aligned text  </span></p>
+              <p><code>.txt_caps</code> for right <span class="txt_caps">aligned text</span></p>
+              <h4>Blockquotes</h4>
+              <hr>
+              <blockquote>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                <footer>Butch Cassidy</footer>
+              </blockquote>
+            </div>
+          </div>
+          <!-- ==================================================================== navs-->
+          <div class="section" id="navs">
+            <div class="col">
+              <h1>Navigations</h1>
+              <hr>
+              <h4>Tabs</h4>
+              <hr>
+              <p> <em><small>main.js file required</small></em></p>
+              <div>We use  <code>dl dt dd  </code>  lists for tabs navigation. </div>
+              <div>No need to generate tabs titles and tabs content separately on server side any more. </div>
+              <div>Simply add <code> .tabs</code> class to <code> dl.</code></div>
+              <div>
+                 Tabs size can be changed with<code> .h1 - .h5</code>classes on <code> dl</code>wrapper</div><br>
+              <dl class="tabs">
+                <dt class="on">Tab 1</dt>
+                <dd>TAB 1 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</dd>
+                <dt>Tab 2</dt>
+                <dd>TAB 2 Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</dd>
+                <dt>Tab 3   </dt>
+                <dd>TAB 3 Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.    </dd>
+              </dl>
+              <dl class="tabs h2">
+                <dt class="on">Tab 1</dt>
+                <dd> <code>dl.tabs.h2 </code>tabs TAB 1 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</dd>
+                <dt>Tab 2</dt>
+                <dd>TAB 2 Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</dd>
+                <dt>Tab 3   </dt>
+                <dd>TAB 3 Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</dd>
+              </dl>
+              <h4>Menus</h4>
+              <hr>
+              <p> <em><small>main.js file required</small></em></p>
+              <div class="grid navbar">
+                <div class="col"> </div>
+                <div class="col xx-2">Logo</div>
+                <div class="col xx-8 xl-10">
+                  <ul class="nav" id="mainmenu">
+                    <li> <a href="#">Item 1</a></li>
+                    <li> <a href="#">Item 1</a></li>
+                    <li> <a href="#">Item 1            </a></li>
+                  </ul>
+                </div>
+                <div class="col xx-2 x-1 xl0 txt_r">
+                  <div class="btn icon-menu" id="mainmenu_toggle"></div>
+                </div>
+              </div>
+              <h4>Breadcrumbs</h4>
+              <hr>
+              <div class="crumbs">
+                <ul>
+                  <li><a href="#">crumb 1</a></li>›
+                  <li><a href="#">crumb 2</a></li>›
+                  <li><span>crumb 3</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <!-- ==================================================================== navs-->
-      <div class="section" id="navs">
-        <div class="col">
-          <h1>Navigations</h1>
-          <hr>
-          <h4>Tabs</h4>
-          <hr>
-          <p> <em><small>main.js file required</small></em></p>
-          <div>We use  <code>dl dt dd  </code>  lists for tabs navigation. </div>
-          <div>No need to generate tabs titles and tabs content separately on server side any more. </div>
-          <div>Simply add <code> .tabs</code> class to <code> dl.</code></div>
-          <div>
-             Tabs size can be changed with<code> .h1 - .h5</code>classes on <code> dl</code>wrapper</div><br>
-          <dl class="tabs">
-            <dt class="on">Tab 1</dt>
-            <dd>TAB 1 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</dd>
-            <dt>Tab 2</dt>
-            <dd>TAB 2 Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</dd>
-            <dt>Tab 3   </dt>
-            <dd>TAB 3 Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.    </dd>
-          </dl>
-          <dl class="tabs h2">
-            <dt class="on">Tab 1</dt>
-            <dd> <code>dl.tabs.h2 </code>tabs TAB 1 Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater.</dd>
-            <dt>Tab 2</dt>
-            <dd>TAB 2 Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</dd>
-            <dt>Tab 3   </dt>
-            <dd>TAB 3 Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</dd>
-          </dl>
-          <h4>Menus</h4>
-          <hr>
-          <p> <em><small>main.js file required</small></em></p>
-          <div class="grid navbar">
-            <div class="col"> </div>
-            <div class="col xx-2">Logo</div>
-            <div class="col xx-8 xl-10">
-              <ul class="nav" id="mainmenu">
-                <li> <a href="#">Item 1</a></li>
-                <li> <a href="#">Item 1</a></li>
-                <li> <a href="#">Item 1            </a></li>
-              </ul>
-            </div>
-            <div class="col xx-2 x-1 xl0 txt_r">
-              <div class="btn icon-menu" id="mainmenu_toggle"></div>
-            </div>
-          </div>
-          <h4>Breadcrumbs</h4>
-          <hr>
-          <div class="crumbs">
-            <ul>
-              <li><a href="#">crumb 1</a></li>›
-              <li><a href="#">crumb 2</a></li>›
-              <li><span>crumb 3</span></li>
-            </ul>
-          </div>
-        </div>
+        <aside><a href="#grids">Grids</a><a href="#forms">Forms</a><a href="#buttons">Buttons</a><a href="#tables">Tables</a><a href="#typography">Typography</a><a href="#navs">Navigations</a></aside>
       </div>
     </div>
-    <aside><a href="#grids">Grids</a><a href="#forms">Forms</a><a href="#buttons">Buttons</a><a href="#tables">Tables</a><a href="#typography">Typography</a><a href="#navs">Navigations</a></aside>
   </body>
 </html>
