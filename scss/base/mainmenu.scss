@@ -41,11 +41,11 @@
 .js-menu #mainmenu {
     left: -$menu_fixed_W;
     @include transition(left .3s ease-in-out);
-    background: #fff;
+    background: $bg_2;
     // top: $page_hdr_H;
     top: 0px;
     overflow-y: auto;
-    padding: 0;
+    padding: $colGap 0 0 0;
     margin: 0px;
     height: 100%;
     position: fixed;
@@ -55,7 +55,7 @@
         display: block;
     }
     a {
-        border-bottom: $bg_1 1px solid;
+        border-bottom: rgba(0, 0, 0, .05) 1px solid;
         text-align: left;
     }
 }

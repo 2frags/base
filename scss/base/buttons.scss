@@ -18,6 +18,7 @@
     background: $active;
     display: inline-block;
     // color:$txt_mid;
+    text-align: center;
     color: #fff;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -71,7 +72,7 @@
 }
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
     cursor: not-allowed;
-    @include opacity(.5);
+    @include opacity(.4);
     pointer-events: none;
 }
 .btn.h1 {
@@ -112,20 +113,24 @@
 .clr_err, .clr_warn, .clr_info, .clr_ok, .clr_def {
     color: #fff;
 }
-.clr_none {
-    background: transparent;
-    // @include btn_hover(transparent);
-}
 .brdr {
     background: transparent;
     border-color: $txt_mid;
     color: $txt_dark;
 }
-.nobrdr {
-    color: $txt_dark;
+// .clr_none,
+.clr_none {
+    color: $active;
     background: transparent;
     border-color: transparent;
     // @include btn_hover(transparent);
+    &:hover {
+        box-shadow: none;
+        text-decoration: underline;
+    }
+    &.disabled, &[disabled] {
+        color: $txt_mid;
+    }
 }
 .brdr, .fld, select {
     &[class*="clr_"] {

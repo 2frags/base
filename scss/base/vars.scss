@@ -11,6 +11,7 @@ $page_padd: 1%;
 //------------------- hdr
 $page_hdr_H: 73px;
 $menu_fixed_W: 40%;
+$menu_dark: true;
 //------------------- colors
 $bg_1: #fff;
 $bg_2:#f6f6f6;
@@ -29,6 +30,7 @@ $clr_warn:#F39C12;
 $clr_info:#51D4BD;
 $clr_ok:#8BC34A;
 //----------------- fonts
+$line_h: 1.4em;
 $fontSize: 16px;
 $h1:2.4rem;
 $h2:2.1rem;
@@ -165,16 +167,16 @@ $rnd: 3px;
     }
 }
 //-----------------Gradients
-@mixin gr_vr($start: #000, $stop: #FFF) {
-    background: ($start + $stop) / 2;
+@mixin gr_vr($start: rgba(0, 0, 0, 0), $stop: rgba(0, 0, 0, .2)) {
+    // background: ($start + $stop) / 2;
     background: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
     // background: -moz-linear-gradient(center top, $start 0%, $stop 100%);
     // background: -moz-gradient(center top, $start 0%, $stop 100%);
     background: linear-gradient(to bottom, $start 0%, $stop 100%);
 }
 // Background Gradient: Left to Right
-@mixin gr_hr($start: #000, $stop: #FFF) {
-    background: ($start + $stop) / 2;
+@mixin gr_hr($start: rgba(0, 0, 0, 0), $stop: rgba(0, 0, 0, .2)) {
+    // background: ($start + $stop) / 2;
     background: -webkit-gradient(linear, top left, top right, from($start), to($stop));
     // background: -moz-linear-gradient(center left, $start 0%, $stop 100%);
     // background: -moz-gradient(center left, $start 0%, $stop 100%);

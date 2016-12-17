@@ -53,7 +53,7 @@ body:before {
         @include opacity(0);
         @include transition(opacity ease-in-out .5s);
         &:before {
-            content: '.';
+            content: '&nbsp;';
             padding: $colGap/2 .8rem;
             font-size: inherit;
             display: block;
@@ -82,6 +82,10 @@ body:before {
 }
 //---------------------------------------- navs
 .navbar {
+    @if $menu_dark {
+        background: $txt_dark;
+        color: #eee;
+    }
     .col {
         vertical-align: middle;
     }
@@ -95,6 +99,13 @@ body:before {
         display: block;
         text-decoration: none;
         padding: $fld_padd_h $fld_padd_v;
+        @if $menu_dark {
+            color: #eee;
+        }
+        &:hover {
+            // @include gr_vr();            
+            // @include shadow(10px, 4px, 10px, #333, inset);
+        }
     }
     &>li {
         display: inline-block;

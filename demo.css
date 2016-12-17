@@ -5,7 +5,7 @@
 .demo h1, .demo h2, .demo h3, .demo h4, .demo h5 {
     padding: 1rem 0 0 0
 }
-.demo aside {
+.demo+aside {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -13,14 +13,14 @@
     background: #333;
     height: 100%;
 }
-.demo aside a {
+.demo+aside a {
     color: #ccc;
     text-decoration: none;
     padding: .4em 1em;
     font-size: .9em;
     display: block
 }
-.demo aside a:hover {
+.demo+aside a:hover {
     color: #fff
 }
 .demo hr {
@@ -69,7 +69,7 @@
     /*padding-left: 0px;*/
 }
 .navbar {
-    background: #eee;
+    /*background: #eee;*/
     padding: 9px 0;
 }
 

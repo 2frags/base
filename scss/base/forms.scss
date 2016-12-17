@@ -70,7 +70,7 @@ label {
     vertical-align: middle;
     line-height: 1em;
     text-align: left;
-    color: #ddd;
+    color: $txt_mid;
     &:before {
         content: '';
         display: inline-block;
@@ -178,7 +178,7 @@ input[type="radio"] {
 }
 input[type="checkbox"] {
     &:checked+label:before {
-        border: $f_active 2px solid;
+        border: $f_active 1px solid;
     }
     &+label:after {
         width: .3em;
@@ -216,7 +216,7 @@ input[type="checkbox"] {
 //---------------------------------------------------------------------------- FORM LINE
 .form_line {
     text-align: left;
-    &>.btn {
+    &>.btn:not[class=brdr] {
         border-left-color: rgba(255, 255, 255, .5);
     }
     &>.btn, &>input {

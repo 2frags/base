@@ -1,38 +1,50 @@
-
 @import "vars";
-
 .grid {
-	text-align: justify;
+    text-align: justify;
     position: relative;
     letter-spacing: -10px;
     font-size: 0;
-    &.grid_l { text-align: left;
+    &.grid_l {
+        text-align: left;
     }
-    &.grid_r { text-align: right;
+    &.grid_r {
+        text-align: right;
     }
-    &.grid_c { text-align: center;
+    &.grid_c {
+        text-align: center;
     }
-		.grid { margin-left:-$colGap; margin-right:-$colGap; }
-		&.fluid {
-			& > .col { width: auto;}
-		}
+    .grid {
+        margin-left: -$colGap;
+        margin-right: -$colGap;
+    }
+    &.fluid {
+        &>.col {
+            width: auto;
+        }
+    }
 }
-.grid > * {
+.grid>* {
     display: inline-block;
     vertical-align: top;
     letter-spacing: normal;
     font-size: 1rem;
     text-align: left;
 }
-
 .grid:after {
-	display: inline-block; content: ''; width: 100%;
+    display: inline-block;
+    content: '';
+    width: 100%;
 }
 //-------------- reverse cols
-.grid.rtl { direction: rtl;
-	.col { direction: ltr;}
+.grid.rtl {
+    direction: rtl;
+    .col {
+        direction: ltr;
+    }
 }
-.grid.middl > * { vertical-align: middle;}
+.grid.middl>* {
+    vertical-align: middle;
+}
 .col {
     // max-width: 100%;
     width: 100%;
@@ -44,100 +56,120 @@
 // @include mquery(max-width, $m) {.s-0 {display: none;}}
 // @include mquery(max-width, $s) {.xs-0 {display: none;}}
 // @include mquery(max-width, $xs) {.xx-0 {display: none;}}
-.col.on { display: inline-block;}
-@include mquery(min-width, $xx)
-{	.xx0 {display: none;}
-	[class*="xx-"] { display: inline-block;}
-	label[class*="xx-"] { text-align: right;}
-	.xx-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.xx-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.xx-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.xx-txt_light {color: #fff;}
-	.xx-txt_dark {color: $txt_dark;}
+.col.on {
+    display: inline-block;
 }
-@include mquery(min-width, $xs)
-{	.xs0 {display: none;}
-	[class*=" xs-"], [class^="xs-"]  { display: inline-block;	}
-	label[class*=" xs-"], label[class^="xs-"]  { text-align: right;}
-	.xs-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.xs-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.xs-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.xs-txt_light {color: #fff;}
-	.xs-txt_dark {color: $txt_dark;}
+@include mquery(min-width, $xx) {
+    .xx0 {
+        display: none;
+    }
+    .xx-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .xx-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .xx-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .xx-txt_r {
+        text-align: right;
+    }
 }
-@include mquery(min-width, $s)
-{	.s0 {display: none;}
-	[class*=" s-"], [class^="s-"] { display: inline-block;}
-	label[class*=" s-"], label[class^="s-"] { text-align: right;}
-	.s-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.s-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.s-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.s-txt_light {color: #fff;}
-	.s-txt_dark {color: $txt_dark;}
+@include mquery(min-width, $xs) {
+    .xs0 {
+        display: none;
+    }
+    .xs-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .xs-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .xs-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .xs-txt_r {
+        text-align: right;
+    }
 }
-@include mquery(min-width, $m)
-{	.m0 {display: none;}
-	[class*=" m-"], [class^="m-"] { display: inline-block;}
-	label[class*=" m-"], label[class^="m-"]  { text-align: right;}
-	.m-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.m-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.m-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.m-txt_light {color: #fff;}
-	.m-txt_dark {color: $txt_dark;}
+@include mquery(min-width, $s) {
+    .s0 {
+        display: none;
+    }
+    .s-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .s-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .s-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .s-txt_r {
+        text-align: right;
+    }
 }
-@include mquery(min-width, $l)
-{	.l0 {display: none;}
-	[class*=" l-"], [class^="l-"] { display: inline-block;}
-	label[class*=" l-"], label[class^="l-"] { text-align: right;}
-	.l-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.l-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.l-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.l-txt_light {color: #fff;}
-	.l-txt_dark {color: $txt_dark;}
+@include mquery(min-width, $m) {
+    .m0 {
+        display: none;
+    }
+    .m-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .m-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .m-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .m-txt_r {
+        text-align: right;
+    }
 }
-@include mquery(min-width, $xl)
-{	.xl0 {display: none;}
-	[class*=" xl-"], [class^="xl-"] { display: inline-block;}
-	label[class*=" xl-"], label[class^="xl-"] { text-align: right;}
-	.xl-gap-0 {margin-left: 0;}
-	@for $i from 1 to $columns+1{
-		.xl-#{$i} {
-		  width: 100% / $columns * $i;
-		}
-		.xl-gap-#{$i} {
-		  margin-left: 100% / $columns * $i;
-		}
-	}
-	.xl-txt_light {color: #fff;}
-	.xl-txt_dark {color: $txt_dark;}
+@include mquery(min-width, $l) {
+    .l0 {
+        display: none;
+    }
+    .l-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .l-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .l-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .l-txt_r {
+        text-align: right;
+    }
+}
+@include mquery(min-width, $xl) {
+    .xl0 {
+        display: none;
+    }
+    .xl-gap-0 {
+        margin-left: 0;
+    }
+    @for $i from 1 to $columns+1 {
+        .xl-#{$i} {
+            width: 100% / $columns * $i;
+        }
+        .xl-gap-#{$i} {
+            margin-left: 100% / $columns * $i;
+        }
+    }
+    .xl-txt_r {
+        text-align: right;
+    }
 }

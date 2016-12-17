@@ -37,7 +37,7 @@ h6, .h6 {
     font-size: $h6
 }
 h1, h2, h3, h4, h5, h6, .hdr.h1, .hdr.h2, .hdr.h3, .hdr.h4, .hdr.h5, .hdr.h6 {
-    margin: 1.2em 0 .7rem 0;
+    margin: $colGap*2 0 $colGap 0;
     font-weight: 300;
     line-height: 1.1em;
     small {
@@ -45,8 +45,8 @@ h1, h2, h3, h4, h5, h6, .hdr.h1, .hdr.h2, .hdr.h3, .hdr.h4, .hdr.h5, .hdr.h6 {
     }
 }
 p {
-    margin: 0 0 1.4em 0;
-    line-height: 1.4em;
+    margin: 0 0 $line_h 0;
+    line-height: $line_h;
 }
 code, kbd, pre, samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -59,9 +59,27 @@ a {
     text-decoration: none;
     color: $active;
 }
+[class*="content"] li {
+    margin: 0 0 $colGap $colGap*3;
+}
 ul, ol {
     margin: 0px;
     padding: 0px;
+}
+ol {
+    list-style-type: none;
+    counter-reset: li;
+    li {
+        &:before {
+            content: counter(li)'.';
+            counter-increment: li;
+            display: inline-block;
+            width: $colGap*2;
+            margin-left: -$colGap*3;
+            margin-right: .3em;
+            color: $txt_light;
+        }
+    }
 }
 .hr {
     border-bottom: $table_brdr 1px solid;

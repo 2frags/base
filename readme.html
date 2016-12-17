@@ -236,7 +236,7 @@
               <hr>
               <div class="form h3"> 
                 <div class="grid">    
-                  <label class="col m-3"> .form.h3</label>
+                  <label class="col m-3 m-txt_r"> .form.h3</label>
                   <div class="col m-3">
                     <input class="fld" type="text" placeholder="Input name">
                   </div>
@@ -251,7 +251,7 @@
               </div>
               <div class="form h2"> 
                 <div class="grid">    
-                  <label class="col m-3">.form.h2</label>
+                  <label class="col m-3 m-txt_r">.form.h2</label>
                   <div class="col m-3">
                     <input class="fld" type="text" placeholder="Input name">
                   </div>
@@ -264,7 +264,7 @@
               </div>
               <div class="form h1">
                 <div class="grid">     
-                  <label class="col m-3">.form.h1</label>
+                  <label class="col m-3 m-txt_r">.form.h1</label>
                   <div class="col m-3">
                     <input class="fld" type="text" placeholder="Input name">
                   </div>
@@ -639,6 +639,17 @@
               <p><code>.txt_lower</code> for right <span class="txt_lower">aligned text  </span></p>
               <p><code>.txt_upper</code> for right <span class="txt_upper">aligned text  </span></p>
               <p><code>.txt_caps</code> for right <span class="txt_caps">aligned text</span></p>
+              <h4>OL and UL</h4>
+              <hr>
+              <div class="grid content">
+                <div class="col">
+                  <OL>
+                    <li><code>li</code> elements used in navigation (menus, crumbs etc.) and in content </li>
+                    <li>To separate their styles we use  <code>[class^="content"] li</code>  rule for style content elements</li>
+                    <li>So put your content into wrapper with  <code>content</code> as classname or it`s part.</li>
+                  </OL>
+                </div>
+              </div>
               <h4>Blockquotes</h4>
               <hr>
               <blockquote>
@@ -679,6 +690,18 @@
               <h4>Menus</h4>
               <hr>
               <p> <em><small>main.js file required</small></em></p>
+              <div class="content"> 
+                <p class="hdr"> <strong>How to cook responsive main navigation:</strong></p>
+                <ol>
+                  <li>
+                     Make a hamburger icon with <code> id="mainmenu_toggle" </code> and hide it on big screens, for example bigger than "xl" (eq. 80em): <code> xl0 </code></li>
+                  <li>
+                     Then create your menu with <code>id="mainmenu"</code> – it will hide automatically when our hamburger icon becomes visible ( on screen smaller than 80em )</li>
+                  <li>That`s all!</li>
+                </ol>
+                <p>
+                   P.S. If you want "drawer menu/off-canvas" effect – just wrap all page content into 2 divs: <code>.js-main_wrap</code> and <code>js-inner_wrap</code></p>
+              </div>
               <div class="grid navbar">
                 <div class="col"> </div>
                 <div class="col xx-2">Logo</div>
