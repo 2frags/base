@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>title</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="demo.css">
@@ -645,7 +646,7 @@
                 <div class="col">
                   <OL>
                     <li><code>li</code> elements used in navigation (menus, crumbs etc.) and in content </li>
-                    <li>To separate their styles we use  <code>[class^="content"] li</code>  rule for style content elements</li>
+                    <li>To separate their styles we use  <code>[class*="content"] li</code>  rule for style content elements</li>
                     <li>So put your content into wrapper with  <code>content</code> as classname or it`s part.</li>
                   </OL>
                 </div>
@@ -687,22 +688,54 @@
                 <dt>Tab 3   </dt>
                 <dd>TAB 3 Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</dd>
               </dl>
-              <h4>Menus</h4>
+              <h4>Navigation</h4>
               <hr>
               <p> <em><small>main.js file required</small></em></p>
               <div class="content"> 
-                <p class="hdr"> <strong>How to cook responsive main navigation:</strong></p>
+                <p>Navigation bar has a simple structure: <code>.navbar</code> is a wrapper, for <code>ul.nav</code> menu.</p>
+                <p class="hdr"> <strong>How to cook responsive collapsible navigation:</strong></p>
                 <ol>
                   <li>
-                     Make a hamburger icon with <code> id="mainmenu_toggle" </code> and hide it on big screens, for example bigger than "xl" (eq. 80em): <code> xl0 </code></li>
+                     Create your menu with some ID. <code>id="menu2"</code> for example.</li>
                   <li>
-                     Then create your menu with <code>id="mainmenu"</code> – it will hide automatically when our hamburger icon becomes visible ( on screen smaller than 80em )</li>
-                  <li>That`s all!</li>
+                     Then make a hamburger icon with <code> data-target="#menu2"</code> and <code>class="js-menu-btn" </code></li>
+                  <li>
+                     And finally hide this button on screens larger than 80em (simply add an <code> .xl0 </code>
+                     class 
+                    to it`s wrapper). Menu will hide when this magic button appears.
+                  </li>
+                  <li>Em.. That`s all.</li>
+                </ol>
+                <p> </p>
+              </div>
+              <div class="grid navbar clr_info">
+                <div class="col"> </div>
+                <div class="col xx-2">Logo</div>
+                <div class="col xx-8 xl-10">
+                  <ul class="nav" id="menu2">
+                    <li> <a href="#">Item 1</a></li>
+                    <li> <a href="#">Item 1</a></li>
+                    <li> <a href="#">Item 1            </a></li>
+                  </ul>
+                </div>
+                <div class="col xx-2 x-1 xl0 txt_r">
+                  <div class="btn brdr clr_white icon-menu js-menu-btn" data-target="#menu2"></div><br>
+                </div>
+              </div>
+              <div class="content"> 
+                <p class="hdr"> <strong>MAIN navigation:</strong></p>
+                <ol>
+                  <li>Add <code>id="mainmenu"</code> to your mainmenu. </li>
+                  <li>
+                     Make a hamburger icon with <code>data-target="#mainmenu"</code> and <code>class="js-menu-btn"</code></li>
+                  <li>
+                     Hide this button on large screens like we did for collapsible navigation.</li>
+                  <li>Ta-da!</li>
                 </ol>
                 <p>
                    P.S. If you want "drawer menu/off-canvas" effect – just wrap all page content into 2 divs: <code>.js-main_wrap</code> and <code>js-inner_wrap</code></p>
               </div>
-              <div class="grid navbar">
+              <div class="grid navbar clr_dark">
                 <div class="col"> </div>
                 <div class="col xx-2">Logo</div>
                 <div class="col xx-8 xl-10">
@@ -713,7 +746,7 @@
                   </ul>
                 </div>
                 <div class="col xx-2 x-1 xl0 txt_r">
-                  <div class="btn icon-menu" id="mainmenu_toggle"></div>
+                  <div class="btn icon-menu js-menu-btn" data-target="#mainmenu"></div>
                 </div>
               </div>
               <h4>Breadcrumbs</h4>

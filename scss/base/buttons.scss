@@ -90,27 +90,32 @@
 .btn.h5 {
     font-size: $h5f;
 }
+//================ colors
+.clr_white {
+    background: $clr_white;
+}
+.clr_black {
+    background: $clr_black;
+}
+.clr_dark {
+    background: $clr_dark;
+}
 .clr_err {
     background: $clr_err;
-    // @include btn_hover($clr_err);
 }
 .clr_warn {
     background: $clr_warn;
-    // @include btn_hover($clr_warn);
 }
 .clr_info {
     background: $clr_info;
-    // @include btn_hover($clr_info);
 }
 .clr_ok {
     background: $clr_ok;
-    // @include btn_hover($clr_ok);
 }
 .clr_def {
     background: $active;
-    // @include btn_hover($active);
 }
-.clr_err, .clr_warn, .clr_info, .clr_ok, .clr_def {
+.clr_black, .clr_dark, .clr_err, .clr_warn, .clr_info, .clr_ok, .clr_def {
     color: #fff;
 }
 .brdr {
@@ -135,6 +140,9 @@
 .brdr, .fld, select {
     &[class*="clr_"] {
         background: transparent;
+    }
+    &.clr_white {
+        @include btn_brdr_hover($clr_white);
     }
     &.clr_err {
         @include btn_brdr_hover($clr_err);

@@ -11,7 +11,8 @@ $page_padd: 1%;
 //------------------- hdr
 $page_hdr_H: 73px;
 $menu_fixed_W: 40%;
-$menu_dark: true;
+$menu_dark: 1;
+//1 - dark menu; 0 - light menu
 //------------------- colors
 $bg_1: #fff;
 $bg_2:#f6f6f6;
@@ -25,6 +26,9 @@ $active_light: lighten($active, 44%);
 $f_active: $active;
 $tab_bg: #fff;
 //----------------- buttons colors
+$clr_white: #fff;
+$clr_black: #000;
+$clr_dark: #333;
 $clr_err: #CF000F;
 $clr_warn:#F39C12;
 $clr_info:#51D4BD;

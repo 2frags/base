@@ -3,10 +3,12 @@
     overflow: hidden;
     position: relative;
     width: 100%;
+    min-height: inherit;
 }
 .js_inner_wrap {
     width: 100%;
     position: relative;
+    min-height: inherit;
     left: 0;
     @include transition(left .3s ease-in-out);
     &:before {
@@ -16,6 +18,9 @@
         opacity: 0;
         @include transition(opacity .3s ease-in-out);
     }
+}
+.js-menu #mainmenu {
+    background: inherit;
 }
 .js-menu_on {
     .js_inner_wrap {
@@ -41,7 +46,7 @@
 .js-menu #mainmenu {
     left: -$menu_fixed_W;
     @include transition(left .3s ease-in-out);
-    background: $bg_2;
+    // background: $bg_2;
     // top: $page_hdr_H;
     top: 0px;
     overflow-y: auto;
@@ -55,7 +60,23 @@
         display: block;
     }
     a {
-        border-bottom: rgba(0, 0, 0, .05) 1px solid;
         text-align: left;
     }
 }
+// @if $menu_dark {
+//     .js-menu #mainmenu {
+//         background: $txt_dark;
+//     }
+//     .js-menu #mainmenu a {
+//         color: #ddd;
+//         border-bottom: rgba(255, 255, 255, .1) 1px solid;
+//     }
+// } @else {    
+//     .js-menu #mainmenu {
+//         background: $txt_dark;
+//     }
+//     .js-menu #mainmenu a {
+//         color: #ddd;
+//         border-bottom: rgba(0, 0, 0, .05) 1px solid;
+//     }
+// }

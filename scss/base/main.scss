@@ -6,6 +6,7 @@ html, *, *::before, *::after, input[type="search"] {
 body {
     font-family: $font;
     font-size: $fontSize;
+    min-height: 100vh;
 }
 body [class^="icon-"], body [class*=" icon-"] {
     font-family: inherit !important;
@@ -120,6 +121,9 @@ ol {
 }
 .v_top {
     vertical-align: top
+}
+.v_base {
+    vertical-align: baseline;
 }
 .v_middl, .middl {
     &>* {

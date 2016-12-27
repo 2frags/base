@@ -16,6 +16,10 @@
     .grid {
         margin-left: -$colGap;
         margin-right: -$colGap;
+        &.margin0 {
+            margin-right: 0px;
+            margin-left: 0px;
+        }
     }
     &.fluid {
         &>.col {
@@ -42,8 +46,11 @@
         direction: ltr;
     }
 }
-.grid.middl>* {
+.grid.middl>*, .grid.v_middl>* {
     vertical-align: middle;
+}
+.grid.v_base>* {
+    vertical-align: baseline;
 }
 .col {
     // max-width: 100%;

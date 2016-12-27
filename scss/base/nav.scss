@@ -31,29 +31,30 @@ body:before {
             border-bottom-color: transparent;
             background: $tab_bg;
             &+dd {
-                @include opacity(1);
-                height: auto;
-                max-height: 10000px;
-                overflow: visible;
+                // @include opacity(1);
+                // height: auto;
+                // max-height: 10000px;
+                // overflow: visible;
+                display: block;
                 background: $tab_bg;
             }
         }
     }
     dd {
         font-size: 1rem;
-        display: block;
+        display: none;
         float: right;
-        max-height: 0px;
-        overflow: hidden;
+        // overflow: hidden;
+        // max-height: 0px;
+        // @include opacity(0);
+        // @include transition(opacity ease-in-out .5s);
         position: relative;
         margin: 0 0 0 -100%;
         padding: 0 $colGap $colGap $colGap;
         background: inherit;
         width: 100%;
-        @include opacity(0);
-        @include transition(opacity ease-in-out .5s);
         &:before {
-            content: '&nbsp;';
+            content: '\00a0';
             padding: $colGap/2 .8rem;
             font-size: inherit;
             display: block;
@@ -81,10 +82,34 @@ body:before {
     }
 }
 //---------------------------------------- navs
+.js-menu_on {
+    // background: inherit;
+}
+.js-menu_on:before {
+    content: '\00a0';
+}
+.js-menu_hide>.nav {
+    position: absolute;
+    // max-height: 0px;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    background: inherit;
+    // @include transition(max-height .3s ease-in-out);
+    &>li {
+        display: block;
+    }
+}
+.js-menu_on>.nav {
+    // max-height: 50000px;
+    display: block;
+}
 .navbar {
-    @if $menu_dark {
-        background: $txt_dark;
-        color: #eee;
+    &>*, .nav, li, a {
+        color: inherit;
+        background: inherit;
     }
     .col {
         vertical-align: middle;
@@ -99,18 +124,49 @@ body:before {
         display: block;
         text-decoration: none;
         padding: $fld_padd_h $fld_padd_v;
-        @if $menu_dark {
-            color: #eee;
-        }
-        &:hover {
-            // @include gr_vr();            
-            // @include shadow(10px, 4px, 10px, #333, inset);
-        }
     }
     &>li {
         display: inline-block;
     }
 }
+.navbar a {
+    @include transition(all .3s ease-in-out);
+    &:hover {
+        background: rgba(255, 255, 255, .1);
+    }
+}
+// @if $menu_dark==1 {
+//     .navbar {
+//         a:hover {
+//             color: #fff;
+//             background: rgba(255, 255, 255, .1);
+//         }
+//     }
+//     .js-menu_hide li:first-child, .js-menu #mainmenu li:first-child {
+//         border-top: rgba(255, 255, 255, .1) 1px solid;
+//     }
+//     .js-menu_hide a, .js-menu #mainmenu a {
+//         border-bottom: rgba(255, 255, 255, .1) 1px solid;
+//     }
+// }
+// @else {
+//     .navbar {
+//         a:hover {
+//             color: #000;
+//             background: rgba(255, 255, 255, .1);
+//         }
+//     }
+//     .js-menu_hide li:first-child, .js-menu #mainmenu li:first-child {
+//         border-top: rgba(0, 0, 0, .05) 1px solid;
+//     }
+//     .js-menu_hide a, .js-menu #mainmenu a {
+//         border-bottom: rgba(0, 0, 0, .05) 1px solid;
+//         &:hover {
+//             color: #000;
+//             background: rgba(0, 0, 0, .05);
+//         }
+//     }
+// }
 //---------------------------- dropdowns
 .drop_hover {
     position: relative;
