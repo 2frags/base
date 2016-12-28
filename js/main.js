@@ -26,7 +26,7 @@ $(document).ready(function() {
             if (target_menu == mainmenu) {
                 $(this).is(':visible') ? $('body').addClass('js-menu') : $('body').removeClass('js-menu');
             } else if (target_menu) {
-                $(this).is(':visible') ? $(target_menu).parent().addClass('js-menu_hide') : $(target_menu).parent().removeClass('js-menu_hide js-menu_on');
+                $(this).is(':visible') ? $(target_menu).parent().addClass('js-menu_hide') : $(target_menu).attr('style', '').parent().removeClass('js-menu_hide js-menu_on');
             }
         });
 
