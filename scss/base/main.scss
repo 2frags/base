@@ -1,5 +1,6 @@
 @import "vars";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin,cyrillic);
+
 html, *, *::before, *::after, input[type="search"] {
     box-sizing: border-box;
 }
@@ -37,7 +38,7 @@ h5, .h5 {
 h6, .h6 {
     font-size: $h6
 }
-h1, h2, h3, h4, h5, h6, .hdr.h1, .hdr.h2, .hdr.h3, .hdr.h4, .hdr.h5, .hdr.h6 {
+.hdr {
     margin: $colGap*2 0 $colGap 0;
     font-weight: 300;
     line-height: 1.1em;
@@ -48,6 +49,7 @@ h1, h2, h3, h4, h5, h6, .hdr.h1, .hdr.h2, .hdr.h3, .hdr.h4, .hdr.h5, .hdr.h6 {
 p {
     margin: 0 0 $line_h 0;
     line-height: $line_h;
+    & + .hdr { margin-top:$line_h*2; }
 }
 code, kbd, pre, samp {
     font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -87,61 +89,6 @@ ol {
 }
 .block {
     display: block;
-}
-//-------------helpers
-.fl_l {
-    float: left;
-}
-.fl_r {
-    float: right;
-}
-.txt_l {
-    text-align: left;
-}
-.txt_r {
-    text-align: right;
-}
-.txt_c {
-    text-align: center;
-}
-.txt_j {
-    text-align: justify;
-}
-.txt_upper {
-    text-transform: uppercase;
-}
-.txt_lower {
-    text-transform: lowercase;
-}
-.txt_caps {
-    text-transform: capitalize;
-}
-.nowrap {
-    white-space: nowrap;
-}
-.v_top {
-    vertical-align: top
-}
-.v_base {
-    vertical-align: baseline;
-}
-.v_middl, .middl {
-    &>* {
-        vertical-align: middle;
-        &:before {
-            content: '';
-            height: 100%;
-        }
-    }
-}
-.tab {
-    color: $txt_light;
-    box-sizing: border-box;
-    @include rounded(5px);
-}
-.tab1 {
-    color: $txt_light;
-    @include shadow(5px, 5px, 10px, #000);
 }
 img {
     max-width: 100%;

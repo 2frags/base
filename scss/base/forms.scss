@@ -16,50 +16,51 @@
             }
         }
     }
+    label.col { margin-bottom: .2rem;}
     //------------------------- form sizes
-    &.h1, &.h2, &.h3, &.h4, &.h5 {
-        margin: 0px;
-        line-height: normal;
-    }
-    &.h1 .col {
-        font-size: $h1f;
-    }
-    &.h2 .col {
-        font-size: $h2f;
-    }
-    &.h3 .col {
-        font-size: $h3f;
-    }
-    &.h4 .col {
-        font-size: $h4f;
-    }
-    &.h5 .col {
-        font-size: $h5f;
-    }
-    .col {
-        vertical-align: middle;
-    }
-    &_line, &_group {
-        font-size: 0;
-        &.h1, &.h2, &.h3 {
-            font-size: 0;
-        }
-        &.h1>* {
-            font-size: $h1f;
-        }
-        &.h2>* {
-            font-size: $h2f;
-        }
-        &.h3>* {
-            font-size: $h3f;
-        }
-        &.h4>* {
-            font-size: $h4f;
-        }
-        &.h5>* {
-            font-size: $h5f;
-        }
-    }
+    // &.h1, &.h2, &.h3, &.h4, &.h5 {
+    //     // margin: 0px;
+    //     line-height: normal;
+    // }
+    // &.h1 .col {
+    //     font-size: $h1f;
+    // }
+    // &.h2 .col {
+    //     font-size: $h2f;
+    // }
+    // &.h3 .col {
+    //     font-size: $h3f;
+    // }
+    // &.h4 .col {
+    //     font-size: $h4f;
+    // }
+    // &.h5 .col {
+    //     font-size: $h5f;
+    // }
+    // .col {
+    //     vertical-align: middle;
+    // }
+    // &_line, &_group {
+    //     font-size: 0;
+    //     &.h1, &.h2, &.h3 {
+    //         font-size: 0;
+    //     }
+    //     &.h1>* {
+    //         font-size: $h1f;
+    //     }
+    //     &.h2>* {
+    //         font-size: $h2f;
+    //     }
+    //     &.h3>* {
+    //         font-size: $h3f;
+    //     }
+    //     &.h4>* {
+    //         font-size: $h4f;
+    //     }
+    //     &.h5>* {
+    //         font-size: $h5f;
+    //     }
+    // }
 }
 .v_top {
     .col {
@@ -196,53 +197,25 @@ input[type="checkbox"] {
 }
 //---------------------------------------------------------------------------- FORM GROUP
 .form_group {
+    border-width: 1px;
     &>* {
-        @include rounded(0);
+        // @include rounded(0);
         position: relative;
         margin-top: -1px;
-        @if $rnd !=0 {
-            &:first-child {
-                @include rounded($rnd $rnd 0 0);
-            }
-            &:last-child {
-                @include rounded(0 0 $rnd $rnd);
-            }
-        }
+        // @if $rnd !=0 {
+        //     &:first-child {
+        //         @include rounded($rnd $rnd 0 0);
+        //     }
+        //     &:last-child {
+        //         @include rounded(0 0 $rnd $rnd);
+        //     }
+        // }
         &:focus {
             z-index: 3;
         }
     }
 }
-//---------------------------------------------------------------------------- FORM LINE
-.form_line {
-    text-align: left;
-    &>.btn:not[class=brdr] {
-        border-left-color: rgba(255, 255, 255, .5);
-    }
-    &>.btn, &>input {
-        @include rounded(0);
-    }
-    &>* {
-        position: relative;
-        &:not(:last-child) {
-            border-right-color: transparent !important;
-        }
-        @if $rnd !=0 {
-            &:first-child {
-                @include rounded($rnd 0 0 $rnd);
-            }
-            &:last-child {
-                @include rounded(0 $rnd $rnd 0);
-            }
-        }
-        &:focus {
-            z-index: 3;
-            &+input, &+select {
-                border-left-color: $f_active;
-            }
-        }
-    }
-}
+
 //---------------------------------------------------------------------------- PLACEHOLDER
 @include placeholder {
     color: #ddd;

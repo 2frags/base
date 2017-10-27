@@ -10,153 +10,282 @@
     border-color: $bg;
     color: $bg;
 }
-.btn {
-    border: none;
-    width: auto;
-    vertical-align: middle;
-    text-decoration: none;
-    background: $active;
+@each $colorname, $color in $map_colors {
+    .txt_#{$colorname} {
+    // unquote('(#{$colorname})'){
+        color: $color;
+    }
+    ._#{$colorname} {
+        background-color: $color;
+        border-color: $color;
+    }
+    
+    ._brdr._#{$colorname} {
+        color: $color;
+        border-color: $color;
+    }
+}
+._brdr {
+    background-color: transparent;
+}
+._light { @include filter(brightness, 130%);}
+._dark { 
+    // @include filter(brightness, 70%);
+    -webkit-filter: brightness(80%) contrast(150%);
+    -ms-filter:  brightness(80%) contrast(150%);
+    filter:  brightness(80%) contrast(150%);
+}
+[class*=" btn"], [class^="btn"] {
+    padding: $btn_padd_v $btn_padd_h;
+    margin: 0 1em 0 0;
     display: inline-block;
-    // color:$txt_mid;
+    vertical-align: middle;
+    transition: all ease-in-out 0.2s;
+    border-radius: 3px;
     text-align: center;
-    color: #fff;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
+    width: auto;
     max-width: 100%;
+    color: inherit;
+    line-height: inherit;
     border: transparent 1px solid;
-    @include transition(all ease-in-out .2s);
-    @if $rnd !=0 {
-        @include rounded($rnd);
-    }
-    &[class*=" icon-"], &[class^="icon-"] {
+    
+    &:hover, &:focus {
+        outline: none;}
+    &[class*="icon-"] {
         line-height: inherit;
+      &:before {
+        vertical-align: 0%;
+        color: inherit;
+        //font-size: 1.8em;
+        line-height: 0.5em;
+        //margin-top: -.2em;
+        //margin-left: -.2em;
+        }
+      &:empty {
+        padding: 0.4em 0.2em;
+        min-width: 2.1em;
+        overflow: visible;
         &:before {
-            // font-size: 1.25em;
-            // line-height: 1.15em;
-            // font-size: 1.15em;
-            // line-height: 1.2em;
-            vertical-align: 0%;
+          width: 100%;
         }
+      }
     }
-    // &:active,
-    &:focus, &:hover {
-        // box-shadow: 0px -2.5em 1px rgba(0, 0, 0, 0.1) inset;
-        box-shadow: 0px 0px 1em 1em rgba(0, 0, 0, 0.1) inset;
-        outline: none;
-    }
-    // @include btn_hover($active);
-    &.rnd {
-        @include rounded($rnd);
-    }
-    &.sh {
-        @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
-    }
-    &.brdr {
-        background: transparent;
-        &:focus, &:hover {
-            box-shadow: none;
-            // @include rounded($rnd*3);
-            // border-color: #333;
-            @include opacity(.7);
-            // box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, .3) inset;
-            // border-color: transparent;
-            // outline: none;
-        }
-    }
-    small {
-        @include opacity(.7);
-        font-size: .9em;
+    &:not(:empty):before {
+        margin-right: .25em;
     }
 }
+.btn, .btn_wide, .tag {
+    &:hover, &:focus {
+        // @include shadow(0px 0px 1em 1em rgba(0,0,0,0.18) inset); text-decoration: none;
+        @include filter(brightness, 120%);
+    }
+    &._off:not(:hover) {
+        background: $table_brdr;
+    }
+    // &._brdr {
+    //     background: transparent;
+    //     color: inherit;
+    // }
+}
+.btn_wide {
+min-width: 10em;
+padding: 0.4em 1.5em;
+}
+.tag {
+    padding: 0.1em 0.4em;
+    margin: 0 .5em .5em 0;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all ease-in-out 0.2s;
+    border-radius: 3px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer;
+    width: auto;
+    max-width: 100%;
+    color: $clr_white;
+    border: transparent 1px solid;
+    select {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        color: $clr_white;
+        option { color: #333; 
+            // background: color(white);
+        }
+    }
+}
+   
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
     cursor: not-allowed;
     @include opacity(.4);
     pointer-events: none;
 }
-.btn.h1 {
-    font-size: $h1f;
-}
-.btn.h2 {
-    font-size: $h2f;
-}
-.btn.h3 {
-    font-size: $h3f;
-}
-.btn.h4 {
-    font-size: $h4f;
-}
-.btn.h5 {
-    font-size: $h5f;
-}
-//================ colors
-.clr_white {
-    background: $clr_white;
-}
-.clr_black {
-    background: $clr_black;
-}
-.clr_dark {
-    background: $clr_dark;
-}
-.clr_err {
-    background: $clr_err;
-}
-.clr_warn {
-    background: $clr_warn;
-}
-.clr_info {
-    background: $clr_info;
-}
-.clr_ok {
-    background: $clr_ok;
-}
-.clr_def {
-    background: $active;
-}
-.clr_black, .clr_dark, .clr_err, .clr_warn, .clr_info, .clr_ok, .clr_def {
-    color: #fff;
-}
-.brdr {
+//========================= btn_group
+.btn_group {
+    padding: 0px;
     background: transparent;
-    border-color: $txt_mid;
-    color: $txt_dark;
+    color: color(gray);
+    border-color: color(gray);
+    .active {color: #fff; background: color(gray);}
+    sup { display:inline-block; 
+        // background: color(yell);
+      padding: 1px 4px; border-radius: 50%;
+      height: 1.2em;
+      color: color(black);
+      line-height: 1em;
+      margin: 0 0 0 4px;
+    }
+    &._blue {
+      color: color(blue); 
+      border-color: color(blue);
+      .active { background: color(blue); }
+    }
+    &._gray {
+      color: color(gray);
+      border-color: color(gray);
+      .active { background: color(gray); }
+    }
+    & > * { display: inline-block; border-left: inherit; padding: 0.4em 0.8em;
+      &:first-child {border-left: none;}
+    }
+  }
+
+
+  .btn._group {
+      padding: 0;
+      letter-spacing: -.5em;
+      &:hover { @include filter(brightness, 100%)}
+    & > * {
+        margin: 0px; 
+        letter-spacing: normal;
+        vertical-align: middle;
+    }
+}
+  //--------------------------
+  .btn___ {  border-bottom: color(blue) 1px solid;}
+  .btn-_- {  border-bottom: color(blue) 1px dashed;}
+  .btn_raw { background: transparent; color: inherit; padding: 0.2em 0;
+    &[class*="icon-"] {
+      overflow: visible;
+      margin-left: 1.8em;
+      &:before {
+        position: absolute;
+        left: -.9em;
+        top:50%;
+      }
+    }
+  }
+  .btn-_-, .btn___ {
+    background: transparent;
+    padding: 0.2em 0;
+    color: inherit;
+    &:hover {
+      color: #333;
+      border-bottom-color: #333;
+      text-decoration: none;
+    }
+    &[class*="icon-"] {
+      overflow: visible;
+      margin-left: 1.8em;
+      &:before {
+        position: absolute;
+        left: -.9em;
+        top:50%;
+      }
+    }
+  }
+
+
+
+// .btn.h1 {
+//     font-size: $h1f;
+// }
+// .btn.h2 {
+//     font-size: $h2f;
+// }
+// .btn.h3 {
+//     font-size: $h3f;
+// }
+// .btn.h4 {
+//     font-size: $h4f;
+// }
+// .btn.h5 {
+//     font-size: $h5f;
+// }
+//================ colors
+// ._white {
+//     background: $clr_white;
+// }
+// ._black {
+//     background: $clr_black;
+// }
+// ._dark {
+//     background: $clr_dark;
+// }
+// ._err {
+//     background: $clr_err;
+// }
+// ._warn {
+//     background: $clr_warn;
+// }
+// ._info {
+//     background: $clr_info;
+// }
+// ._ok {
+//     background: $clr_ok;
+// }
+// ._def {
+//     background: $active;
+// }
+// ._black, ._dark, ._err, ._warn, ._info, ._ok, ._def {
+//     color: #fff;
+// }
+._brdr {
+    background: transparent;
+    // border-color: $txt_mid;
+    // color: $txt_dark;
 }
 // .clr_none,
-.clr_none {
-    color: $active;
-    background: transparent;
-    border-color: transparent;
-    // @include btn_hover(transparent);
-    &:hover {
-        box-shadow: none;
-        text-decoration: underline;
-    }
-    &.disabled, &[disabled] {
-        color: $txt_mid;
-    }
-}
-.brdr, .fld, select {
-    &[class*="clr_"] {
-        background: transparent;
-    }
-    &.clr_white {
-        @include btn_brdr_hover($clr_white);
-    }
-    &.clr_err {
-        @include btn_brdr_hover($clr_err);
-    }
-    &.clr_warn {
-        @include btn_brdr_hover($clr_warn);
-    }
-    &.clr_info {
-        @include btn_brdr_hover($clr_info);
-    }
-    &.clr_ok {
-        @include btn_brdr_hover($clr_ok);
-    }
-    &.clr_def {
-        @include btn_brdr_hover($active);
-    }
-}
+// .clr_none {
+//     color: $active;
+//     background: transparent;
+//     border-color: transparent;
+//     // @include btn_hover(transparent);
+//     &:hover {
+//         box-shadow: none;
+//         text-decoration: underline;
+//     }
+//     &.disabled, &[disabled] {
+//         color: $txt_mid;
+//     }
+// }
+// .brdr, .fld, select {
+//     &[class*="clr_"] {
+//         background: transparent;
+//     }
+//     &.clr_white {
+//         @include btn_brdr_hover($clr_white);
+//     }
+//     &.clr_err {
+//         @include btn_brdr_hover($clr_err);
+//     }
+//     &.clr_warn {
+//         @include btn_brdr_hover($clr_warn);
+//     }
+//     &.clr_info {
+//         @include btn_brdr_hover($clr_info);
+//     }
+//     &.clr_ok {
+//         @include btn_brdr_hover($clr_ok);
+//     }
+//     &.clr_def {
+//         @include btn_brdr_hover($active);
+//     }
+// }

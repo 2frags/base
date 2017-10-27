@@ -1,0 +1,62 @@
+@import "vars";
+//-------------helpers
+._rnd {
+    @include rounded($rnd);
+}
+._sh {
+    @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
+}
+.fl_l {
+    float: left;
+}
+.fl_r {
+    float: right;
+}
+.txt_l {
+    text-align: left;
+}
+.txt_r {
+    text-align: right;
+}
+.txt_c {
+    text-align: center;
+}
+.txt_j {
+    text-align: justify;
+}
+.txt_upper {
+    text-transform: uppercase;
+}
+.txt_lower {
+    text-transform: lowercase;
+}
+.txt_caps {
+    text-transform: capitalize;
+}
+.nowrap {
+    white-space: nowrap;
+}
+.v_top {
+    vertical-align: top
+}
+.v_base {
+    vertical-align: baseline;
+}
+.v_middl, .middl {
+    &>* {
+        vertical-align: middle;
+        &:before {
+            content: '';
+            height: 100%;
+        }
+    }
+}
+.tab {
+    color: $txt_light;
+    box-sizing: border-box;
+    @include rounded(5px);
+}
+.tab1 {
+    color: $txt_light;
+    @include shadow(5px, 5px, 10px, #000);
+}

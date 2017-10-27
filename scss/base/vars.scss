@@ -8,6 +8,8 @@ $xl: 80em;
 $columns:12;
 $colGap:0.6rem;
 $page_padd: 1%;
+$btn_padd_v: 0.4em;
+$btn_padd_h: 0.8em;
 //------------------- hdr
 $page_hdr_H: 73px;
 $menu_fixed_W: 40%;
@@ -31,8 +33,44 @@ $clr_black: #000;
 $clr_dark: #333;
 $clr_err: #CF000F;
 $clr_warn:#F39C12;
-$clr_info:#51D4BD;
-$clr_ok:#8BC34A;
+$clr_info:#00bcd4;
+$clr_info2: #00bcd4;
+$clr_ok:#8bc34a;
+$clr_def: #009688;
+
+$map_colors: (
+    'white': #ffffff,
+    'black': #000000,
+    'red': #f44336,
+    'purple': #9c27b0,
+    'pink': #e91e63,
+    'deep_purple': #673ab7,
+    'indigo': #3f51b5,
+    'blue': #2196f3,
+    'light_blue': #03a9f4,
+    'cyan': #00bcd4,
+    'teal': #009688,
+    'green': #4caf50,
+    'salad': #8bc34a,
+    'lime': #cddc39,
+    'yell': #ffeb3b,
+    'orange': #ff9800,
+    'brown': #795548,
+    'gray': #9c9c9c
+  );
+@function color($key) {
+    // map inception
+    //@if map-has-key($map_colors, $key) {
+        @return map-get($map_colors, $key);
+     // }    
+    //@warn "Unknown `#{$key}` in $map_colors.";
+   // @return null;
+}
+
+
+
+
+
 //----------------- fonts
 $line_h: 1.4em;
 $fontSize: 16px;
@@ -76,7 +114,7 @@ $rnd: 3px;
     // -o-filter: $filter-type+unquote('(#{$filter-amount})');
     filter: $filter-type+unquote('(#{$filter-amount})');
 }
-@mixin rounded($radius) {
+@mixin rounded($radius...) {
     // -moz-border-radius: $radius;
     // -webkit-border-radius: $radius;
     // -ms-border-radius: $radius;
@@ -92,18 +130,23 @@ $rnd: 3px;
     // $opacity-ie: $opacity * 100;
 }
 //-------------- box-shadow
-@mixin shadow($top, $left, $blur, $color, $inset: false) {
-    @if $inset {
-        // -webkit-box-shadow: inset $top $left $blur $color;
-        // -moz-box-shadow: inset $top $left $blur $color;
-        box-shadow: inset $top $left $blur $color;
-    }
-    @else {
-        // -webkit-box-shadow: $top $left $blur $color;
-        // -moz-box-shadow: $top $left $blur $color;
-        box-shadow: $top $left $blur $color;
-    }
-}
+// @mixin shadow($top, $left, $blur, $color, $inset: false) {
+//     @if $inset {
+//         // -webkit-box-shadow: inset $top $left $blur $color;
+//         // -moz-box-shadow: inset $top $left $blur $color;
+//         box-shadow: inset $top $left $blur $color;
+//     }
+//     @else {
+//         // -webkit-box-shadow: $top $left $blur $color;
+//         // -moz-box-shadow: $top $left $blur $color;
+//         box-shadow: $top $left $blur $color;
+//     }
+// }
+@mixin shadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+  }
 //-------------------animation delay
 @mixin a_delay($val) {
     -webkit-animation-delay: $val;

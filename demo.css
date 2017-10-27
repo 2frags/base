@@ -2,9 +2,7 @@
     padding-left: 140px;
     /*transition: padding-left 0.3s ease-in-out;*/
 }
-.demo h1, .demo h2, .demo h3, .demo h4, .demo h5 {
-    padding: 1rem 0 0 0
-}
+
 .demo+aside {
     position: fixed;
     left: 0px;
