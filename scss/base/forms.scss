@@ -196,7 +196,7 @@ input[type="checkbox"] {
     }
 }
 //---------------------------------------------------------------------------- FORM GROUP
-.form_group {
+.form._group {
     border-width: 1px;
     &>* {
         // @include rounded(0);
