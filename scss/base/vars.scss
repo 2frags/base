@@ -27,6 +27,8 @@ $active: #03A9F4;
 $active_light: lighten($active, 44%);
 $f_active: $active;
 $tab_bg: #fff;
+$field_bg: #fff;
+$btn_clr: #fff;
 //----------------- buttons colors
 $clr_white: #fff;
 $clr_black: #000;
@@ -67,10 +69,6 @@ $map_colors: (
    // @return null;
 }
 
-
-
-
-
 //----------------- fonts
 $line_h: 1.4em;
 $fontSize: 16px;
@@ -80,6 +78,8 @@ $h3:1.8rem;
 $h4:1.4rem;
 $h5:1.2rem;
 $h6:1rem;
+$h7:.9rem;
+$h8:.8rem;
 $font:'Open Sans', Arial, sans-serif;
 $serif: Georgia, Times, 'Times New Roman', serif;
 //----------------- form sizes

@@ -35,23 +35,28 @@
     -ms-filter:  brightness(80%) contrast(150%);
     filter:  brightness(80%) contrast(150%);
 }
-[class*=" btn"], [class^="btn"] {
+// [class*=" btn"], [class^="btn"] 
+[class*="btn"]
+{
     padding: $btn_padd_v $btn_padd_h;
     margin: 0 1em 0 0;
     display: inline-block;
     vertical-align: middle;
     transition: all ease-in-out 0.2s;
-    border-radius: 3px;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
     cursor: pointer;
-    width: auto;
+    // width: auto;
     max-width: 100%;
-    color: inherit;
+    // color: inherit;
+    color: $btn_clr;
     line-height: inherit;
-    border: transparent 1px solid;
+    font-weight: 100;
+    // border: transparent 1px solid;
+    border-width: 1px;
+    border-style: solid;
     
     &:hover, &:focus {
         outline: none;}
@@ -128,44 +133,56 @@ padding: 0.4em 1.5em;
     pointer-events: none;
 }
 //========================= btn_group
-.btn_group {
-    padding: 0px;
-    background: transparent;
-    color: color(gray);
-    border-color: color(gray);
-    .active {color: #fff; background: color(gray);}
-    sup { display:inline-block; 
-        // background: color(yell);
-      padding: 1px 4px; border-radius: 50%;
-      height: 1.2em;
-      color: color(black);
-      line-height: 1em;
-      margin: 0 0 0 4px;
-    }
-    &._blue {
-      color: color(blue); 
-      border-color: color(blue);
-      .active { background: color(blue); }
-    }
-    &._gray {
-      color: color(gray);
-      border-color: color(gray);
-      .active { background: color(gray); }
-    }
-    & > * { display: inline-block; border-left: inherit; padding: 0.4em 0.8em;
-      &:first-child {border-left: none;}
-    }
-  }
+// .btn_group {
+//     padding: 0px;
+//     background: transparent;
+//     color: color(gray);
+//     border-color: color(gray);
+//     .active {color: #fff; background: color(gray);}
+//     sup { display:inline-block; 
+//         // background: color(yell);
+//       padding: 1px 4px; border-radius: 50%;
+//       height: 1.2em;
+//       color: color(black);
+//       line-height: 1em;
+//       margin: 0 0 0 4px;
+//     }
+//     &._blue {
+//       color: color(blue); 
+//       border-color: color(blue);
+//       .active { background: color(blue); }
+//     }
+//     &._gray {
+//       color: color(gray);
+//       border-color: color(gray);
+//       .active { background: color(gray); }
+//     }
+//     & > * { display: inline-block; border-left: inherit; padding: 0.4em 0.8em;
+//       &:first-child {border-left: none;}
+//     }
+//   }
 
 
   .btn._group {
       padding: 0;
+      margin-bottom: $colGap;
       letter-spacing: -.5em;
       &:hover { @include filter(brightness, 100%)}
     & > * {
         margin: 0px; 
         letter-spacing: normal;
         vertical-align: middle;
+        border-width: 0px 1px 0px 0px;
+        @include rounded(0);        
+        &:last-child {border-width: 0px;}
+        &:not([class*="btn"]){
+            background-color: $field_bg;
+            border-color: inherit;
+        }
+        &[class*="btn"] {
+            background: inherit; 
+        }
+        &:not([class*="col-"]) { width: auto;}
     }
 }
   //--------------------------
