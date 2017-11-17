@@ -1,25 +1,20 @@
 @import "vars";
 //---------------------------------------------------------------------------- BUTTONS
-@mixin btn_hover($bg) {
-    background: $bg;
-    &:focus, &:hover {
-        background: darken($bg, 7%);
+
+// ._light { @include filter(brightness, 130%);}
+// ._dark { 
+//     -webkit-filter: brightness(80%) contrast(165%);
+//     -ms-filter:  brightness(80%) contrast(165%);
+//     filter:  brightness(80%) contrast(165%);
+// }
+// [class*=" btn"], [class^="btn"] {
+
+.btn:not(._group), .btn_wide, .tag, .btn._group > .btn {
+    &:hover, &:focus, &.active {
+        @include filter(brightness, 120%);
     }
 }
-@mixin btn_brdr_hover($bg) {
-    border-color: $bg;
-    color: $bg;
-}
-
-._light { @include filter(brightness, 130%);}
-._dark { 
-    // @include filter(brightness, 70%);
-    -webkit-filter: brightness(80%) contrast(165%);
-    -ms-filter:  brightness(80%) contrast(165%);
-    filter:  brightness(80%) contrast(165%);
-}
-// [class*=" btn"], [class^="btn"] {
-[class*="btn"] {
+.btn {
     padding: $btn_padd_v $btn_padd_h;
     margin: 0 1em 0 0;
     display: inline-block;
@@ -32,20 +27,18 @@
     cursor: pointer;
     // width: auto;
     max-width: 100%;
-    // color: inherit;
-    color: $btn_clr;
     line-height: inherit;
     font-weight: 100;
     // border: transparent 1px solid;
     border-width: 1px;
     border-color: transparent;
-    // @include transition(filter ease-in-out .3s);
     @include transition(all ease-in-out .3s);
-    @include gr_vr;
-    background-position: 0 2em;
+    background-position: 0 2.5em;
     background-repeat: no-repeat;
     border-style: solid;
-    
+    //color: $btn_clr;
+    &:not(._brdr):not(.-_-):not(.__):not(.\.\.\.):not(._raw) {color: $btn_clr;}
+    // &:not(._raw), &:not(._white) {color: $btn_clr;}
     &:hover, &:focus {outline: none;}
     &[class*="icon-"] {
         line-height: inherit;
@@ -69,34 +62,14 @@
     &:not(:empty):before {
         margin-right: .25em;
     }
-}
-.btn:not(._group), .btn_wide, .tag, .btn._group > .btn {
-    &:hover, &:focus, &.active {
-        // @include shadow(0px 0px 1em 1em rgba(0,0,0,0.18) inset); text-decoration: none;
-        // @include filter(brightness, 140%);
-        background-position: 0 0;
+    &._brdr {    
+        &:hover {
+            text-decoration: none;
+            @include filter(brightness, 60%);
+        }
     }
-    // &._off:not(:hover) {
-    //     background: $table_brdr;
-    // }
-    // &._brdr {
-    //     background: transparent;
-    //     color: inherit;
-    // }
+    // &:not(._brdr), &:not(.__), &:not(.-_-), &:not(.\.\.\.) { color: #fff;}
 }
-// ._off:not(:hover) {
-//     background: $table_brdr;
-//     pointer-events: none;
-//     border-color: transparent;
-//     &._brdr, &.-_-, &.__, &.\.\.\.  { background: transparent; color: $table_brdr; border-color: $table_brdr; }
-// }
-// .btn._brdr {
-//     &:hover, &:focus, &.active {
-//         -webkit-filter: brightness(60%) contrast(165%);
-//         -ms-filter:  brightness(60%) contrast(165%);
-//         filter:  brightness(60%) contrast(165%);
-//     }
-// }
 .btn_wide {
 min-width: 10em;
 padding: 0.4em 1.5em;
@@ -139,22 +112,24 @@ padding: 0.4em 1.5em;
     &._brdr, &.-_-, &.__, &.\.\.\.  { background: transparent; color: $table_brdr; border-color: $table_brdr; }
 }
 //=============================== colors
-._raw {background: transparent; color: inherit; border-color: transparent;}
 @each $colorname, $color in $map_colors {
-    ._txt_#{$colorname} {
-    // unquote('(#{$colorname})'){
-        color: $color;
-    }
-    ._#{$colorname}{
+    // ._txt_#{$colorname} {
+    // // unquote('(#{$colorname})'){
+    //     color: $color;
+    // }
+    $darker: darken($color, 15%);
+    $lighter: lighten($color, 12%);
+    ._#{$colorname}{ 
         background-color: $color;
         border-color: $color;
-    }
-    
-    ._brdr._#{$colorname}, .-_-._#{$colorname}, .__._#{$colorname}, .\.\.\.._#{$colorname} {
         color: $color;
-        border-color: $color;
+        // color: $color;
+        // background-image: linear-gradient(to bottom, to_rgba($darker, 0) 0%, to_rgba($darker, 0.5) 100%); 
+        &._light { background-color: $lighter; border-color: $lighter; color: $lighter;}
+        &._dark { background-color: $darker; border-color: $darker; color: $darker;}
     }
 }
+._white { color: color('black');}
 //========================= btn_group
   .btn._group {
       padding: 0;
@@ -167,11 +142,11 @@ padding: 0.4em 1.5em;
         border-width: 0px 1px 0px 0px;
         @include rounded(0);        
         &:last-child {border-width: 0px;}
-        &:not([class*="btn"]){
+        &:not(.btn){
             background-color: $field_bg;
             border-color: inherit;
         }
-        &[class*="btn"] {
+        &.btn {
             background: inherit; 
             border-right-color: rgba(255,255,255, .2);
         }
@@ -180,32 +155,17 @@ padding: 0.4em 1.5em;
 }
   //--------------------------
 
-//   .btn_raw { background: transparent; color: inherit; padding: 0.2em 0;
-//     &[class*="icon-"] {
-//       overflow: visible;
-//       margin-left: 1.8em;
-//       &:before {
-//         position: absolute;
-//         left: -.9em;
-//         top:50%;
-//       }
-//     }
-//   }
   .\.\.\. { border-style: dotted;}
   .-_- { border-style: dashed;}
   .__ { border-style: solid;}
   .__, .-_-, .\.\.\. {padding: 0.2em 0; border-width: 0 0 1px 0;}
-//   ._brdr:hover {@include rounded(10px);}
+
+  ._raw {background: transparent; border-color: transparent; color: inherit}
   ._brdr, .__, .-_-, .\.\.\. {
     //   @include transition(border-radius ease-in-out .3s);
-    background: transparent;    
-    color: inherit;
-    &:hover {
-      text-decoration: none;
-    //   -webkit-filter:  func_filter(brightness, 1.3)  func_filter(grayscale, .95);
-    //   filter:  func_filter(brightness, 1.3)  func_filter(grayscale, .95);
-    // @include filter(brightness, 70%);
-    }
+    // background: transparent;  
+    background-color: transparent !important;
+    // color: inherit;
     &[class*="icon-"] {
       overflow: visible;
       margin-left: 1.8em;
@@ -216,91 +176,4 @@ padding: 0.4em 1.5em;
       }
     }
   }
- 
 
-
-// .btn.h1 {
-//     font-size: $h1f;
-// }
-// .btn.h2 {
-//     font-size: $h2f;
-// }
-// .btn.h3 {
-//     font-size: $h3f;
-// }
-// .btn.h4 {
-//     font-size: $h4f;
-// }
-// .btn.h5 {
-//     font-size: $h5f;
-// }
-//================ colors
-// ._white {
-//     background: $clr_white;
-// }
-// ._black {
-//     background: $clr_black;
-// }
-// ._dark {
-//     background: $clr_dark;
-// }
-// ._err {
-//     background: $clr_err;
-// }
-// ._warn {
-//     background: $clr_warn;
-// }
-// ._info {
-//     background: $clr_info;
-// }
-// ._ok {
-//     background: $clr_ok;
-// }
-// ._def {
-//     background: $active;
-// }
-// ._black, ._dark, ._err, ._warn, ._info, ._ok, ._def {
-//     color: #fff;
-// }
-._brdr {
-    background: transparent;
-    // border-color: $txt_mid;
-    // color: $txt_dark;
-}
-// .clr_none,
-// .clr_none {
-//     color: $active;
-//     background: transparent;
-//     border-color: transparent;
-//     // @include btn_hover(transparent);
-//     &:hover {
-//         box-shadow: none;
-//         text-decoration: underline;
-//     }
-//     &.disabled, &[disabled] {
-//         color: $txt_mid;
-//     }
-// }
-// .brdr, .fld, select {
-//     &[class*="clr_"] {
-//         background: transparent;
-//     }
-//     &.clr_white {
-//         @include btn_brdr_hover($clr_white);
-//     }
-//     &.clr_err {
-//         @include btn_brdr_hover($clr_err);
-//     }
-//     &.clr_warn {
-//         @include btn_brdr_hover($clr_warn);
-//     }
-//     &.clr_info {
-//         @include btn_brdr_hover($clr_info);
-//     }
-//     &.clr_ok {
-//         @include btn_brdr_hover($clr_ok);
-//     }
-//     &.clr_def {
-//         @include btn_brdr_hover($active);
-//     }
-// }

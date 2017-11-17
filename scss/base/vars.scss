@@ -8,6 +8,7 @@ $xl: 80em;
 $columns:12;
 $colGap:0.6rem;
 $page_padd: 1%;
+
 $btn_padd_v: 0.4em;
 $btn_padd_h: 0.8em;
 //------------------- hdr
@@ -54,9 +55,9 @@ $map_colors: (
     'teal': #009688,
     'green': #4caf50,
     'salad': #8bc34a,
-    'lime': #cddc39,
+    'lime': #c4d617,
     'yell': #ffeb3b,
-    'orange': #ff9800,
+    'orange': #f59200,
     'brown': #795548,
     'gray': #9c9c9c
   );
@@ -77,9 +78,9 @@ $h2:2.1rem;
 $h3:1.8rem;
 $h4:1.4rem;
 $h5:1.2rem;
-$h6:1rem;
-$h7:.9rem;
-$h8:.8rem;
+$h6:.9rem;
+$h7:.8rem;
+$h8:.7rem;
 $font:'Open Sans', Arial, sans-serif;
 $serif: Georgia, Times, 'Times New Roman', serif;
 //----------------- form sizes
@@ -110,6 +111,10 @@ $rnd: 3px;
     // -o-filter: $filter-type+unquote('(#{$filter-amount})');
     filter: $filter-type+unquote('(#{$filter-amount})');
 }
+@function to_rgba($color, $opacity: 0.3) {
+    @return rgba($color, $opacity);
+}
+
 @function func_filter($filter-type, $val: null){
 @if ($val) {
     @return $filter-type + '('+$val+')';

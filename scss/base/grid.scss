@@ -29,11 +29,12 @@
 }
 .grid>* {
     display: inline-block;
-    vertical-align: top;
     letter-spacing: normal;
     font-size: 1rem;
     text-align: left;
+    vertical-align: top;
 }
+.grid>label, .grid> label.col ~ .col  {    vertical-align: middle;}
 .grid:after {
     display: inline-block;
     content: '';
