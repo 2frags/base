@@ -118,9 +118,6 @@ input, .btn, select, textarea {
     }
     /* IE11 */
 }
-.btn:not(:empty):before {
-    padding-right: .3em;
-}
 //--------------------------------------------------------------------------------- select
 select {
     -webkit-appearance: none;

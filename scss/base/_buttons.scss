@@ -14,9 +14,15 @@
         @include filter(brightness, 120%);
     }
 }
+._rnd, ._rnd .btn { border-radius: $rnd;}
+._rnd2x, ._rnd2x .btn { border-radius: $rnd2x;}
+._btns_grid .btn {    
+    margin: 0 $colGap/4 $colGap/2 0;
+}
 .btn {
     padding: $btn_padd_v $btn_padd_h;
-    margin: 0 1em 0 0;
+    margin: 0 $colGap/4 0 0;
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     transition: all ease-in-out 0.2s;
@@ -40,19 +46,21 @@
     &:not(._brdr):not(.-_-):not(.__):not(.\.\.\.):not(._raw) {color: $btn_clr;}
     // &:not(._raw), &:not(._white) {color: $btn_clr;}
     &:hover, &:focus {outline: none;}
+    &:last-child { margin-right: 0;}
     &[class*="icon-"] {
         line-height: inherit;
       &:before {
-        vertical-align: 0%;
+        // vertical-align: 0%;
         color: inherit;
-        //font-size: 1.8em;
-        line-height: 0.5em;
-        //margin-top: -.2em;
+        font-size: 1.4em;
+        line-height: 0.7em;
+        position: relative;
+        top: -.1em;
         //margin-left: -.2em;
         }
       &:empty {
-        padding: 0.4em 0.2em;
-        min-width: 2.1em;
+          &:not(.-_-):not(.__):not(.\.\.\.):not(._raw)  {padding: 0.4em 0.2em;}        
+        min-width: 2.2em;
         overflow: visible;
         &:before {
           width: 100%;
@@ -60,7 +68,7 @@
       }
     }
     &:not(:empty):before {
-        margin-right: .25em;
+        margin-right: .2em;
     }
     &._brdr {    
         &:hover {
@@ -80,7 +88,7 @@ padding: 0.4em 1.5em;
     display: inline-block;
     vertical-align: middle;
     transition: all ease-in-out 0.2s;
-    border-radius: 3px;
+    border-radius: $rnd;
     text-align: center;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -100,18 +108,10 @@ padding: 0.4em 1.5em;
         }
     }
 }
-   
-.disabled, [disabled], fieldset[disabled] .btn, ._off {
-    cursor: not-allowed;
-    // @include opacity(.4);
-    @include filter (brightness, 100%);
-    pointer-events: none;
-    background: $table_brdr;
-    pointer-events: none;
-    border-color: transparent;
-    &._brdr, &.-_-, &.__, &.\.\.\.  { background: transparent; color: $table_brdr; border-color: $table_brdr; }
-}
 //=============================== colors
+._white {
+    &:not(._brdr):not(.-_-):not(.__):not(.\.\.\.):not(._raw) {color: color('black');}
+}
 @each $colorname, $color in $map_colors {
     // ._txt_#{$colorname} {
     // // unquote('(#{$colorname})'){
@@ -129,7 +129,19 @@ padding: 0.4em 1.5em;
         &._dark { background-color: $darker; border-color: $darker; color: $darker;}
     }
 }
-._white { color: color('black');}
+
+   
+.disabled, [disabled], fieldset[disabled] .btn, ._off, ._light._off, ._dark._off {
+    cursor: not-allowed;
+    // @include opacity(.4);
+    cursor: not-allowed;
+    @include filter (brightness, 100%);
+    pointer-events: none;
+    background: $table_brdr;
+    pointer-events: none;
+    border-color: transparent;
+    &._brdr, &.-_-, &.__, &.\.\.\.  { background: transparent; color: $table_brdr; border-color: $table_brdr; }
+}
 //========================= btn_group
   .btn._group {
       padding: 0;
@@ -158,7 +170,17 @@ padding: 0.4em 1.5em;
   .\.\.\. { border-style: dotted;}
   .-_- { border-style: dashed;}
   .__ { border-style: solid;}
-  .__, .-_-, .\.\.\. {padding: 0.2em 0; border-width: 0 0 1px 0;}
+  .__, .-_-, .\.\.\. {padding: 0.2em 0; border-width: 0 0 1px 0;
+    // &[class*="icon-"]:not(:empty) {
+    //     overflow: visible;
+    //     margin-left: 1.8em;
+    //     &:before {
+    //         position: absolute;
+    //         left: -.9em;
+    //         top:50%;
+    //     }
+    // }
+}
 
   ._raw {background: transparent; border-color: transparent; color: inherit}
   ._brdr, .__, .-_-, .\.\.\. {
@@ -166,14 +188,6 @@ padding: 0.4em 1.5em;
     // background: transparent;  
     background-color: transparent !important;
     // color: inherit;
-    &[class*="icon-"] {
-      overflow: visible;
-      margin-left: 1.8em;
-      &:before {
-        position: absolute;
-        left: -.9em;
-        top:50%;
-      }
-    }
+    
   }
 

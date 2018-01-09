@@ -88,7 +88,8 @@ $serif: Georgia, Times, 'Times New Roman', serif;
 $fld_padd_h: .5em; 
 $fld_padd_v: .4em;
 //---------------round corners
-$rnd: 3px;
+$rnd: .3em;
+$rnd2x: 2em;
 //----------------- query
 @mixin mquery($value, $query) {
     @media ($value: $query) {
