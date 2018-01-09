@@ -130,6 +130,12 @@ padding: 0.4em 1.5em;
     }
 }
 
+@each $colorname, $color in $map_colors {
+    ._txt_#{$colorname} {
+       color: $color;
+    }
+}
+._clr_inherit { color: inherit;}
    
 .disabled, [disabled], fieldset[disabled] .btn, ._off, ._light._off, ._dark._off {
     cursor: not-allowed;
