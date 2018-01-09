@@ -82,6 +82,7 @@ body:before {
     &>li {
         display: block;
     }
+    a, span { padding: $colGap; display: block;}
 }
 .js-menu_on>.nav {
     // max-height: 50000px;

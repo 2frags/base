@@ -14,8 +14,6 @@
         @include filter(brightness, 120%);
     }
 }
-._rnd, ._rnd .btn { border-radius: $rnd;}
-._rnd2x, ._rnd2x .btn { border-radius: $rnd2x;}
 ._btns_grid .btn {    
     margin: 0 $colGap/4 $colGap/2 0;
 }
