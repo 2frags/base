@@ -1,7 +1,7 @@
 @import "vars";
 //-------------helpers
 ._rnd {
-    @include rounded($rnd);
+    border-radius: $rnd;
 }
 ._sh {
     @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
@@ -54,7 +54,7 @@
 .tab {
     color: $txt_light;
     box-sizing: border-box;
-    @include rounded(5px);
+    border-radius: $rnd;
 }
 .tab1 {
     color: $txt_light;

@@ -117,18 +117,15 @@ $rnd2x: 2em;
 }
 
 @function func_filter($filter-type, $val: null){
-@if ($val) {
-    @return $filter-type + '('+$val+')';
-}
-@else {
-    @return $filter-type + '(100%)';
-}
+    @if ($val) {
+        @return $filter-type + '('+$val+')';
+    }
+    @else {
+        @return $filter-type + '(100%)';
+    }
 }
 
 @mixin rounded($radius...) {
-    // -moz-border-radius: $radius;
-    // -webkit-border-radius: $radius;
-    // -ms-border-radius: $radius;
     border-radius: $radius;
 }
 //-------------- lighten

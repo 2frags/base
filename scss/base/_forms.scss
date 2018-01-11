@@ -87,7 +87,6 @@ input, textarea, select {
     // padding-left:$colGap; padding-right: $colGap;
     border: 1px solid $table_brdr;
     background: transparent;
-    // @include rounded($rnd);
     color: $txt_mid;
     @include transition(border ease-in-out .15s);
     &:focus {
@@ -175,7 +174,7 @@ input[type="radio"] {
         border: $f_active 5px solid;
     }
     &+label:before {
-        @include rounded(50%);
+        border-radius: 50%;
     }
 }
 input[type="checkbox"] {
@@ -200,17 +199,8 @@ input[type="checkbox"] {
 .form._group {
     border-width: 1px;
     &>* {
-        // @include rounded(0);
         position: relative;
         margin-top: -1px;
-        // @if $rnd !=0 {
-        //     &:first-child {
-        //         @include rounded($rnd $rnd 0 0);
-        //     }
-        //     &:last-child {
-        //         @include rounded(0 0 $rnd $rnd);
-        //     }
-        // }
         &:focus {
             z-index: 3;
         }
