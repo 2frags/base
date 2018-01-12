@@ -11,14 +11,14 @@ $(document).ready(function() {
         scrollTimeout = setTimeout(scrollHandler, 150);
     });
     scrollHandler = function() {
-            if ($(window).scrollTop() > 10) {
-                $('#header').addClass("sticky");
-            } else {
-                $('#header').removeClass("sticky");
-                $('#mainmenu li').removeClass("active");
-            }
+        if ($(window).scrollTop() > 10) {
+            $('#header').addClass("sticky");
+        } else {
+            $('#header').removeClass("sticky");
+            $('#mainmenu li').removeClass("active");
         }
-        //================ js-hamburger
+    }
+    //================ js-hamburger
     function mainmenu_pos($el) {
         //$($el).is(':visible') ? $('body').addClass('js-menu') : $('body').removeClass('js-menu');
         $($el).each(function() {
@@ -56,19 +56,19 @@ $(document).ready(function() {
 
     //=============== js hamburger menu
     $('.js-menu-btn').on('click', function() {
-            var target_menu = $(this).data('target');
-            //console.log(target_menu + ' ' + $('body').attr('class'));
-            if (target_menu == mainmenu) {
-                $('body').toggleClass('js-menu_on');
-            } else if (target_menu) {
-                $(target_menu).slideToggle(300);
-                $(target_menu).parent().toggleClass('js-menu_on');
-            }
-        })
-        //=============== tabs
+        var target_menu = $(this).data('target');
+        //console.log(target_menu + ' ' + $('body').attr('class'));
+        if (target_menu == mainmenu) {
+            $('body').toggleClass('js-menu_on');
+        } else if (target_menu) {
+            $(target_menu).slideToggle(300);
+            $(target_menu).parent().toggleClass('js-menu_on');
+        }
+    })
+    //=============== tabs
     $('.tabs').on('click', ' dt:not(.on)', function() {
-        $(this).next('dd').slideToggle(500);
-        $(this).siblings('dt.on + dd').slideToggle(500);
+        // $(this).next('dd').slideToggle(500);
+        // $(this).siblings('dt.on + dd').slideToggle(500);
         $(this).addClass('on').siblings('dt').removeClass('on');
     })
 })

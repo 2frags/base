@@ -38,23 +38,24 @@ body:before {
             border-bottom-color: transparent;
             background: $tab_bg;
             &+dd {
-                // @include opacity(1);
-                // height: auto;
-                // max-height: 10000px;
+                @include opacity(1);
+                height: auto;
+                max-height: 5000px;
                 // overflow: visible;
                 display: block;
                 background: $tab_bg;
+                @include transition( all ease-in-out 1.2s);
             }
         }
     }
     dd {
         font-size: 1rem;
-        display: none;
+        // display: none;
         float: right;
-        // overflow: hidden;
-        // max-height: 0px;
-        // @include opacity(0);
-        // @include transition(opacity ease-in-out .5s);
+        overflow: hidden;
+        max-height: 0px;
+        @include opacity(0);
+        @include transition( all ease-in-out .5s);
         position: relative;
         margin: 0 0 0 -100%;
         padding: $colGap;
@@ -102,7 +103,7 @@ body:before {
     margin: 0px;
     padding: 0px;
     vertical-align: middle;
-    a {
+    li a {
         display: block;
         text-decoration: none;
         padding: $fld_padd_h $fld_padd_v;
@@ -111,7 +112,7 @@ body:before {
         display: inline-block;
     }
 }
-.navbar a {
+.navbar li a {
     @include transition(all .3s ease-in-out);
     &:hover {
         background-color: rgba(255, 255, 255, .1);
