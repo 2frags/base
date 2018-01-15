@@ -3,6 +3,13 @@
 ._sh {
     @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
 }
+._abs { position: absolute;}
+._rel { position: relative;}
+._top { top:0px;}
+._right { right:0px;}
+._left {left: 0px;}
+._bottom {bottom: 0px;}
+
 .fl_l {
     float: left;
 }
