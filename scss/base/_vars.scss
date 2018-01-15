@@ -16,31 +16,7 @@ $page_hdr_H: 73px;
 $menu_fixed_W: 40%;
 $menu_dark: 1;
 //1 - dark menu; 0 - light menu
-//------------------- colors
-$bg_1: #fff;
-$bg_2:#f6f6f6;
-$txt_light: #999;
-$txt_mid: #666;
-$txt_dark: #333;
-$table_brdr: #aaa;
-$td_even: #fafafa;
-$active: #03A9F4;
-$active_light: lighten($active, 44%);
-$f_active: $active;
-$tab_bg: #fff;
-$field_bg: #fff;
-$btn_clr: #fff;
-//----------------- buttons colors
-$clr_white: #fff;
-$clr_black: #000;
-$clr_dark: #333;
-$clr_err: #CF000F;
-$clr_warn:#F39C12;
-$clr_info:#00bcd4;
-$clr_info2: #00bcd4;
-$clr_ok:#8bc34a;
-$clr_def: #009688;
-
+//----------------- colors
 $map_colors: (
     'white': #ffffff,
     'black': #000000,
@@ -62,14 +38,20 @@ $map_colors: (
     'gray': #9c9c9c
   );
 @function color($key) {
-    // map inception
-    //@if map-has-key($map_colors, $key) {
-        @return map-get($map_colors, $key);
-     // }    
-    //@warn "Unknown `#{$key}` in $map_colors.";
-   // @return null;
+    @return map-get($map_colors, $key);
 }
-
+//------------------- colors
+$txt_light: #999;
+$txt_mid: #666;
+$txt_dark: #333;
+$table_brdr: #aaa;
+$td_even: #fafafa;
+$active: color(light_blue);
+$active_light: lighten($active, 44%);
+$f_active: $active;
+$tab_bg: color(white);
+$field_bg: color(white);
+$btn_clr: color(white);
 //----------------- fonts
 $line_h: 1.4em;
 $fontSize: 16px;
@@ -84,156 +66,9 @@ $h8:.7rem;
 $font:'Open Sans', Arial, sans-serif;
 $serif: Georgia, Times, 'Times New Roman', serif;
 //----------------- form sizes
-
 $fld_padd_h: .5em; 
 $fld_padd_v: .4em;
 //---------------round corners
 $rnd: .3em;
 $rnd2x: 2em;
-//----------------- query
-@mixin mquery($value, $query) {
-    @media ($value: $query) {
-        @content
-    }
-}
-//------------------- filter
-// grayscale      ex: filter: grayscale(100%);
-// sepia          ex: filter: sepia(100%);
-// saturate       ex: filter: saturate(0%);
-// hue-rotate     ex: filter: hue-rotate(45deg);
-// invert         ex: filter: invert(100%);
-// brightness     ex: filter: brightness(15%);
-// contrast       ex: filter: contrast(200%);
-// blur           ex: filter: blur(2px);
-@mixin filter($filter-type, $filter-amount) {
-    -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
-    // -moz-filter: $filter-type+unquote('(#{$filter-amount})');
-    -ms-filter: $filter-type+unquote('(#{$filter-amount})');
-    // -o-filter: $filter-type+unquote('(#{$filter-amount})');
-    filter: $filter-type+unquote('(#{$filter-amount})');
-}
-@function to_rgba($color, $opacity: 0.3) {
-    @return rgba($color, $opacity);
-}
-
-@function func_filter($filter-type, $val: null){
-    @if ($val) {
-        @return $filter-type + '('+$val+')';
-    }
-    @else {
-        @return $filter-type + '(100%)';
-    }
-}
-
-@mixin rounded($radius...) {
-    border-radius: $radius;
-}
-//-------------- lighten
-@mixin lighten($color) {
-    background: ighten( $color, 10%);
-}
-//-------------- opacity
-@mixin opacity($opacity) {
-    opacity: $opacity;
-    // $opacity-ie: $opacity * 100;
-}
-//-------------- box-shadow
-// @mixin shadow($top, $left, $blur, $color, $inset: false) {
-//     @if $inset {
-//         // -webkit-box-shadow: inset $top $left $blur $color;
-//         // -moz-box-shadow: inset $top $left $blur $color;
-//         box-shadow: inset $top $left $blur $color;
-//     }
-//     @else {
-//         // -webkit-box-shadow: $top $left $blur $color;
-//         // -moz-box-shadow: $top $left $blur $color;
-//         box-shadow: $top $left $blur $color;
-//     }
-// }
-@mixin shadow($args...) {
-    -webkit-box-shadow: $args;
-    -moz-box-shadow: $args;
-    box-shadow: $args;
-  }
-//-------------------animation delay
-@mixin a_delay($val) {
-    -webkit-animation-delay: $val;
-    // -moz-animation-delay: $val;
-    // -o-animation-delay: $val;
-    animation-delay: $val;
-}
-//------------------------- transition
-@mixin transition($args...) {
-    // -webkit-transition: $args;
-    // -moz-transition: $args;
-    // -ms-transition: $args;
-    // -o-transition: $args;
-    transition: $args;
-}
-//-------------------- transforms
-// generic transform
-@mixin transform($transforms) {
-    // -moz-transform: $transforms;
-    // -o-transform: $transforms;
-    -ms-transform: $transforms;
-    -webkit-transform: $transforms;
-    transform: $transforms;
-}
-// rotate
-@mixin rotate ($deg) {
-    @include transform(rotate(#{$deg}deg));
-}
-// scale
-@mixin scale($scale) {
-    @include transform(scale($scale));
-}
-// translate
-@mixin translate ($x, $y) {
-    @include transform(translate($x, $y));
-}
-// skew
-@mixin skew ($x, $y) {
-    @include transform(skew(#{$x}deg, #{$y}deg));
-}
-//transform origin
-@mixin transform-origin ($origin) {
-    // moz-transform-origin: $origin;
-    // -o-transform-origin: $origin;
-    -ms-transform-origin: $origin;
-    -webkit-transform-origin: $origin;
-    transform-origin: $origin;
-}
-//-----------------Placeholder
-@mixin placeholder {
-     ::-webkit-input-placeholder {
-        @content
-    }
-     :-moz-placeholder {
-        @content
-    }
-     ::-moz-placeholder {
-        @content
-    }
-     :-ms-input-placeholder {
-        @content
-    }
-     ::-ms-input-placeholder {
-        @content
-    }
-}
-//-----------------Gradients
-@mixin gr_vr($start: rgba(0, 0, 0, 0), $stop: rgba(0, 0, 0, .2)) {
-    // background: ($start + $stop) / 2;
-    // background-image: -webkit-gradient(linear, left top, left bottom, from($start), to($stop));
-    // background: -moz-linear-gradient(center top, $start 0%, $stop 100%);
-    // background: -moz-gradient(center top, $start 0%, $stop 100%);
-    background-image: linear-gradient(to bottom, $start 0%, $stop 100%);
-}
-// Background Gradient: Left to Right
-@mixin gr_hr($start: rgba(0, 0, 0, 0), $stop: rgba(0, 0, 0, .2)) {
-    // background: ($start + $stop) / 2;
-    // background-image: -webkit-gradient(linear, top left, top right, from($start), to($stop));
-    // background: -moz-linear-gradient(center left, $start 0%, $stop 100%);
-    // background: -moz-gradient(center left, $start 0%, $stop 100%);
-    background-image: linear-gradient(to right, $start 0%, $stop 100%);
-}
+$tabs_rnd: .3em;

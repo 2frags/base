@@ -19,8 +19,8 @@ body:before {
         border-bottom: $table_brdr 1px solid;}
     // background: inherit;
     dt {
-        @if $rnd !=0 {
-            @include rounded($rnd $rnd 0 0);
+        @if $tabs_rnd !=0 {
+            border-radius: $tabs_rnd $tabs_rnd 0 0;
         }
         vertical-align: top;
         margin-bottom: -1px;
@@ -69,7 +69,7 @@ body:before {
 }
 .js-menu_on:before {
     content: '\00a0';
-}
+} 
 .js-menu_hide>.nav {
     position: absolute;
     // max-height: 0px;
@@ -208,7 +208,6 @@ body:before {
         margin: 0 2px;
         display: inline-block;
         border: $table_brdr 1px solid;
-        @include rounded(2px);
         padding: 2px 5px;
         min-width: 1.5rem;
         color: $txt_dark;

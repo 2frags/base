@@ -1,4 +1,4 @@
-@import "vars";
+@import "mixins";
 //---------------------------------------------------------------------------- BUTTONS
 
 // ._light { @include filter(brightness, 130%);}
@@ -94,14 +94,14 @@ padding: 0.4em 1.5em;
     cursor: pointer;
     width: auto;
     max-width: 100%;
-    color: $clr_white;
+    color: color(white);
     border: transparent 1px solid;
     select {
         background-color: transparent;
         border: none;
         padding: 0;
-        color: $clr_white;
-        option { color: #333; 
+        color: color(white);
+        option { color: color(white); 
             // background: color(white);
         }
     }
@@ -156,7 +156,7 @@ padding: 0.4em 1.5em;
         letter-spacing: normal;
         vertical-align: middle;
         border-width: 0px 1px 0px 0px;
-        @include rounded(0);        
+        // @include rounded(0);        
         &:last-child {border-width: 0px;}
         &:not(.btn){
             background-color: $field_bg;

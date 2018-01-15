@@ -1,8 +1,5 @@
-@import "vars";
+@import "mixins";
 //-------------helpers
-._rnd {
-    border-radius: $rnd;
-}
 ._sh {
     @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
 }
@@ -60,3 +57,13 @@
     color: $txt_light;
     @include shadow(5px, 5px, 10px, #000);
 }
+
+//-------- square & circle blocks
+.square, .circle { 
+    overflow: hidden; position: relative;
+    background-position: 50%; background-size: cover;
+    &:after { padding-bottom: 100%; content: ''; display: block;}
+    & > * { position: absolute; width: 100%; height: 100%;  }
+  }
+.circle { border-radius: 50%; 
+shape-outside: ellipse();     background-clip: content-box;}
