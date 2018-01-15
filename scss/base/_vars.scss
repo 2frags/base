@@ -46,12 +46,12 @@ $txt_mid: #666;
 $txt_dark: #333;
 $table_brdr: #aaa;
 $td_even: #fafafa;
-$active: color(light_blue);
+$active: color('light_blue');
 $active_light: lighten($active, 44%);
 $f_active: $active;
-$tab_bg: color(white);
-$field_bg: color(white);
-$btn_clr: color(white);
+$tab_bg: color('white');
+$field_bg: color('white');
+$btn_clr: color('white');
 //----------------- fonts
 $line_h: 1.4em;
 $fontSize: 16px;
