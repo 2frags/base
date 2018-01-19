@@ -1,5 +1,17 @@
 @import "mixins";
 //-------------helpers
+//--------- svg background icons
+ [class*="icon-"] {
+    &:before {
+     background-size: contain;
+     width: 1.4em; height: 1.2em;
+     display: inline-block;
+     content: '';
+     margin-top: -.2em;
+     position: relative;
+    }
+  }
+//----------------------- icons end
 ._sh {
     @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
 }
@@ -9,44 +21,23 @@
 ._right { right:0px;}
 ._left {left: 0px;}
 ._bottom {bottom: 0px;}
+._rtl { direction: rtl;}
 
-.fl_l {
-    float: left;
-}
-.fl_r {
-    float: right;
-}
-.txt_l {
-    text-align: left;
-}
-.txt_r {
-    text-align: right;
-}
-.txt_c {
-    text-align: center;
-}
-.txt_j {
-    text-align: justify;
-}
-.txt_upper {
-    text-transform: uppercase;
-}
-.txt_lower {
-    text-transform: lowercase;
-}
-.txt_caps {
-    text-transform: capitalize;
-}
-.nowrap {
-    white-space: nowrap;
-}
-.v_top {
-    vertical-align: top
-}
-.v_base {
-    vertical-align: baseline;
-}
-.v_middl, .middl {
+.fl_l {   float: left;}
+.fl_r {    float: right;}
+
+._txt_l {    text-align: left;}
+._txt_r {    text-align: right;}
+._txt_c {    text-align: center;}
+._txt_j {    text-align: justify;}
+._txt_upper {    text-transform: uppercase;}
+._txt_lower {    text-transform: lowercase;}
+._txt_caps {    text-transform: capitalize;}
+
+._nowrap {    white-space: nowrap;}
+._v_top {    vertical-align: top}
+._v_base {    vertical-align: baseline;}
+._v_middl {
     &>* {
         vertical-align: middle;
         &:before {
