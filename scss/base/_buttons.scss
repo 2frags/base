@@ -66,9 +66,8 @@
         }
       }
     }
-    &:not(:empty):before {
-        margin-right: .2em;
-    }
+    &:not(:empty):before {  margin-right: .3em; }
+    &._rtl:not(:empty):before {  margin-right: 0; margin-left: .3em;}
     &._brdr {    
         &:hover {
             text-decoration: none;
