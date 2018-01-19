@@ -131,7 +131,6 @@ padding: 0.4em 1.5em;
        color: $color;
     }
 }
-._clr_inherit { color: inherit;}
    
 .disabled, [disabled], fieldset[disabled] .btn, ._off, ._light._off, ._dark._off {
     cursor: not-allowed;
@@ -185,6 +184,7 @@ padding: 0.4em 1.5em;
 }
 
   ._raw {background: transparent; border-color: transparent; color: inherit}
+  [class*="_txt_"] > * { color: inherit !important;}
   ._brdr, .__, .-_-, .\.\.\. {
     //   @include transition(border-radius ease-in-out .3s);
     // background: transparent;  
