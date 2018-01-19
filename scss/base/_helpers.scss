@@ -1,17 +1,14 @@
 @import "mixins";
 //-------------helpers
-//--------- svg background icons
- [class*="icon-"] {
+body [class*="icon-"] {
+    font-family: inherit !important;
     &:before {
-     background-size: contain;
-     width: 1.4em; height: 1.2em;
-     display: inline-block;
-     content: '';
-     margin-top: -.2em;
-     position: relative;
+        font-family: 'icomoon2' !important;
+        display: inline-block;
+        position: relative;
     }
-  }
-//----------------------- icons end
+}
+
 ._sh {
     @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
 }
