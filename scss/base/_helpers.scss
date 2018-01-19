@@ -11,6 +11,8 @@ body [class*="icon-"] {
         vertical-align: -16%;
         font-size: 1.4em;
     }
+    &:not(:empty):before {  margin-right: .35em; }
+    &._rtl:not(:empty):before {  margin-right: 0; margin-left: .35em;}
 }
 
 ._sh {

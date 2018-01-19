@@ -65,9 +65,9 @@
           width: 100%;
         }
       }
+      &:not(:empty):before {  margin-right: .35em; }
+      &._rtl:not(:empty):before {  margin-right: 0; margin-left: .35em;}
     }
-    &:not(:empty):before {  margin-right: .3em; }
-    &._rtl:not(:empty):before {  margin-right: 0; margin-left: .3em;}
     &._brdr {    
         &:hover {
             text-decoration: none;
