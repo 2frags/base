@@ -42,7 +42,7 @@
     background-repeat: no-repeat;
     border-style: solid;
     //color: $btn_clr;
-    &:not(._brdr):not(.-_-):not(.__):not(.\.\.\.):not(._raw) {color: $btn_clr;}
+    &:not(._brdr):not(.-_-):not(.__):not(.\.\.\.):not(._raw):not([class*="_txt_"]) {color: $btn_clr;}
     // &:not(._raw), &:not(._white) {color: $btn_clr;}
     &:hover, &:focus {outline: none;}
     &:last-child { margin-right: 0;}
@@ -127,7 +127,7 @@ padding: 0.4em 1.5em;
 }
 
 @each $colorname, $color in $map_colors {
-    ._txt_#{$colorname} {
+    ._txt_#{$colorname}, ._dark._txt_#{$colorname}, ._light._txt_#{$colorname} {
        color: $color;
     }
     // ._bg_#{$colorname} {
