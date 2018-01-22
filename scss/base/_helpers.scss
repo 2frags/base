@@ -33,10 +33,10 @@ body [class*="icon-"] {
 ._txt_r {    text-align: right;}
 ._txt_c {    text-align: center;}
 ._txt_j {    text-align: justify;
-    &:after {
-        content: ''; display: inline-block;
-        overflow: hidden; width: 100%; height: 0;
-    }
+    // &:after {
+    //     content: ''; display: inline-block;
+    //     overflow: hidden; width: 100%; height: 0;
+    // }
 }
 ._txt_upper {    text-transform: uppercase;}
 ._txt_lower {    text-transform: lowercase;}
@@ -46,14 +46,16 @@ body [class*="icon-"] {
 ._v_top {    vertical-align: top}
 ._v_base {    vertical-align: baseline;}
 ._v_middl {
-    &>* {
-        vertical-align: middle;
-        &:before {
-            content: '';
-            height: 100%;
-        }
+    vertical-align: middle;
+    &:before {
+        display: inline-block;
+        height: 100%;
+        // vertical-align: middle;
+        content: "";
     }
+    & > * {display: inline-block; vertical-align: middle;}
 }
+._abs_full { position: absolute; top: 0px; left:0px; right:0px; bottom: 0px;}
 .tab {
     color: $txt_light;
     box-sizing: border-box;
