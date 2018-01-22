@@ -130,6 +130,9 @@ padding: 0.4em 1.5em;
     ._txt_#{$colorname} {
        color: $color;
     }
+    // ._bg_#{$colorname} {
+    //     background-color: $color;
+    //  }
 }
    
 .disabled, [disabled], fieldset[disabled] .btn, ._off, ._light._off, ._dark._off {
