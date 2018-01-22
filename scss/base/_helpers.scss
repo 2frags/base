@@ -53,8 +53,7 @@ body [class*="icon-"] {
         vertical-align: middle;
         content: "";
         width: 0px;
-        margin-left: -.25em;
-        overflow: hidden;
+        margin-left: -.3em;
     }
     & > * {display: inline-block; vertical-align: middle;}
 }
