@@ -50,8 +50,11 @@ body [class*="icon-"] {
     &:before {
         display: inline-block;
         height: 100%;
-        // vertical-align: middle;
+        vertical-align: middle;
         content: "";
+        width: 0px;
+        margin-left: -.25em;
+        overflow: hidden;
     }
     & > * {display: inline-block; vertical-align: middle;}
 }
