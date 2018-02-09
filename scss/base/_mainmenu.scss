@@ -44,7 +44,7 @@
 }
 //----------------------- !!! styles for mobile mainmenu
 .js-menu #mainmenu {
-    left: -$menu_fixed_W;
+    left: -100%;
     @include transition(left .3s ease-in-out);
     // background: $bg_2;
     // top: $page_hdr_H;
