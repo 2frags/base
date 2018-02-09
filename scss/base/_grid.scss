@@ -67,117 +67,22 @@
 .col.on {
     display: inline-block;
 }
-@include mquery(min-width, $xx) {
-    .xx0 {
-        display: none;
+//------------ mixin
+@each $j in $media-sizes {
+    //.red { color: $#{$j};}
+    @include mquery(min-width, nth($j, 2)) {
+        .#{nth($j, 1)}-0 {width: 0; padding: 0;}
+        .#{nth($j, 1)}-hide {display: none;}
+        .#{nth($j, 1)}-show {display: inline-block;}
+        .#{nth($j, 1)}-gap-0 {margin-left: 0; }
+    @for $i from 1 through $columns {      
+            .#{nth($j, 1)}-#{$i} {         
+                width: 100% / $columns * $i;   
+            }  
+            .#{nth($j, 1)}-gap-#{$i} {
+                margin-left: 100% / $columns * $i;
+            }         
+        }         
+      .#{nth($j, 1)}-txt_r { text-align: right;  }  
     }
-    .xx-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .xx-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .xx-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .xx-txt_r {
-        text-align: right;
-    }
-}
-@include mquery(min-width, $xs) {
-    .xs0 {
-        display: none;
-    }
-    .xs-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .xs-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .xs-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .xs-txt_r {
-        text-align: right;
-    }
-}
-@include mquery(min-width, $s) {
-    .s0 {
-        display: none;
-    }
-    .s-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .s-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .s-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .s-txt_r {
-        text-align: right;
-    }
-}
-@include mquery(min-width, $m) {
-    .m0 {
-        display: none;
-    }
-    .m-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .m-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .m-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .m-txt_r {
-        text-align: right;
-    }
-}
-@include mquery(min-width, $l) {
-    .l0 {
-        display: none;
-    }
-    .l-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .l-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .l-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .l-txt_r {
-        text-align: right;
-    }
-}
-@include mquery(min-width, $xl) {
-    .xl0 {
-        display: none;
-    }
-    .xl-gap-0 {
-        margin-left: 0;
-    }
-    @for $i from 1 to $columns+1 {
-        .xl-#{$i} {
-            width: 100% / $columns * $i;
-        }
-        .xl-gap-#{$i} {
-            margin-left: 100% / $columns * $i;
-        }
-    }
-    .xl-txt_r {
-        text-align: right;
-    }
-}
+  }
