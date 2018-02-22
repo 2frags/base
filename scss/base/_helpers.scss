@@ -16,7 +16,7 @@ body [class*="icon-"] {
 }
 
 ._sh {
-    @include shadow(2px, 2px, 8px, rgba(0, 0, 0, .3));
+    @include shadow(2px  2px  8px  rgba(0, 0, 0, .3));
 }
 ._abs { position: absolute;}
 ._rel { position: relative;}
