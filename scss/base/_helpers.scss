@@ -29,10 +29,10 @@ body [class*="icon-"] {
 .fl_l {   float: left;}
 .fl_r {    float: right;}
 
-._txt_l {    text-align: left;}
-._txt_r {    text-align: right;}
-._txt_c {    text-align: center;}
-._txt_j {    text-align: justify;
+.txt_l {    text-align: left;}
+.txt_r {    text-align: right;}
+.txt_c {    text-align: center;}
+.txt_j {    text-align: justify;
     // &:after {
     //     content: ''; display: inline-block;
     //     overflow: hidden; width: 100%; height: 0;
