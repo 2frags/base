@@ -1,52 +1,84 @@
 @import "mixins";
-table {
+
+.table {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
-    tr:nth-child(even)>td {
+    border-style: solid;
+    border-width: 0px;
+    border-color:$table_brdr;
+    background: transparent;
+    // border: $table_brdr 1px solid;
+    .grid {margin: -1px 0px;
+        & > * {margin: 0 0px -1px 0px; border-right: none;}
+    }
+    tr:nth-child(even)>td, & > .grid:nth-child(even) {
         background: $td_even;
     }
-    td, th {
-        padding: 0.5em 1em;
-        border: none;
-        &:first-child {
-            border-left-width: 0;
-        }
-        th {
-            border-bottom: $table_brdr 1px solid;
-        }
+    * {border-color: inherit; border-style: inherit; border-width: 0;}
+    tr > *, .grid > * {
+        padding: $btn_padd_v $btn_padd_h;
     }
-    &.brdr {
-        border: $table_brdr 1px solid;
+    &:not(.-_-):not(.\.\.\.)  {border-style: solid;}
+    &._brdr{
+        border-width: 1px;
     }
-    &.h_brdr {
-        td, th {
-            border-bottom: $table_brdr 1px solid;
+    &._brdr_v {
+        tr > *, .grid > * {
+            border-left-width: 1px;
+            &:first-of-type {border-left-width: 0px;}
         }
     }
-    &.v_brdr {
-        td, th {
-            border-left: $table_brdr 1px solid;
-            &:first-child {
-                border-left-width: 0;
-            }
+    &._brdr_h {
+        tr > *, .grid > * {
+            border-bottom-width: 1px;
+        }
+        tr:last-of-type, .grid:last-of-type  {
+            & > * { border-bottom-width: 0px;}
         }
     }
-    &.all_brdr {
-        border: $table_brdr 1px solid;
-        td, th {
-            border-bottom: $table_brdr 1px solid;
-            border-left: $table_brdr 1px solid;
-            &:first-child {
-                border-left-width: 0;
-            }
+    &._brdr_full {border-width: 1px;
+        tr > *, .grid > * {
+            border-width: 1px;
+            &:first-of-type {border-left-width: 0px;}
         }
     }
-    &.fit {
-        td, th {
-            padding: 0.2em .4em;
-        }
-    }
+    // &.__ {
+    //     border-style: solid;
+    //     border-bottom-width: 1px; 
+    //     td, th, .grid > * {
+    //         border-bottom-width: 1px;
+    //     }
+        
+    // }
+    // &.h_brdr {
+    //     td, th {
+    //         border-bottom: $table_brdr 1px solid;
+    //     }
+    // }
+    // &.v_brdr {
+    //     td, th {
+    //         border-left: $table_brdr 1px solid;
+    //         &:first-child {
+    //             border-left-width: 0;
+    //         }
+    //     }
+    // }
+    // &.all_brdr {
+    //     border: $table_brdr 1px solid;
+    //     td, th {
+    //         border-bottom: $table_brdr 1px solid;
+    //         border-left: $table_brdr 1px solid;
+    //         &:first-child {
+    //             border-left-width: 0;
+    //         }
+    //     }
+    // }
+    // &.fit {
+    //     td, th {
+    //         padding: 0.2em .4em;
+    //     }
+    // }
     &.tr_hover, &.td_hover {
         td {
             @include transition(background ease-in-out .2s);

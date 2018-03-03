@@ -30,7 +30,7 @@
               <div>Also <code>flexbox</code> have a lot of issues on IE 10 & 11.      </div>
               <h4>Grid options</h4>
               <hr>
-              <table class="v_brdr h_brdr brdr">
+              <table class="table v_brdr h_brdr brdr">
                 <tr> 
                   <th>class</th>
                   <th>Media-query</th>
@@ -519,9 +519,8 @@
                 </div>
                 <div class="col m-6">
                   <p></p>
-                  <p>
-                     Adding outer border to table:   <code>.brdr</code></p>
-                  <table class="brdr">
+                  <p>Adding outer border to table:   <code>._brdr</code></p>
+                  <table class="table _brdr">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -547,8 +546,8 @@
                 <div class="col m-6">
                   <p> </p>
                   <p>
-                     Vertical borders table:   <code>.v_brdr</code></p>
-                  <table class="v_brdr">
+                     Vertical borders table:   <code>._brdr_v</code></p>
+                  <table class="table _brdr_v">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -574,8 +573,8 @@
                 <div class="col m-6">
                   <p> </p>
                   <p>
-                     Horizontal borders table:   <code>.h_brdr</code></p>
-                  <table class="h_brdr">
+                     Horizontal borders table:   <code>._brdr_h</code></p>
+                  <table class="table _brdr_h">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -601,8 +600,8 @@
                 <div class="col">
                   <p> </p>
                   <p>
-                     Also we can use any combinations of outher   <code>.brdr   </code>, horisontal <code>.h_brdr    </code> and vertical   <code>.v_brdr </code> borders. Or use   <code>.all_brdr </code>for fully bordered table.</p>
-                  <table class="brdr v_brdr h_brdr">
+                     Also we can use any combinations of outher   <code>.brdr   </code>, horisontal <code>._brdr_v    </code> and vertical   <code>._brdr_h </code> borders. Or use   <code>._brdr_full </code>for fully bordered table.</p>
+                  <table class="table _brdr_full">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -632,7 +631,7 @@
                   <p> </p>
                   <p>
                      Use   <code>.tr_hover     </code> for tr hovering </p>
-                  <table class="brdr h_brdr tr_hover">
+                  <table class="table _brdr_full tr_hover">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -659,7 +658,7 @@
                   <p> </p>
                   <p>
                      Use   <code>.td_hover     </code> for td hovering </p>
-                  <table class="brdr h_brdr td_hover">
+                  <table class="table _brdr_full td_hover">
                     <tr> 
                       <th>First Name</th>
                       <th>Last name</th>
@@ -681,6 +680,28 @@
                       <td>1984   </td>
                     </tr>
                   </table>
+                </div>
+
+                <div class="col m-6">
+                    <p></p>
+                    <p>And CSS tables:   <code>.table._brdr._brdr</code></p>
+                  <div class="table _brdr _brdr">
+                    <div class="grid _strong">
+                      <div class="xx-5">First Name</div> 
+                      <div class="xx-4">Last Name</div> 
+                      <div class="xx-3">Year</div> 
+                    </div>
+                    <div class="grid">
+                      <div class="xx-5">Barton</div> 
+                      <div class="xx-4">Fink</div> 
+                      <div class="xx-3">1991</div> 
+                    </div>
+                    <div class="grid">
+                      <div class="xx-5">Sundance</div> 
+                      <div class="xx-4">Kid</div> 
+                      <div class="xx-3">1969</div> 
+                    </div>
+                  </div>  
                 </div>
               </div>
             </div>
