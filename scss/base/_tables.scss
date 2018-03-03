@@ -80,14 +80,18 @@
     //     }
     // }
     &.tr_hover, &.td_hover {
-        td {
+        td, .grid > * {
             @include transition(background ease-in-out .2s);
         }
     }
-    &.tr_hover tr:hover td {
-        background: $active_light;
+    &.tr_hover {
+        tr:hover td, .grid:hover > *  {
+            background: $active_light;
+        }
     }
-    &.td_hover td:hover {
-        background: $active_light;
+    &.td_hover {
+        td:hover, .grid > *:hover {
+            background: $active_light;
+        }
     }
 }
