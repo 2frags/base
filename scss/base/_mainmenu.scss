@@ -65,6 +65,8 @@ body:not(.js-menu) #mainmenu {
       opacity: 0;
       max-height: 0;
       overflow: hidden;
+      min-width: 100%;
+      a, span { height: auto; line-height: 1.3em;}
     }
     li:hover {
         ul {
