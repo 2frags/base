@@ -101,14 +101,14 @@ body:not(.js-menu) #mainmenu {
     width: $menu_fixed_W;
     &:before { display: none;}
     li {        display: block;    }
-    li:hover > a { padding-left: 20px;}
+    a:hover { padding-left: 20px;}
     a, span {
         text-align: left; padding: $colGap 10px; line-height: 1em;
     }
     ul {
         position: relative;        
-        a, span {padding: $colGap*.8 10px $colGap*.8 20px; }
-        a { padding-left: 40px;}
+        a, span {padding: $colGap*.8 10px $colGap*.8 30px; }
+        a:hover { padding-left: 40px;}
     }
 }
 header:not(.sticky) ~ .main_wrap {transform: translate3d(0,0,0);}
