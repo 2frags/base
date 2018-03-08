@@ -41,6 +41,13 @@
 }
 #mainmenu {
     display: inline-block;
+    &:before {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        content: "";
+        width: 0px;
+    }
 }
 //----------------------- !!! styles for mobile mainmenu
 .js-menu #mainmenu {
@@ -56,6 +63,7 @@
     position: fixed;
     z-index: 10000;
     width: $menu_fixed_W;
+    &:before { display: none;}
     li {
         display: block;
     }
