@@ -98,9 +98,8 @@ body:not(.js-menu) #mainmenu {
     z-index: 10000;
     width: $menu_fixed_W;
     &:before { display: none;}
-    li {
-        display: block;
-    }
+    li {        display: block;    }
+    li:hover > a { padding-left: 20px;}
     a, span {
         text-align: left; padding: $colGap 10px; line-height: 1em;
     }
