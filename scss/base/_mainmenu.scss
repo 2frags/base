@@ -19,9 +19,7 @@
         @include transition(opacity .3s ease-in-out);
     }
 }
-.js-menu #mainmenu {
-    background: inherit;
-}
+
 .js-menu_on {
     .js_inner_wrap {
         left: $menu_fixed_W;
@@ -48,8 +46,44 @@
         content: "";
         width: 0px;
     }
+    // li a, li span { padding: $page_hdr_H/3 10px; line-height: $page_hdr_H/3}
+}
+//----------------------- !!! styles for wide screen mainmenu
+body:not(.js-menu) #mainmenu { 
+    overflow: visible !important;
+    letter-spacing: -10px;  
+    white-space: nowrap; 
+    max-width: 105%;
+    margin-left: -$colGap;
+    margin-right: -$colGap;
+    // height: $page_hdr_H;
+    ul {
+      background: inherit;
+      transition: all ease-in-out .3s;
+      position: absolute; 
+      top: 100%;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+    }
+    li:hover {
+        ul {
+            overflow: visible;
+            max-height: 1000px;
+            opacity: 1;
+        }
+    }
+    a, span {height: inherit;}
+    & > li {
+    height: inherit;  
+    // vertical-align: middle;
+    letter-spacing: normal;
+    }
 }
 //----------------------- !!! styles for mobile mainmenu
+// .js-menu #mainmenu {
+//     background: inherit;
+// }
 .js-menu #mainmenu {
     left: -100%;
     @include transition(left .3s ease-in-out);
@@ -67,10 +101,16 @@
     li {
         display: block;
     }
-    a {
-        text-align: left;
+    a, span {
+        text-align: left; padding: $colGap 10px; line-height: 1em;
+    }
+    ul {
+        position: relative;        
+        a, span {padding: $colGap*.8 10px $colGap*.8 20px; }
+        a { padding-left: 40px;}
     }
 }
+header:not(.sticky) ~ .main_wrap {transform: translate3d(0,0,0);}
 // @if $menu_dark {
 //     .js-menu #mainmenu {
 //         background: $txt_dark;

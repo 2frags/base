@@ -90,23 +90,35 @@ body:before {
     display: block;
 }
 .navbar {
+    height: $page_hdr_H;
+    line-height: $page_hdr_H;
+    vertical-align: middle;
     &>*, .nav, li, a {
         color: inherit;
         background: inherit;
     }
     .col {
-        vertical-align: middle;
+        // vertical-align: middle;
     }
+    &:before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+        width: 0px;
+    }
+    .btn { vertical-align: baseline;}
 }
 .nav {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
-    vertical-align: middle;
-    li a {
+    // vertical-align: middle;
+    li a, li span {
         display: block;
         text-decoration: none;
-        padding: $fld_padd_h $fld_padd_v;
+        padding: 0 $fld_padd_v;
+        line-height: inherit;
     }
     &>li {
         display: inline-block;

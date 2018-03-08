@@ -47,7 +47,9 @@
     &:hover, &:focus {outline: none;}
     &:last-child { margin-right: 0;}
     &[class*="icon-"] {
-        line-height: inherit;
+        &:not(:empty) {
+            line-height: inherit;
+        }
       &:before {
         // vertical-align: 0%;
             // color: inherit;
@@ -151,6 +153,11 @@ padding: 0.4em 1.5em;
       padding: 0;
       margin-bottom: $colGap;
       letter-spacing: -.5em;
+      &._rnd {
+        & > *:not(:last-child):not(:first-child) { border-radius: 0px;}
+        & > *:last-child { border-bottom-left-radius:0px;border-bottom-left-radius: 0px; }
+        & > *:first-child { border-bottom-right-radius:0px;border-top-right-radius: 0px; }
+      }
     & > * {
         margin: 0px; 
         letter-spacing: normal;
