@@ -87,7 +87,7 @@ body:not(.js-menu) #mainmenu {
 //     background: inherit;
 // }
 .js-menu #mainmenu {
-    left: -100%;
+    left: -$menu_fixed_W;
     @include transition(left .3s ease-in-out);
     // background: $bg_2;
     // top: $page_hdr_H;
