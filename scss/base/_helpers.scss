@@ -78,3 +78,5 @@ body [class*="icon-"] {
   }
 .circle { border-radius: 50%; 
 shape-outside: ellipse();     background-clip: content-box;}
+._bg_contain { background-size: contain;}
+._bg_cover { background-size: cover;}
