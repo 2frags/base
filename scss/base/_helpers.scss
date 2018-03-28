@@ -71,6 +71,7 @@ body [class*="icon-"] {
 
 //-------- square & circle blocks
 .square, .circle { 
+    background-repeat: no-repeat;
     overflow: hidden; position: relative;
     background-position: 50%; background-size: cover;
     &:after { padding-bottom: 100%; content: ''; display: block;}
