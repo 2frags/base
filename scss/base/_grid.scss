@@ -73,6 +73,8 @@
     @include mquery(min-width, nth($j, 2)) {
         .#{nth($j, 1)}-0 {width: 0; padding: 0;}
         .#{nth($j, 1)}-hide {display: none;}
+        .#{nth($j, 1)}-abs {position: absolute;}
+        .#{nth($j, 1)}-rel {position: relative;}
         .#{nth($j, 1)}-show {display: inline-block;}
         .#{nth($j, 1)}-gap-0 {margin-left: 0; }
         [class*="#{nth($j, 1)}-marg"] {margin: $colGap; }
