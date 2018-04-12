@@ -55,10 +55,12 @@ $(document).ready(function() {
     })
 
     //=============== js hamburger menu
-    $('.js-menu-btn').on('click', function() {
+    $('body').on('mouseup', '.js-menu-btn', function(e) {
         var target_menu = $(this).data('target');
         //console.log(target_menu + ' ' + $('body').attr('class'));
+        e.stopPropagation();
         if (target_menu == mainmenu) {
+            console.log(target_menu + $('body').attr('class'));
             $('body').toggleClass('js-menu_on');
         } else if (target_menu) {
             $(target_menu).slideToggle(300);
