@@ -88,6 +88,7 @@ input, textarea, select {
     border: 1px solid $table_brdr;
     background: transparent;
     color: $txt_mid;
+    line-height: $fld_line_h;
     @include transition(border ease-in-out .15s);
     &:focus {
         outline: 0;
@@ -104,8 +105,6 @@ input, textarea, select {
 }
 input, select, textarea {
     width: 100%;
-}
-input, .btn, select, textarea {
     padding: $fld_padd_v $fld_padd_h;
     font-family: $font;
 }

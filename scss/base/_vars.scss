@@ -11,9 +11,16 @@ $media-sizes: xx $xx, xs $xs, s $s, m $m, l $l, xl $xl;
 $columns:12;
 $colGap:0.6rem;
 $page_padd: 1%;
-
-$btn_padd_v: 0.4em;
-$btn_padd_h: 0.8em;
+//----------------- form sizes
+$fld_line_h: 1.2em;
+$fld_padd_v: .4em;
+$fld_padd_h: .5em; 
+$btn_padd_v: $fld_padd_v;
+$btn_padd_h: $fld_padd_h*2;
+//---------------round corners
+$rnd: .3em;
+$rnd2x: 2em;
+$tabs_rnd: .3em;
 //------------------- hdr
 $page_hdr_H: 3rem;
 $menu_fixed_W: 400px;
@@ -69,10 +76,3 @@ $h7:.8rem;
 $h8:.7rem;
 $font:'Open Sans', Arial, sans-serif;
 $serif: Georgia, Times, 'Times New Roman', serif;
-//----------------- form sizes
-$fld_padd_h: .5em; 
-$fld_padd_v: .4em;
-//---------------round corners
-$rnd: .3em;
-$rnd2x: 2em;
-$tabs_rnd: .3em;

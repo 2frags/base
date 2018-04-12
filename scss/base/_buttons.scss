@@ -19,6 +19,7 @@
     margin: 0 $colGap/4 $colGap/2 0;
 }
 .btn {
+    font-family: $font;
     padding: $btn_padd_v $btn_padd_h;
     margin: 0 $colGap/4 0 0;
     position: relative;
@@ -32,7 +33,8 @@
     cursor: pointer;
     // width: auto;
     max-width: 100%;
-    line-height: inherit;
+    // line-height: inherit;
+    line-height: $fld_line_h;
     font-weight: 100;
     // border: transparent 1px solid;
     border-width: 1px;
@@ -47,9 +49,9 @@
     &:hover, &:focus {outline: none;}
     &:last-child { margin-right: 0;}
     &[class*="icon-"] {
-        &:not(:empty) {
-            line-height: inherit;
-        }
+        // &:not(:empty) {
+        //     line-height: inherit;
+        // }
       &:before {
         // vertical-align: 0%;
             // color: inherit;
@@ -171,6 +173,7 @@ padding: 0.4em 1.5em;
         }
         &.btn {
             background: inherit; 
+            line-height: inherit;
             border-right-color: rgba(255,255,255, .2);
         }
         &:not([class*="col-"]) { width: auto;}

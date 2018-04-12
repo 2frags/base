@@ -96,6 +96,7 @@ body:before {
     &>*, .nav, li, a {
         color: inherit;
         background: inherit;
+        line-height: inherit;
     }
     .col {
         // vertical-align: middle;

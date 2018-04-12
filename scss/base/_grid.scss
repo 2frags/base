@@ -4,6 +4,7 @@
     position: relative;
     letter-spacing: -3rem;
     font-size: 0;
+    line-height: 0;
     &.grid_l {
         text-align: left;
     }
@@ -31,6 +32,7 @@
     display: inline-block;
     letter-spacing: normal;
     font-size: 1rem;
+    line-height: 1.4em;
     text-align: left;
     vertical-align: top;
 }
