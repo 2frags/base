@@ -35,7 +35,7 @@ $(document).ready(function() {
     $(document).on('mouseup', 'body.js-menu_on', function() {
         $(this).removeClass('js-menu_on');
     });
-    $('#mainmenu').mouseup(function(e) {
+    $('#mainmenu:not(.hide-on-click)').mouseup(function(e) {
         e.stopPropagation();
     });
 
