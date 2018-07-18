@@ -1,5 +1,39 @@
+window.$ = jQuery;
+window.jQuery = jQuery;
 var mainmenu = '#mainmenu';
+$.cachedScript = function( url, options ) {
+    options = $.extend( options || {}, {dataType: "script",  cache: true, url: url});
+    return jQuery.ajax( options );
+};
+$.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.6/release/featherlight.min.js" ).done(function( script, textStatus ) {
+    console.log( textStatus );
+    
+    $('._fl_menu').featherlight({
+        targetAttr: 'data-sub',
+        variant: '_sub',
+        afterOpen: function(event){
+            console.log(this); // this contains all related elements
+            console.log(this.$currentTarget[0]); // this contains all related elements
+            console.log(this.targetAttr); // this contains all related elements
+        },
+        root: $(this).parent()
+        // root: '#panel1'
+    });
+  });
+
+var featherlight_sub = {
+    //root: $(this).closest('.navbar'),
+    variant: '_sub',
+	afterOpen: function(event){
+        console.log(this); // this contains all related elements
+    },
+    onResize: function(event){
+        console.log(this); // this contains all related elements
+    }
+};
 $(document).ready(function() {
+    // $('#test').featherlight('#menu2');
+    // $('[data-sub]').featherlight($(this).attr('data-sub'), featherlight_sub);
     //===============sticky header
     var scrollTimeout;
     scrolled = 0;
@@ -18,59 +52,9 @@ $(document).ready(function() {
             $('#mainmenu li').removeClass("active");
         }
     }
-    //================ js-hamburger
-    function mainmenu_pos($el) {
-        //$($el).is(':visible') ? $('body').addClass('js-menu') : $('body').removeClass('js-menu');
-        $($el).each(function() {
-            var target_menu = $(this).data('target');
-            if (target_menu == mainmenu) {
-                $(this).is(':visible') ? $('body').addClass('js-menu') : $('body').removeClass('js-menu');
-            } else if (target_menu) {
-                $(this).is(':visible') ? $(target_menu).parent().addClass('js-menu_hide') : $(target_menu).attr('style', '').parent().removeClass('js-menu_hide js-menu_on');
-            }
-        });
-
-    }
-    //=============== js-show_block
-    $(document).on('mouseup', 'body.js-menu_on', function() {
-        $(this).removeClass('js-menu_on');
-    });
-    $('#mainmenu:not(.hide-on-click)').mouseup(function(e) {
-        e.stopPropagation();
-    });
-
-    // $('.js-click_show').one('click', function() {
-    //     $(this).addClass('hide');
-    // })
-    mainmenu_pos('.js-menu-btn');
-    // mainmenu_pos('#mainmenu_toggle');
-
-    // $('#mainmenu_toggle').click(function() {
-    //     $('body').toggleClass('js-menu_on');
-    // })
-
-    $(window).resize(function() {
-        mainmenu_pos('.js-menu-btn');
-        $('body').removeClass('js-menu_on');
-    })
-
-    //=============== js hamburger menu
-    $('body').on('mouseup', '.js-menu-btn', function(e) {
-        var target_menu = $(this).data('target');
-        //console.log(target_menu + ' ' + $('body').attr('class'));
-        e.stopPropagation();
-        if (target_menu == mainmenu) {
-            console.log(target_menu + $('body').attr('class'));
-            $('body').toggleClass('js-menu_on');
-        } else if (target_menu) {
-            $(target_menu).slideToggle(300);
-            $(target_menu).parent().toggleClass('js-menu_on');
-        }
-    })
+   
     //=============== tabs
     $('.tabs').on('click', ' dt:not(.on)', function() {
-        // $(this).next('dd').slideToggle(500);
-        // $(this).siblings('dt.on + dd').slideToggle(500);
         $(this).addClass('on').siblings('dt').removeClass('on');
     })
 })

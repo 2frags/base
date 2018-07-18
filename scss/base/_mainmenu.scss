@@ -1,42 +1,4 @@
 @import "mixins";
-.js-main_wrap {
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    min-height: inherit;
-}
-.js_inner_wrap {
-    width: 100%;
-    position: relative;
-    min-height: inherit;
-    left: 0;
-    @include transition(left .3s ease-in-out);
-    &:before {
-        content: '';
-        position: absolute;
-        background: #000;
-        opacity: 0;
-        @include transition(opacity .3s ease-in-out);
-    }
-}
-
-.js-menu_on {
-    .js_inner_wrap {
-        left: $menu_fixed_W;
-        &:before {
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            bottom: 0px;
-            z-index: 999;
-            opacity: .3;
-        }
-    }
-    &.js-menu #mainmenu {
-        left: 0;
-        @include shadow(0px, 4px, 10px, #333);
-    }
-}
 #mainmenu {
     display: inline-block;
     &:before {
@@ -49,83 +11,66 @@
     // li a, li span { padding: $page_hdr_H/3 10px; line-height: $page_hdr_H/3}
 }
 //----------------------- !!! styles for wide screen mainmenu
-body:not(.js-menu) #mainmenu { 
-    overflow: visible !important;
-    letter-spacing: -10px;  
-    white-space: nowrap; 
-    max-width: 105%;
-    margin-left: -$colGap;
-    margin-right: -$colGap;
-    // height: $page_hdr_H;
-    ul {
-      background: inherit;
-      transition: all ease-in-out .3s;
-      position: absolute; 
-      top: 100%;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      min-width: 100%;
-      a, span { height: auto; line-height: 1.3em; padding: .6rem 10px;}
-    }
-    li:hover {
-        ul {
-            overflow: visible;
-            max-height: 1000px;
-            opacity: 1;
-        }
-    }
-    a, span {height: inherit;}
-    & > li {
-    height: inherit;  
-    // vertical-align: middle;
-    letter-spacing: normal;
-    }
-}
-//----------------------- !!! styles for mobile mainmenu
+// body:not(.js-menu) #mainmenu { 
+//     overflow: visible !important;
+//     letter-spacing: -10px;  
+//     white-space: nowrap; 
+//     max-width: 105%;
+//     margin-left: -$colGap;
+//     margin-right: -$colGap;
+//     // height: $page_hdr_H;
+//     ul {
+//       background: inherit;
+//       transition: all ease-in-out .3s;
+//       position: absolute; 
+//       top: 100%;
+//       opacity: 0;
+//       max-height: 0;
+//       overflow: hidden;
+//       min-width: 100%;
+//       a, span { height: auto; line-height: 1.3em; padding: .6rem 10px;}
+//     }
+//     li:hover {
+//         ul {
+//             overflow: visible;
+//             max-height: 1000px;
+//             opacity: 1;
+//         }
+//     }
+//     a, span {height: inherit;}
+//     & > li {
+//     height: inherit;  
+//     // vertical-align: middle;
+//     letter-spacing: normal;
+//     }
+// }
+// //----------------------- !!! styles for mobile mainmenu
+// // .js-menu #mainmenu {
+// //     background: inherit;
+// // }
 // .js-menu #mainmenu {
-//     background: inherit;
+//     left: -$menu_fixed_W;
+//     @include transition(left .3s ease-in-out);
+//     // background: $bg_2;
+//     // top: $page_hdr_H;
+//     top: 0px;
+//     overflow-y: auto;
+//     padding: $colGap 0 0 0;
+//     margin: 0px;
+//     height: 100%;
+//     position: fixed;
+//     z-index: 10000;
+//     width: $menu_fixed_W;
+//     &:before { display: none;}
+//     li {        display: block;    }
+//     a:hover { padding-left: 20px;}
+//     a, span {
+//         text-align: left; padding: $colGap 10px; line-height: 1em;
+//     }
+//     ul {
+//         position: relative;        
+//         a, span {padding: $colGap*.8 10px $colGap*.8 30px; }
+//         a:hover { padding-left: 40px;}
+//     }
 // }
-.js-menu #mainmenu {
-    left: -$menu_fixed_W;
-    @include transition(left .3s ease-in-out);
-    // background: $bg_2;
-    // top: $page_hdr_H;
-    top: 0px;
-    overflow-y: auto;
-    padding: $colGap 0 0 0;
-    margin: 0px;
-    height: 100%;
-    position: fixed;
-    z-index: 10000;
-    width: $menu_fixed_W;
-    &:before { display: none;}
-    li {        display: block;    }
-    a:hover { padding-left: 20px;}
-    a, span {
-        text-align: left; padding: $colGap 10px; line-height: 1em;
-    }
-    ul {
-        position: relative;        
-        a, span {padding: $colGap*.8 10px $colGap*.8 30px; }
-        a:hover { padding-left: 40px;}
-    }
-}
 header:not(.sticky) ~ .main_wrap {transform: translate3d(0,0,0);}
-// @if $menu_dark {
-//     .js-menu #mainmenu {
-//         background: $txt_dark;
-//     }
-//     .js-menu #mainmenu a {
-//         color: #ddd;
-//         border-bottom: rgba(255, 255, 255, .1) 1px solid;
-//     }
-// } @else {    
-//     .js-menu #mainmenu {
-//         background: $txt_dark;
-//     }
-//     .js-menu #mainmenu a {
-//         color: #ddd;
-//         border-bottom: rgba(0, 0, 0, .05) 1px solid;
-//     }
-// }

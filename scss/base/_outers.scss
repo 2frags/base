@@ -1,0 +1,32 @@
+@import "vars";
+// ====================================================== featherlight
+.featherlight {
+    &[class*=_bar] .featherlight-content {padding: 0px; margin: 0px; border: 0; position: absolute;}
+    &._hr_bar .featherlight-content {width: 100vw; }
+    &._vr_bar .featherlight-content {height: 100vh; max-height: 100vh; }
+    &._top .featherlight-content  { top: inherit; }
+    &._left .featherlight-content  { left: inherit; }
+    &._right .featherlight-content  { right: inherit;}
+    &._bottom .featherlight-content  { bottom: inherit;}
+    &:last-of-type { background: transparent;
+        &:after { content: ''; z-index: 0; width: 100vw; height: 100vh; top:0px; display: block; background: rgba(0,0,0,0.4);
+            -webkit-transform: translate3d(0,0,0); position: absolute;
+        }
+    }
+    .featherlight-content { z-index: 1;}
+    &._sub {
+        background-color: inherit;
+        position: absolute;
+        top: 100%;
+        height: auto;
+        &:after { display: none;}
+        .featherlight-content {
+            position: absolute;
+            left: 0px;
+            width: 100%;
+            height: auto;
+            background-color: inherit;
+            max-height: initial;
+        }
+    }
+}
