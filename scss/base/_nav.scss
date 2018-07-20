@@ -64,15 +64,43 @@ body:before {
     }
 }
 //---------------------------------------- navs
+.js-menu_on {
+    // background: inherit;
+}
+.js-menu_on:before {
+    content: '\00a0';
+} 
+.js-menu_hide>.nav {
+    position: absolute;
+    // max-height: 0px;
+    left: 0px;
+    top: 100%;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+    background: inherit;
+    // @include transition(max-height .3s ease-in-out);
+    &>li {
+        display: block;
+    }
+    a, span { padding: $colGap; display: block;}
+}
+.js-menu_on>.nav {
+    // max-height: 50000px;
+    display: block;
+}
+//---------------------------------------- navs
 
-.navbar {
-    height: $page_hdr_H;
-    line-height: $page_hdr_H;
+[class*=navbar] {
+    // height: $page_hdr_H;
+    // line-height: $page_hdr_H;
+    // &:not(._vr_navbar) {height: 2em;}    
     vertical-align: middle;
     &>*, .nav, li, a {
         color: inherit;
         background: inherit;
-        line-height: inherit;
+        // line-height: inherit;
+        line-height: 3em;
     }
     .col {
         // vertical-align: middle;
@@ -86,10 +114,13 @@ body:before {
     }
     .btn { vertical-align: baseline;}
 }
+//------------- nav
 .nav {
     list-style-type: none;
     margin: 0px;
     padding: 0px;
+    li { margin: 0;}
+    a { color: inherit;}
     // vertical-align: middle;
     li a, li span {
         display: block;
@@ -101,11 +132,19 @@ body:before {
         display: inline-block;
     }
 }
-.navbar li a {
+[class*=navbar]  li a {
+    display: inline-block;
     @include transition(all .3s ease-in-out);
     &:hover {
         background-color: rgba(255, 255, 255, .1);
     }
+}
+._vr_navbar, ._hr_navbar {
+    li { list-style-type: none;}
+}
+._vr_navbar {vertical-align: top;}
+._vr_navbar .nav {
+    li {display: block; margin: 0px; line-height: 2em;}
 }
 //---------------------------- dropdowns
 .drop_hover {
@@ -188,9 +227,3 @@ body:before {
     }
 }
 //----------------------- Queries
-@include mquery(min-width, $m) {
-    .menu_fixed #mainmenu {
-        width: $menu_fixed_W;
-        left: -$menu_fixed_W;
-    }
-}

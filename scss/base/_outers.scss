@@ -1,16 +1,29 @@
 @import "vars";
 // ====================================================== featherlight
 .featherlight {
-    &[class*=_bar] .featherlight-content {padding: 0px; margin: 0px; border: 0; position: absolute;}
-    &._hr_bar .featherlight-content {width: 100vw; }
-    &._vr_bar .featherlight-content {height: 100vh; max-height: 100vh; }
+    // overflow: hidden;
+    height: 100vh;
+    .featherlight-content {transition: all ease-in-out .3s; box-shadow: 0px 0px 20px rgba(0,0,0,0.4)}
+    &[class*=_navbar] .featherlight-content {padding: 0px; margin: 0px; border: 0; position: absolute;}
+    &._hr_navbar { width: 100vw; 
+        .featherlight-content {width: inherit; left: 0px; }
+    }
+    &._vr_navbar {
+        .featherlight-content {height: 100vh; max-height: 100vh; width: 100%; }
+    }
     &._top .featherlight-content  { top: inherit; }
     &._left .featherlight-content  { left: inherit; }
     &._right .featherlight-content  { right: inherit;}
     &._bottom .featherlight-content  { bottom: inherit;}
+    &.fl_anim {
+        &._top .featherlight-content  { top: -100%; }
+        &._left .featherlight-content  { left: -100%; }
+        &._right .featherlight-content  { right: -100%;}
+        &._bottom .featherlight-content  { bottom: -100%;}
+    }
     &:last-of-type { background: transparent;
         &:after { content: ''; z-index: 0; width: 100vw; height: 100vh; top:0px; display: block; background: rgba(0,0,0,0.4);
-            -webkit-transform: translate3d(0,0,0); position: absolute;
+            -webkit-transform: translate3d(0,0,0); position: fixed;
         }
     }
     .featherlight-content { z-index: 1;}

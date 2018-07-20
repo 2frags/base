@@ -19,6 +19,12 @@ body {
 //         // font-size: 1.2em;
 //     }
 // }
+.main_wrap {flex:1; }
+.flex_wrap {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
 //----------------- heaaders
 h1, .h1 {
     font-size: $h1
