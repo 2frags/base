@@ -48,7 +48,8 @@
     // &:not(._raw), &:not(._white) {color: $btn_clr;}
     &:hover, &:focus {outline: none;}
     &:last-child { margin-right: 0;}
-    &[class*="icon-"] {
+    // &[class*="icon-"] {
+    &[class*="la-"] {
         // &:not(:empty) {
         //     line-height: inherit;
         // }

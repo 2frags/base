@@ -38,7 +38,7 @@ $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/fea
   });
  
 $(document).ready(function() {
-
+    //======================== featherlight open/close animation
     window.sideIn = function(event){
         $(event.$instance[0]).removeClass('fl_anim');
     };
@@ -66,25 +66,22 @@ $(document).ready(function() {
     }
     //=============== js hamburger menu show-hide
     function mainmenu_pos($el) {
-        console.log($el);
         $($el).each(function() {
-            var target_menu = $(this).data('menu');
-            if (target_menu) {
-                $(this).is(':visible') ? $(target_menu).parent().addClass('js-menu_hide') : $(target_menu).attr('style', '').parent().removeClass('js-menu_hide js-menu_on');
-            }
-        });
-        $('body').on('mouseup', $el, function(e) {
-            e.stopPropagation();
-            var target_menu = $(this).data('menu');
             var is_featherlight = $(this).data('featherlight');
-            if (target_menu && !is_featherlight) {
-                $(target_menu).slideToggle(300);
-                $(target_menu).parent().toggleClass('js-menu_on');
+            if (is_featherlight) {
+                $(is_featherlight).is(':visible') ? $(this).addClass('xx-hide') : $(this).removeClass('xx-hide');
             }
-
         });
     }
-    mainmenu_pos('.js-menu-btn');
+    mainmenu_pos("[data-featherlight][class*='menu']");
+
+    $(window).resize(function() {
+        mainmenu_pos("[data-featherlight][class*='menu']");
+        if(window.$.featherlight){
+            window.$.featherlight.close(); 
+        }
+        
+    })
 
    
     //=============== tabs

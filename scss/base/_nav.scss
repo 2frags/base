@@ -121,30 +121,82 @@ body:before {
     padding: 0px;
     li { margin: 0;}
     a { color: inherit;}
-    // vertical-align: middle;
-    li a, li span {
+    // // vertical-align: middle;
+    // li a, li span {
+    //     display: block;
+    //     text-decoration: none;
+    //     padding: 0 $fld_padd_v;
+    //     line-height: inherit;
+    // }
+    &>li {
+        display: inline-block;
+    }
+}
+[class*=navbar] {
+    & > * { display: inline-block;}
+    li a, li span, .hdr {
         display: block;
         text-decoration: none;
         padding: 0 $fld_padd_v;
         line-height: inherit;
     }
-    &>li {
-        display: inline-block;
+    li a {
+        @include transition(all .3s ease-in-out);
+        &:hover {
+            background-color: rgba(255, 255, 255, .1);
+        }
     }
-}
-[class*=navbar]  li a {
-    display: inline-block;
-    @include transition(all .3s ease-in-out);
-    &:hover {
-        background-color: rgba(255, 255, 255, .1);
-    }
+    .hdr { line-height: 1em;}
 }
 ._vr_navbar, ._hr_navbar {
     li { list-style-type: none;}
 }
-._vr_navbar {vertical-align: top;}
-._vr_navbar .nav {
+._vr_navbar {
+    vertical-align: top;
+    &:before { display: none;}
+    a, span { display: block;}
     li {display: block; margin: 0px; line-height: 2em;}
+}
+[class*=r_sub] {
+    position: absolute;
+    max-height: 0em;
+    opacity: 0;
+    overflow: hidden;
+    left: 0px; 
+    top: 100%;
+    @include transition(all .3s ease-in-out);
+}
+._hr_sub  {
+     right: 0px;
+     border-top: rgba(0,0,0, .2) 1px solid;
+    li { display: inline-block;}
+}
+li {
+    &.active, &:hover {
+        ._hr_sub {
+            max-height: 4em;
+            opacity: 1;
+        }
+        ._vr_sub {
+            max-height: 90vh;
+            opacity: 1;
+        }
+    }
+}
+.featherlight-content {
+    .nav { padding: 0 $colGap;
+        .nav {padding: 0 0 $colGap 0; margin-bottom: -.2em;}
+    }
+    [class*=r_sub] { 
+        box-shadow: none;
+        position: relative; 
+        display: block;
+        max-height: inherit !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        // .wrap, .col { padding: inherit;}
+        li { display: block;}
+    }
 }
 //---------------------------- dropdowns
 .drop_hover {

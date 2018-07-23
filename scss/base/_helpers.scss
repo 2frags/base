@@ -1,5 +1,14 @@
 @import "mixins";
 //-------------helpers
+.la:before {
+    font-family: LineAwesome;
+    font-size: 1.4em;
+    bottom: -0.1em;
+    display: inline-block;
+    text-align: center;
+    width: 1.4em;
+    position: relative;
+}
 body [class*="icon-"] {
     font-family: inherit !important;
     &:before {
@@ -17,6 +26,9 @@ body [class*="icon-"] {
 
 ._sh {
     @include shadow(2px  2px  8px  rgba(0, 0, 0, .3));
+}
+._sh_down {
+    @include shadow(0px  6px  8px  rgba(0, 0, 0, .3));
 }
 ._slim { padding: $btn_padd_v/2 $btn_padd_h/2;}
 ._abs { position: absolute;}
