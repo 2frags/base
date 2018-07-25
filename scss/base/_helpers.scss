@@ -1,13 +1,17 @@
 @import "mixins";
 //-------------helpers
-.la:before {
-    font-family: LineAwesome;
-    font-size: 1.4em;
-    bottom: -0.1em;
-    display: inline-block;
-    text-align: center;
-    width: 1.4em;
-    position: relative;
+.la {
+    &:before {
+        font-family: LineAwesome;
+        font-size: 1.4em;
+        bottom: -0.1em;
+        display: inline-block;
+        // text-align: center;
+        // width: 1.4em;
+        position: relative;
+    }
+    &:not(:empty):before {  margin-right: .35em; }
+    &._rtl:not(:empty):before {  margin-right: 0; margin-left: .35em;}
 }
 body [class*="icon-"] {
     font-family: inherit !important;
@@ -93,3 +97,14 @@ body [class*="icon-"] {
 shape-outside: ellipse();     background-clip: content-box;}
 ._bg_contain { background-size: contain;}
 ._bg_cover { background-size: cover;}
+
+.m-top-x2 { margin-top: $colGap*2;}
+.m-top-x3 { margin-top: $colGap*3;}
+.m-top-x4 { margin-top: $colGap*4;}
+.m-top-x5 { margin-top: $colGap*5;}
+.m-top-x6 { margin-top: $colGap*6;}
+.m-bttm-x2 { margin-bottom: $colGap*2;}
+.m-bttm-x3 { margin-bottom: $colGap*3;}
+.m-bttm-x4 { margin-bottom: $colGap*4;}
+.m-bttm-x5 { margin-bottom: $colGap*5;}
+.m-bttm-x6 { margin-bottom: $colGap*6;}

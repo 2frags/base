@@ -46,7 +46,8 @@ $map_colors: (
     'yell': #ffeb3b,
     'orange': #f59200,
     'brown': #795548,
-    'gray': #9c9c9c
+    'gray': #9c9c9c,
+    'bbb': #bbbbbb
   );
 @function color($key) {
     @return map-get($map_colors, $key);
