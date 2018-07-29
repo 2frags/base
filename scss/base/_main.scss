@@ -135,3 +135,18 @@ blockquote {
         font-family: $serif;
     }
 }
+
+._v_top {    vertical-align: top}
+._v_base {    vertical-align: baseline;}
+._v_middl {
+    vertical-align: middle;
+    &:before {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        content: "";
+        width: 0px;
+        // margin-left: -.3em;
+    }
+    & > * {display: inline-block; vertical-align: middle;}
+}

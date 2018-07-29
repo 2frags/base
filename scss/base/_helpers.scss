@@ -59,21 +59,8 @@ body [class*="icon-"] {
 ._txt_lower {    text-transform: lowercase;}
 ._txt_caps {    text-transform: capitalize;}
 
+._padd0 {padding: 0px;}
 ._nowrap {    white-space: nowrap;}
-._v_top {    vertical-align: top}
-._v_base {    vertical-align: baseline;}
-._v_middl {
-    vertical-align: middle;
-    &:before {
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-        content: "";
-        width: 0px;
-        // margin-left: -.3em;
-    }
-    & > * {display: inline-block; vertical-align: middle;}
-}
 ._abs_full { position: absolute; top: 0px; left:0px; right:0px; bottom: 0px;}
 .tab {
     color: $txt_light;

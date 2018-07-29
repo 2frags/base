@@ -107,7 +107,7 @@ body:before {
     }
     &:before {
         content: '';
-        display: inline-block;
+        // display: inline-block;
         vertical-align: middle;
         height: 100%;
         width: 0px;
@@ -132,8 +132,11 @@ body:before {
         display: inline-block;
     }
 }
+[class*=navbar], .grid[class*=navbar] {
+    & > * {vertical-align: middle;}
+}
 [class*=navbar] {
-    & > * { display: inline-block;}
+    & > * { display: inline-block; vertical-align: middle;}
     li a, li span, .hdr {
         display: block;
         text-decoration: none;

@@ -62,7 +62,8 @@
         //margin-left: -.2em;
         }
       &:empty {
-          &:not(.-_-):not(.__):not(.\.\.\.):not(._raw)  {padding: 0.4em 0.2em;}        
+          &:not(.-_-):not(.__):not(.\.\.\.):not(._raw)  {padding: 0.4em 0.2em;}    
+          &._with_img {padding: 0.4em 0.2em;}    
         min-width: 2.2em;
         overflow: visible;
         &:before {
@@ -75,6 +76,14 @@
             text-decoration: none;
             @include filter(brightness, 60%);
         }
+    }
+    img {
+        height: 1.9em;
+        max-width: 1.9em;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
     }
     // &:not(._brdr), &:not(.__), &:not(.-_-), &:not(.\.\.\.) { color: #fff;}
 }

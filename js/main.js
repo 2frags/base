@@ -45,7 +45,10 @@ $(document).ready(function() {
     window.sideOut = function(event){
         $(event.$instance[0]).addClass('fl_anim');
     };
-
+    window.closeFL = function(){
+        var current = $.featherlight.current();
+        current.close();
+    };
     //===============sticky header
     var scrollTimeout;
     scrolled = 0;
@@ -69,6 +72,7 @@ $(document).ready(function() {
         $($el).each(function() {
             var is_featherlight = $(this).data('featherlight');
             if (is_featherlight) {
+                console.log( $(is_featherlight).is(':visible'));
                 $(is_featherlight).is(':visible') ? $(this).addClass('xx-hide') : $(this).removeClass('xx-hide');
             }
         });
