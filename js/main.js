@@ -36,6 +36,8 @@ $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/fea
     //     console.log('xxxx');
     // }
   });
+  $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.gallery.min.js" ).done(function( script, textStatus ) {});
+  
  
 $(document).ready(function() {
     //======================== featherlight open/close animation
