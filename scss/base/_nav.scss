@@ -164,7 +164,7 @@ body:before {
     position: absolute;
     max-height: 0em;
     opacity: 0;
-    overflow: hidden;
+    // overflow: hidden;
     left: 0px; 
     top: 100%;
     @include transition(all .3s ease-in-out);
