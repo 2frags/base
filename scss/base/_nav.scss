@@ -160,6 +160,7 @@ body:before {
     a, span { display: block;}
     li {display: block; margin: 0px; line-height: 2em;}
 }
+[class*=r_sub], [class*=r_sub] div, [class*=r_sub] ul { background-color: inherit;}
 [class*=r_sub] {
     position: absolute;
     max-height: 0em;
@@ -170,7 +171,6 @@ body:before {
     top: 100%;
     @include transition(all .3s ease-in-out);
 }
-li:hover [class*=r_sub] { overflow: visible; visibility: visible;}
 ._hr_sub  {
      right: 0px;
      border-top: rgba(0,0,0, .2) 1px solid;
@@ -178,13 +178,13 @@ li:hover [class*=r_sub] { overflow: visible; visibility: visible;}
 }
 li {
     &.active, &:hover {
-        ._hr_sub {
+        & > [class*=r_sub] { overflow: visible; visibility: visible; opacity: 1;}
+        & > ._hr_sub {
             max-height: 4em;
-            opacity: 1;
+            
         }
-        ._vr_sub {
+        & > ._vr_sub {
             max-height: 90vh;
-            opacity: 1;
         }
     }
 }
