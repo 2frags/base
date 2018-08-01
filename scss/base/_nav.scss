@@ -180,8 +180,7 @@ li {
     &.active, &:hover {
         & > [class*=r_sub] { overflow: visible; visibility: visible; opacity: 1;}
         & > ._hr_sub {
-            max-height: 4em;
-            
+            max-height: 4em;            
         }
         & > ._vr_sub {
             max-height: 90vh;
@@ -199,6 +198,7 @@ li {
         max-height: inherit !important;
         overflow: visible !important;
         opacity: 1 !important;
+        visibility: visible;
         // .wrap, .col { padding: inherit;}
         li { display: block;}
     }
