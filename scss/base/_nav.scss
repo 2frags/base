@@ -157,8 +157,11 @@ body:before {
 ._vr_navbar {
     vertical-align: top;
     &:before { display: none;}
-    a, span { display: block;}
+    li a, li span { display: block; line-height: 1.2em; padding: $fld_padd_v;}
     li {display: block; margin: 0px; line-height: 2em;}
+    &._flat {
+        ul ul, .col { padding: 0px; }
+    }
 }
 [class*=r_sub], [class*=r_sub] div, [class*=r_sub] ul { background-color: inherit;}
 [class*=r_sub] {
