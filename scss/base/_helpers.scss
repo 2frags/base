@@ -71,7 +71,13 @@ body [class*="icon-"] {
     color: $txt_light;
     @include shadow(5px, 5px, 10px, #000);
 }
-
+._table {
+    display: table;
+    width: 100%;
+    & > * {
+        display: table-cell;
+    }
+}
 //-------- square & circle blocks
 .square, .circle { 
     background-repeat: no-repeat;
