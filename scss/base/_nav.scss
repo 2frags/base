@@ -180,7 +180,7 @@ body:before {
     li { display: inline-block;}
 }
 li {
-    &.active, &:hover {
+     &:hover {
         & > [class*=r_sub] { overflow: visible; visibility: visible; opacity: 1;}
         & > ._hr_sub {
             max-height: 4em;            
