@@ -40,6 +40,9 @@ $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/fea
   
  
 $(document).ready(function() {
+    if ($(window).scrollTop() > 10) {
+        $('#header').addClass("sticky");
+    }
     //======================== featherlight open/close animation
     window.sideIn = function(event){
         $(event.$instance[0]).removeClass('fl_anim');
