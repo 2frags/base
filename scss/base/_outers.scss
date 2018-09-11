@@ -6,6 +6,9 @@
     // overflow: hidden;
     height: 100vh;
     .featherlight-content {transition: all ease-in-out .3s; box-shadow: 0px 0px 20px rgba(0,0,0,0.4)}
+    &.preload  {
+        .featherlight-content, .featherlight-image{opacity: 0;}
+    }
     &[class*=_navbar] .featherlight-content {padding: 0px; margin: 0px; border: 0; position: absolute;}
     &._hr_navbar { width: 100vw; 
         .featherlight-content {width: inherit; left: 0px; }
