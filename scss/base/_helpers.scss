@@ -78,6 +78,13 @@ body [class*="icon-"] {
         display: table-cell;
     }
 }
+//-------- max width
+[class*="maxw-"] {margin-left: auto; margin-right: auto; padding: 0 $colGap; }
+.maxw-xs {max-width: $xs;} //22.5em
+.maxw-s {max-width: $s;} //35.5em
+.maxw-m {max-width: $m;} //48em
+.maxw-l {max-width: $l;} //64em
+.maxw-xl {max-width: $xl;} //80em
 //-------- square & circle blocks
 .square, .circle { 
     background-repeat: no-repeat;
