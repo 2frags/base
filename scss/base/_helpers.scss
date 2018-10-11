@@ -78,6 +78,27 @@ body [class*="icon-"] {
         display: table-cell;
     }
 }
+._strong {font-weight: bold;}
+//---- justify block
+._jstfy { text-align: justify;
+    & > * {display: inline-block;}
+    &:after { content: ''; display: inline-block; width: 100%;}
+}
+//------------------ aspect ratio
+[class*=_ar_] > .col {
+    background-size: cover;
+    &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
+}
+._ar_8x3 > .col { &:before {padding-top:37.5%;}}
+._ar_4x1 > .col { &:before {padding-top:25%;}}
+._ar_2x1 > .col { &:before {padding-top:50%;}}
+._ar_4x3 > .col { &:before {padding-top:75%;}}
+._ar_1x1 > .col { &:before {padding-top:100%;}}
+._ar_1x2 > .col { &:before {padding-top:200%;}}
+._ar_3x4 > .col { &:before {padding-top:133%;}}
+._ar_30vh > .col { &:before {padding-top:30vh; min-height: 260px;}}
+._ar_24vh > .col { &:before {padding-top:24vh; min-height: 200px;}}
+
 //-------- max width
 [class*="maxw-"] {margin-left: auto; margin-right: auto; padding: 0 $colGap; }
 .maxw-xs {max-width: $xs;} //22.5em

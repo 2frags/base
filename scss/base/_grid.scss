@@ -23,10 +23,11 @@
             margin-left: 0px;
         }
     }
-    &.fluid {
-        &>.col {
-            width: auto;
-        }
+}
+.fluid {
+    &>.col {
+        width: auto;
+        display: inline-block;
     }
 }
 .grid>* {
