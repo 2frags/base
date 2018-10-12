@@ -79,11 +79,7 @@ body [class*="icon-"] {
     }
 }
 ._strong {font-weight: bold;}
-//---- justify block
-._jstfy { text-align: justify;
-    & > * {display: inline-block;}
-    &:after { content: ''; display: inline-block; width: 100%;}
-}
+
 //------------------ aspect ratio
 [class*=_ar_] > .col {
     background-size: cover;

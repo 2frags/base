@@ -1,5 +1,10 @@
 @import "vars";
 @import "mixins";
+//---- justify block
+._jstfy { text-align: justify;
+    & > * {display: inline-block;}
+    &:after { content: ''; display: inline-block; width: 100%;}
+}
 .grid {
     text-align: justify;
     position: relative;
