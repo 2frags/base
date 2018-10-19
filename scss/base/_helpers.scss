@@ -58,7 +58,7 @@ body [class*="icon-"] {
 ._txt_upper {    text-transform: uppercase;}
 ._txt_lower {    text-transform: lowercase;}
 ._txt_caps {    text-transform: capitalize;}
-
+._ov_h { overflow: hidden;}
 ._padd0 {padding: 0px;}
 ._nowrap {    white-space: nowrap;}
 ._abs_full { position: absolute; top: 0px; left:0px; right:0px; bottom: 0px;}
@@ -81,19 +81,85 @@ body [class*="icon-"] {
 ._strong {font-weight: bold;}
 
 //------------------ aspect ratio
-[class*=_ar_] > .col {
-    background-size: cover;
-    &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
+// [class*=_ar_] > .col {
+//     background-size: cover;
+//     &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
+// }
+// ._ar_8x3 > .col { &:before {padding-top:37.5%;}}
+// ._ar_4x1 > .col { &:before {padding-top:25%;}}
+// ._ar_2x1 > .col { &:before {padding-top:50%;}}
+// ._ar_4x3 > .col { &:before {padding-top:75%;}}
+// ._ar_1x1 > .col { &:before {padding-top:100%;}}
+// ._ar_1x2 > .col { &:before {padding-top:200%;}}
+// ._ar_3x4 > .col { &:before {padding-top:133%;}}
+// ._ar_30vh > .col { &:before {padding-top:30vh; min-height: 260px;}}
+// ._ar_24vh > .col { &:before {padding-top:24vh; min-height: 200px;}}
+//------------------ aspect ratio for img - more adaptive way
+[class*=_ar_] {
+    .img { position: relative;
+        background-size: cover;
+        &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
+        &:after {
+            content: '';
+            position: absolute;
+            opacity: 0;
+            transition: opacity ease-in-out .3s;
+            width: 100%;
+            top: 0%;
+            left: 0%;
+            height: 100%;
+        }
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;    
+            top: 0px;
+            left: 0px;
+        }
+    }
 }
-._ar_8x3 > .col { &:before {padding-top:37.5%;}}
-._ar_4x1 > .col { &:before {padding-top:25%;}}
-._ar_2x1 > .col { &:before {padding-top:50%;}}
-._ar_4x3 > .col { &:before {padding-top:75%;}}
-._ar_1x1 > .col { &:before {padding-top:100%;}}
-._ar_1x2 > .col { &:before {padding-top:200%;}}
-._ar_3x4 > .col { &:before {padding-top:133%;}}
-._ar_30vh > .col { &:before {padding-top:30vh; min-height: 260px;}}
-._ar_24vh > .col { &:before {padding-top:24vh; min-height: 200px;}}
+[class*=_ar_] > .col:hover {
+    .img:after { opacity: .8;}
+}
+._ar_8x3 .img { &:before {padding-top:37.5%;}}
+._ar_7x3 .img { &:before {padding-top:43%;}}
+._ar_4x1 .img { &:before {padding-top:25%;}}
+._ar_2x1 .img { &:before {padding-top:50%;}}
+._ar_4x3 .img { &:before {padding-top:75%;}}
+._ar_1x1 .img { &:before {padding-top:100%;}}
+._ar_1x2 .img { &:before {padding-top:200%;}}
+._ar_3x4 .img { &:before {padding-top:133%;}}
+._ar_30vh .img { &:before {padding-top:30vh; min-height: 260px;}}
+._ar_24vh .img { &:before {padding-top:24vh; min-height: 200px;}}
+//=========== news_grid
+.news_grid {
+    .grid { margin-left: 0px; margin-right: 0px;}
+    & > .col { 
+        display: inline-block;
+        margin-bottom: $colGap*2;
+        color: inherit; position: relative; 
+    }
+    .img { padding: 0px;}
+    &._cover {
+        .img + * { position: absolute; bottom: 0px;  padding: $colGap; left: $colGap; right: $colGap; overflow: hidden; max-height: 100%;}
+        &._top .img + * { bottom:auto; top: 0px;}
+    }
+    // &:not(._cover){
+    //     & > .col {        
+    //         letter-spacing: -2rem;
+    //         padding: 0px;
+    //         font-size: 0;
+    //         line-height: 0;
+    //         margin-left: $colGap; margin-right: $colGap;
+    //         & > * {
+    //         letter-spacing: normal;
+    //         font-size: 1rem;
+    //         line-height: 1.4em;            
+    //         } 
+    //     }
+    // }
+}
 
 //-------- max width
 [class*="maxw-"] {margin-left: auto; margin-right: auto; padding: 0 $colGap; }
