@@ -94,7 +94,8 @@ body [class*="icon-"] {
 //------------------ aspect ratio for img - more adaptive way
 [class*=_ar_] {
     .img { position: relative;
-        background-size: cover;
+        background-size: 1px;
+        background-repeat: no-repeat; 
         &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
         &:after {
             content: '';
