@@ -58,9 +58,6 @@ body [class*="icon-"] {
 ._txt_upper {    text-transform: uppercase;}
 ._txt_lower {    text-transform: lowercase;}
 ._txt_caps {    text-transform: capitalize;}
-._ov_h { overflow: hidden;}
-._padd0 {padding: 0px;}
-._nowrap {    white-space: nowrap;}
 ._abs_full { position: absolute; top: 0px; left:0px; right:0px; bottom: 0px;}
 .tab {
     color: $txt_light;
@@ -180,6 +177,11 @@ body [class*="icon-"] {
 shape-outside: ellipse();     background-clip: content-box;}
 ._bg_contain { background-size: contain;}
 ._bg_cover { background-size: cover;}
+
+._ov_h { overflow: hidden;}
+._padd0 {padding: 0px;}
+._nowrap {    white-space: nowrap;}
+
 .mt-1 { margin-top: $colGap;}
 .mt-2 { margin-top: $colGap*2;}
 .mt-3 { margin-top: $colGap*3;}

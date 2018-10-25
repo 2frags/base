@@ -30,9 +30,10 @@
     }
 }
 .fluid {
-    &>.col {
-        width: auto;
-        display: inline-block;
+    &>.col {width: auto;}
+    &>.col:not([class*=-hide]) {        
+        display: inline-block; 
+        //- prevent zz-hide class overwrite
     }
 }
 .grid>* {
@@ -84,13 +85,15 @@
         .#{nth($j, 1)}-hide {display: none;}
         .#{nth($j, 1)}-abs {position: absolute;}
         .#{nth($j, 1)}-rel {position: relative;}
+        .#{nth($j, 1)}-sta {position: static;}
         .#{nth($j, 1)}-show {display: inline-block;}
         .#{nth($j, 1)}-fl_l {float: left;}
         .#{nth($j, 1)}-fl_r {float: right;}
         .#{nth($j, 1)}-gap-0 {margin-left: 0; }
         [class*="#{nth($j, 1)}-marg"] {margin: $colGap; }
         [class*="#{nth($j, 1)}-padd"] {padding: $colGap; }
-    @for $i from 1 through $columns {      
+        .#{nth($j, 1)}-1\/5 {width: 20%;}   
+    @for $i from 1 through $columns {   
             .#{nth($j, 1)}-#{$i} {         
                 width: 100% / $columns * $i;   
             }  

@@ -77,7 +77,7 @@ $(document).ready(function() {
         $($el).each(function() {
             var is_featherlight = $(this).data('featherlight');
             if (is_featherlight) {
-                console.log( $(is_featherlight).is(':visible'));
+                // console.log( $(is_featherlight).is(':visible'));
                 $(is_featherlight).is(':visible') ? $(this).addClass('xx-hide') : $(this).removeClass('xx-hide');
             }
         });
