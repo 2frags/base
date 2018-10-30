@@ -6,7 +6,11 @@ $.cachedScript = function( url, options ) {
     return jQuery.ajax( options );
 };
 // $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js" ).done(function( script, textStatus ) {
-    $.cachedScript( "https://gitcdn.xyz/repo/noelboss/featherlight/master/release/featherlight.min.js" ).done(function( script, textStatus ) {
+    $.cachedScript( "https://gitcdn.xyz/cdn/noelboss/featherlight/aca473f3a99dacd36c290dda1792a4f70c48996f/release/featherlight.min.js" ).done(function( script, textStatus ) {
+        $.cachedScript( "https://gitcdn.xyz/cdn/noelboss/featherlight/aca473f3a99dacd36c290dda1792a4f70c48996f/release/featherlight.gallery.min.js" ).done(function( script, textStatus ) {
+            //console.log( textStatus );
+            
+        });
     //console.log( textStatus );
     
     // $('._fl_menu').featherlight({
@@ -38,7 +42,7 @@ $.cachedScript = function( url, options ) {
     // }
   });
 //   $.cachedScript( "https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.gallery.min.js" ).done(function( script, textStatus ) {});
-  $.cachedScript( "https://gitcdn.xyz/repo/noelboss/featherlight/master/release/featherlight.gallery.min.js" ).done(function( script, textStatus ) {});
+  
   
  
 $(document).ready(function() {

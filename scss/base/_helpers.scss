@@ -232,3 +232,71 @@ shape-outside: ellipse();     background-clip: content-box;}
 .pr-4 { padding-right: $colGap*4;}
 .pr-5 { padding-right: $colGap*5;}
 .pr-6 { padding-right: $colGap*6;}
+
+//==================== featherlight
+//------------------ featherlight
+.featherlight-next, .featherlight-previous {
+    img { display: none !important;}    
+    span {
+        font-family: LineAwesome;
+        font-size: 0px;
+        color: #fff;
+        text-shadow: none;
+        &:before { font-size: 44px;}
+    }
+}
+.featherlight-previous span:before { content: "\f111"}
+.featherlight-next span:before { content: "\f112"}
+html.with-featherlight { overflow: auto;}
+.featherlight:last-of-type  {
+    &._trans { background: transparent;}
+    &._topbar { 
+        .featherlight-content {margin: 0; width: 100%; padding: 0; border: 0;}        
+        &:before {height: 0;}
+    }
+}
+//-----
+.featherlight-content {
+    [class*=r_sub]{        
+        border-top: none;
+        border-bottom: rgba(0,0,0, .2) 1px solid;
+    }
+    [class*=r_sub]:hover { 
+        &:before {
+            content: '';
+            position: absolute;
+            top: -4px; width: 100%;
+            border-top: #fff 4px solid;
+        }
+    }
+    li {
+        &.active, &:hover {
+            // [class*=r_sub]  {margin-top: -2px;}
+        }
+    }
+}
+.featherlight.preload {
+    .featherlight-content, .featherlight-image { opacity: 0;}
+    // .featherlight-image {}
+  }
+  .featherlight-content {text-align: center; 
+    opacity: 1;
+    transition: all ease-in-out .3s;
+    transform-origin: center;
+  }
+  .featherlight .featherlight-image {
+    display: inline-block; vertical-align: middle; 
+    transform-origin: center;
+    transition: all ease-in-out .6s;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: inline-block;
+    width: auto;
+  }
+  .featherlight-next, .featherlight-previous {
+    transition: all ease-in-out .6s;
+    opacity: 0; background: rgba(0,0,0,.15);
+    span { display: block; text-shadow: none;
+      transition: opacity ease-in-out .6s .3s;} 
+    &:hover {    background: rgba(0,0,0,.15); opacity: 1}
+  }
