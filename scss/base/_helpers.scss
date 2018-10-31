@@ -287,10 +287,11 @@ html.with-featherlight { overflow: auto;}
   .featherlight .featherlight-image {
     display: inline-block; vertical-align: middle; 
     transform-origin: center;
-    transition: all ease-in-out .6s;
+    transition: opacity ease-in-out .6s;
     max-width: 90vw;
     max-height: 90vh;
     display: inline-block;
+    opacity: 0;
     width: auto;
   }
   .featherlight-next, .featherlight-previous {
