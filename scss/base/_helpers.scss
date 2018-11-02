@@ -284,6 +284,7 @@ html.with-featherlight { overflow: auto;}
     transition: all ease-in-out .3s;
     transform-origin: center;
   }
+  .featherlight .featherlight-image[style] {  opacity: 1;}
   .featherlight .featherlight-image {
     display: inline-block; vertical-align: middle; 
     transform-origin: center;
