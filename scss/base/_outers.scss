@@ -2,13 +2,64 @@
 // ============================= la avesome
 .la { font-family: inherit;}
 // ====================================================== featherlight
+$fl_padd: 25px;
+
+html.with-featherlight { overflow: auto;}
+.featherlight-content {
+    opacity: 1;
+    transform-origin: center;
+    z-index: 1;
+    transition: all ease-in-out .6s; 
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    padding: $fl_padd;
+    margin: 0 5%;
+    max-height: 95%; max-width:95%; 
+    background: #fff;
+    white-space: normal;
+    [class*=r_sub]{        
+        border-top: none;
+        border-bottom: rgba(0,0,0, .2) 1px solid;
+    }
+    [class*=r_sub]:hover { 
+        &:before {
+            content: '';
+            position: absolute;
+            top: -4px; width: 100%;
+            border-top: #fff 4px solid;
+        }
+    }
+  }
 .featherlight {
     // overflow: hidden;
     height: 100vh;
-    .featherlight-content {transition: all ease-in-out .3s; box-shadow: 0px 0px 20px rgba(0,0,0,0.4)}
-    &.preload  {
-        .featherlight-content, .featherlight-image{opacity: 0;}
-    }
+    position: fixed;
+    text-align: center;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    z-index: 10000;  
+    &.preload {
+        // .featherlight-content, 
+        .featherlight-content {
+            // max-width:100px; max-height: 100px; 
+            opacity: 0; 
+            margin: 0 50%;
+        }
+        .featherlight-image { opacity: 0;
+        }
+      }
+    &:before {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }  
     &[class*=_navbar] .featherlight-content {padding: 0px; margin: 0px; border: 0; position: absolute;}
     &._hr_navbar { width: 100vw; 
         .featherlight-content {width: inherit; left: 0px; }
@@ -30,8 +81,13 @@
         &:after { content: ''; z-index: 0; width: 100vw; height: 100vh; top:0px; display: block; background: rgba(0,0,0,0.4);
             -webkit-transform: translate3d(0,0,0); position: fixed;
         }
+        &._trans { background: transparent;}
+        &._topbar { 
+            .featherlight-content {margin: 0; width: 100%; padding: 0; border: 0;}        
+            &:before {height: 0;}
+        }
     }
-    .featherlight-content { z-index: 1;}
+
     &._sub {
         background-color: inherit;
         position: absolute;
@@ -48,3 +104,55 @@
         }
     }
 }
+//---fl image
+.featherlight-image[style] {  opacity: 1;}
+.featherlight-image {
+    display: inline-block; vertical-align: middle; 
+    transform-origin: center;
+    // transition: all ease-in-out .6s;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: inline-block;
+    opacity: 0;
+    width: auto;
+}
+//---fl gal buttons
+.featherlight-next, .featherlight-previous {
+    position: absolute; width: $fl_padd*3;
+    transition: all ease-in-out .3s;
+    text-align: center;
+    opacity: 0; 
+    // background: rgba(0,0,0,.35);
+    background: rgba(255, 255, 255, 0.45);
+    z-index: 1000; cursor: pointer;
+    top: $fl_padd; bottom: $fl_padd;    
+    &:before { content: ''; display: inline-block; height: 100%;  vertical-align: middle;}
+    img { display: none !important;}    
+    span { vertical-align: middle;
+        display: inline-block; text-shadow: none;
+        // transition: opacity ease-in-out .3s .3s;
+        font-family: LineAwesome;
+        font-size: 0px;
+        color: #333;
+        text-shadow: none;
+        &:before { font-size: $fl_padd*2;}
+    }
+    &:hover { opacity: 1; width: $fl_padd*4 }
+}
+.featherlight-next { right: $fl_padd;}
+.featherlight-previous { left: $fl_padd;}
+.featherlight-previous span:before { content: "\f111"}
+.featherlight-next span:before { content: "\f112"}
+
+.featherlight-close {    
+    top: 0;
+    right: 0;
+    line-height: $fl_padd;
+    width: $fl_padd;
+    position: absolute;
+    border: none;
+    cursor: pointer;}
+  //===================
+
+
+
