@@ -18,7 +18,7 @@ html.with-featherlight { overflow: auto;}
     overflow: auto;
     padding: $fl_padd;
     margin: 0 5%;
-    max-height: 95%; max-width:95%; 
+    max-height: 95%; max-width:90%; 
     background: #fff;
     white-space: normal;
     [class*=r_sub]{        
@@ -36,6 +36,7 @@ html.with-featherlight { overflow: auto;}
   }
 .featherlight {
     // overflow: hidden;
+    white-space: nowrap;
     height: 100vh;
     position: fixed;
     text-align: center;
