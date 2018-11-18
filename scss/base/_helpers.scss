@@ -97,7 +97,7 @@ body [class*="icon-"] {
     .img { position: relative;
         background-size: 1px;
         background-repeat: no-repeat; 
-        &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s;}
+        &:before {content: ''; display: block; background-size: cover; background-position: 50% 50%; background-image: inherit; transition: all ease-in-out .3s; background-repeat: no-repeat;}
         &:after {
             content: '';
             position: absolute;
