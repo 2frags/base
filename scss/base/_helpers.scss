@@ -92,7 +92,8 @@ body [class*="icon-"] {
 // ._ar_30vh > .col { &:before {padding-top:30vh; min-height: 260px;}}
 // ._ar_24vh > .col { &:before {padding-top:24vh; min-height: 200px;}}
 //------------------ aspect ratio for img - more adaptive way
-[class*=_ar_] {
+[class*=_ar_] {    
+    &._bg_contain .img:before { background-size: contain;}
     .img { position: relative;
         background-size: 1px;
         background-repeat: no-repeat; 
