@@ -163,7 +163,7 @@ body:before {
         ul ul, .col { padding: 0px; }
     }
 }
-[class*=r_sub], [class*=r_sub] div, [class*=r_sub] ul { background-color: inherit;}
+[class*=r_sub], [class*=r_sub] div, [class*=r_sub] ul { background-color: inherit; } 
 [class*=r_sub] {
     position: absolute;
     max-height: 0em;
@@ -173,6 +173,9 @@ body:before {
     left: 0px; 
     top: 100%;
     @include transition(all .3s ease-in-out);
+    li {
+        list-style-type: none; line-height: 1em;
+    }
 }
 ._hr_sub  {
      right: 0px;
