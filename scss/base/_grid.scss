@@ -8,7 +8,7 @@
 .grid {
     text-align: justify;
     position: relative;
-    letter-spacing: -2rem;
+    letter-spacing: -1rem; //-----higher value causes some overflow bugs
     font-size: 0;
     line-height: 0;
     &.grid_l {
