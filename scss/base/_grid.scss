@@ -92,7 +92,7 @@
         .#{nth($j, 1)}-gap-0 {margin-left: 0; }
         [class*="#{nth($j, 1)}-marg"] {margin: $colGap; }
         [class*="#{nth($j, 1)}-padd"] {padding: $colGap; }
-        .#{nth($j, 1)}-5 {width: 20%;}   
+        .#{nth($j, 1)}--5 {width: 20%;}   
     @for $i from 1 through $columns {   
             .#{nth($j, 1)}-#{$i} {         
                 width: 100% / $columns * $i;   
