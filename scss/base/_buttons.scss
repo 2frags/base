@@ -20,6 +20,7 @@
 .btn {
     font-family: $font;
     padding: $btn_padd_v $btn_padd_h;
+    text-decoration: none;
     margin: 0 $colGap/4 0 0;
     position: relative;
     display: inline-block;
